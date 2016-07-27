@@ -1,0 +1,187 @@
+**SERVER**
+
+  /stories      CURRENT
+    GET
+    RETURNS: The last recently updated incomplete stories
+    FORMAT: {story:
+              {
+                id: 1,
+                title: "title",
+                contribution_limit: 45,
+                contribution_length: 24,
+                location: {
+                 lat: -41.5151,
+                 lng: 174.6764 
+                }
+                completed: false
+              }, ..
+            }
+            
+  /stories    CURRENT
+    POST
+    ACTION: Create a new story
+    FORMAT: {"story": 
+	             {
+		       "title": "Nearby routing. Zomg.",
+		       "contribution_limit": 13,
+		       "lat": -41.4151,
+		       "lng": 174.4164
+	              }
+            }
+            
+           
+           
+  /stories/completed  CURRENT 
+    GET
+    RETURNS: all completed stories
+    FORMAT: {story:
+              {
+                id: 1,
+                title: "title",
+                first_contribution: 'Hello World',
+                location: {
+                 lat: -41.5151,
+                 lng: 174.6764 
+                }
+                completed: true
+              }, ..
+            }
+  
+
+  /stories/:id  CURRENT
+    GET
+    RETURNS: A story
+              - title and contributions
+    FORMAT: 
+    	if a story is completed:
+	    {title: 
+	              {
+	              	id: 1,
+	                title: "title",
+	                contributions_length,
+	                contribution_limit,
+	                completed: true,
+	                location: {
+	                 lat: -41.5151,
+	                 lng: 174.6764 
+	                },
+	                all_contributions {
+	                 story_id: 1,
+	                 content: "content",
+	                 username: "username"
+	                }, ..
+	              }
+	              
+	if a story is not completed:
+	    {title: 
+	              {
+	              	id: 1,
+	                title: "title",
+	                contributions_length,
+	                contribution_limit,
+	                completed: false,
+	                location: {
+	                 lat: -41.5151,
+	                 lng: 174.6764 
+	                },
+	                last_contribution {
+	                 story_id: 1,
+	                 content: "content",
+	                 username: "username"
+	                }
+	              }
+	            }
+
+  /stories/:story_id/contributions    CURRENT
+    POST
+    ACTION: create a contribution for a specific story
+    INPUT FORMAT: { contribution:
+                      {
+                      	story_id: 1,
+                        content: "content",
+                        username: "username"
+                      }, ..
+                  }
+
+  /stories/nearby     
+    GET
+    RETURNS:  get nearby stories in radius based on lat + lng
+    		returns {id, title, contribution_limit, contributions_length, lat, lng}
+    FORMAT: { nearby_stories:
+                  {
+                    id: id,
+                    title: "title",
+                    contribution_limit: 34,
+                    completed: false,
+                    contribution_length: 12,
+                    first_contribution: 'Hello World',
+                    last_contribution: 'Hello World',
+                    location: {
+	                 lat: -41.5151,
+	                 lng: 174.6764 
+	            }
+                  }, ..
+            }
+
+  /stories/:story_id/in_range   TO BE COMPLETED
+    GET
+    RETURNS:  true/false depending on wheteher or not a story is in range
+    FORMAT: {search:
+    		{
+    			lat: -41.531,
+    			lng: 174.414
+    		}
+    	}
+
+**CLIENTS**
+
+  NAVBAR
+    - menu button
+      - home link
+      - rules link
+    - has a "FIND NEARBY" button for finding stories near current location
+      GET /nearby
+        - get users current location from browser and sent to server
+        - display incomplete stories on google map
+    - has a search bar for searching incompleted stories by location
+      AAAAH! = Client can determine lat&lng of "The Eiffel Tower"? - Google map API
+    - has a logo on the left
+
+  A HOME PAGE
+    - has COMPLETED and INCOMPLETE story tabs
+    - has MAP or LIST view of stories as tabs
+        - default load of page incomplete tab displays ten most recent stories created nearby
+         	- GET /nearby
+        - Menu at side has link buttons to:
+        	- create new story (page)
+        	- search by location (page)
+
+        FOR COMPLETE STORIES TAB
+          - display can be toggled either in a list or map
+          - can see the title
+          - can see beginning of the first contribution
+          - can see its location (as specific as poss) in TEXT 
+          - stories are selectable
+              - links to a page to read the complete story
+                GET /stories/:id 
+
+        FOR INCOMPLETE STORIES TAB
+         - display can be toggled either in a list or map
+                - can see the title
+                - can see beginning of the last contribution
+                - can see its location (as specific as poss) in TEXT 
+         	- stories are selectable for contribution if in range (logic)
+                  - contribution button links to story page to make contribution
+                  - GET /stories/:id
+
+  AN INCOMPLETE STORY PAGE
+    GET /stories/:id
+    - shows the story title
+    - shows the last contribution
+    - if user is in range (/stories/:id/in_range) a form to add a contribution with username
+        - POST request to /stories/:story_id/contributions
+
+  A COMPLETED STORY PAGE
+    GET /stories/:id
+    - shows the story title
+    - story shows all the contributions WITH their usernames
