@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import Nav from './Nav';
 
 class App extends Component {
   static propTypes = {
@@ -14,7 +15,9 @@ class App extends Component {
 
   render() {
     return (
-      <div>App</div>
+      <div>
+        <Nav />
+      </div>
     );
   }
 }
