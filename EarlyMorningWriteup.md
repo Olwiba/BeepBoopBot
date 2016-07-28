@@ -27,7 +27,7 @@
 
 # Technologies
 
-* TDD - take it as it comes
+* TDD - Yes please
 
 # Technology
 
