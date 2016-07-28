@@ -1,14 +1,33 @@
 Learning Objectives (Not in order)  
 -------------------
 
-## Ollie
+## Redux
 
-## Miles
+* Ollie
+* Shayan
+* Sean
 
-## Troy
+## GreenSock
 
-## Vai
+* Sean
 
-## Sean
+## ThreeJs
 
-## Shayan
+* Vai
+* Miles
+* Shayan
+* Sean
+
+## Mobile Friendly
+
+* Miles
+* Troy
+
+## React
+
+* Sean
+* Vai
+
+## MVC
+
+## Immutable (Stretch)
