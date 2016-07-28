@@ -7,7 +7,6 @@ At this point these can / should be very brainstormy. Throw any ideas in here, w
  * As a user, I can click a '?' and see the about page again
  * As a user, I can learn from the crucial levels how to play the game
  * As a user, I can select what level I want to play
- * As a user, I fdsfdsfdsdfs to be executed by BBB
  * As a user, I can add commands to be executed by BBB
  * As a user, I can click 'Go' to have BBB execute the commands
  * As a user, I can click 'Stop' and BBB will reset position so that I can edit my commands
