@@ -5,7 +5,7 @@ Links to Wireframes
 -----------------
 
 About Page
-![alt tag](https://postimg.org/image/j5f99jixj "About Page")
+![alt tag](https://s31.postimg.org/crq66ae1n/About_Page.png "About Page")
 
 Home Page
-![alt tag](https://postimg.org/image/ejdmkva6v "Home Page")
+![alt tag](https://s31.postimg.org/dh3g2brdn/Home_Wireframe.png "Home Page")
