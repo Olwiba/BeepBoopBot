@@ -19,7 +19,7 @@ class App extends Component {
         <Board />
         <CommandPaneContainer />
       </div>
-     )
+    )
   }
 }
 

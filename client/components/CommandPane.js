@@ -14,10 +14,18 @@ class CommandPane extends Component {
         <div>
           Click commands here to add them to the queue
         </div>
-        <button onClick={() => { this.props.ADD_FORWARD() }}>FWD</button>
-        <button>LEFT</button>
-        <button>RIGHT</button>
-        <button>JUMP</button>
+        <button onClick={() => { this.props.ADD_FORWARD() }}>
+          FWD
+        </button>
+        <button>
+          LEFT
+        </button>
+        <button>
+          RIGHT
+        </button>
+        <button>
+          JUMP
+        </button>
       </section>
     )
   }
