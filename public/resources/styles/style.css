@@ -29,3 +29,15 @@
   padding: 10px;
   background: #1c6e8c;
   font-family: 'Press Start 2P', cursive; }
+
+.command-pane {
+  z-index: 2;
+  display: flex;
+  flex-direction: column; }
+  .command-pane .command-queue {
+    background-color: #c2c2f0; }
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
