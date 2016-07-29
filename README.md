@@ -147,3 +147,5 @@ Each team member is to install standardJS (npm i standard -g) and standard-forma
 Run standard (linter) with 'standard'. It checks all of the files in your current dir for formatting and linting problems and prints a list of problems. Fix the problems before pushing to github. You can also run 'standard-format -w', which usually automatically fixes most of the errors.
 
 Sublime and Atom packages available. See https://github.com/feross/standard and https://www.npmjs.com/package/standard-format for details. Ask Miles if you have installation problems.
+
+We are using TravisCI to check for errors before merging with master.
