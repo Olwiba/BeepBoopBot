@@ -47,6 +47,7 @@
         .levels-container {
             height: 60%;
             margin-right: 4%;
+
                         
                 .levels {
                 height: 100%;
@@ -62,6 +63,22 @@
                     @media screen and (max-width: 450px) {
                     /* Do this */
                     }
+                }
+
+                .levels:hover {
+                    color: $blue-light;
+                    border: 2px solid $blue-light;
+                }
+
+                .level-option{
+                    background: $blue-darkest;
+                    color: $blue;
+                }
+
+                select {
+                   -webkit-appearance: none;
+                   -moz-appearance: none;
+                   appearance: none;
                 }
         }
 
