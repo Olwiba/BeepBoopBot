@@ -20,9 +20,7 @@ class Board extends Component {
               left: value.x,
               border: '1px solid red'
             }
-            return <div style={style}>
-                      {value.x}
-            </div>
+            return (<div style={style}>{value.x}</div>)
           }}
         </Motion>
       </div>
