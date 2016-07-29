@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import CommandQueue from './CommandQueue'
-import GoButton from './GoButton'
+import RunButtons from './RunButtons'
 
 class CommandPane extends Component {
 
@@ -8,7 +8,7 @@ class CommandPane extends Component {
     return (
       <section className='command-pane'>
         <CommandQueue />
-        <GoButton />
+        <RunButtons />
         <div>
           Click commands here to add them to the queue
         </div>
