@@ -12,8 +12,10 @@ class Nav extends Component {
   render () {
     return (
       <div className='navigation'>
-        <div className='logo-container'>
-          <img src='/resources/images/b3-logo.svg' alt='Logo' className='logo' />
+        <div className="invisible-container"> 
+          <div className='logo-container'>
+            <img src='/resources/images/b3-logo.svg' alt='Logo' className='logo' />
+          </div>
         </div>
         <div>
           <select className='levels' onChange={this.selectLevel}>
