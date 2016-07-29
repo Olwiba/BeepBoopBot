@@ -14,7 +14,13 @@ export default class Model {
 
   moveForward () {
     // check with board this is okay
-    // then call moveForward on robot
+    if (this.board.canMove(this.robot)) {
+      this.robot.moveForward()
+      return true
+    } else {
+      return false
+    }
+  // then call moveForward on robot
   }
 
   left () {
