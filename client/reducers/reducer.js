@@ -22,6 +22,10 @@ const reducer = (state = INITIAL_STATE, action) => {
     case 'STOP_BUTTON':
       return state
 
+    case 'ADD_FORWARD':
+      console.log('Adding fwd')
+      return state
+
     default:
       return state
 
