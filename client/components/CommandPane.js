@@ -6,13 +6,13 @@ class CommandPane extends Component {
 
   render () {
     return (
-      <div className='command-pane'>
+      <section className='command-pane'>
         <CommandQueue />
         <GoButton />
-        <p>
+        <div>
           Click commands here to add them to the queue
-        </p>
-      </div>
+        </div>
+      </section>
     )
   }
 }

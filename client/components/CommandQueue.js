@@ -4,7 +4,7 @@ class CommandQueue extends Component {
 
   render () {
     return (
-      <div>
+      <div className='command-queue'>
         <p>
           CommandQueue
         </p>
