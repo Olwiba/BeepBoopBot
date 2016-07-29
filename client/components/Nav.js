@@ -12,7 +12,7 @@ class Nav extends Component {
   render () {
     return (
       <div className='navigation'>
-        <div className="invisible-container"> 
+        <div className='invisible-container'>
           <div className='logo-container'>
             <img src='/resources/images/b3-logo.svg' alt='Logo' className='logo' />
           </div>

@@ -2,7 +2,6 @@
 /* Import Assets */
 @import 'https://fonts.googleapis.com/css?family=Press+Start+2P';
 .navigation {
-  position: fixed;
   width: 100%;
   height: 8%;
   background: #02333a;
@@ -26,6 +25,7 @@
       .navigation .invisible-container {
         /* Do this */ } }
     .navigation .invisible-container .logo-container {
+      z-index: 1;
       height: 120%;
       padding: 2%;
       background: #02333a;
@@ -49,33 +49,27 @@
       .navigation .levels {
         /* Do this */ } }
 
-.logo {
-  height: 100px;
-  width: auto;
-  margin: 5px;
-  margin-left: 50px; }
-
-.logo-container {
-  padding: 5px;
-  background: #03323a; }
-
-.levels {
-  height: 50px;
-  width: 250px;
-  margin: 30px;
-  border-radius: 10px;
-  padding: 10px;
-  background: #1c6e8c;
-  font-family: 'Press Start 2P', cursive; }
-
 .command-pane {
-  z-index: 2;
-  display: flex;
-  flex-direction: column; }
+  position: absolute;
+  bottom: 0;
+  background: #78c042;
+  width: 100%;
+  height: 30%; }
   .command-pane .command-queue {
     background-color: #c2c2f0; }
+
+#board {
+  background: #f7ec37;
+  height: 62%;
+  width: 100%; }
+
+/* Import Fonts */
+/* Fonts */
+h1 {
+  margin: 0; }
 
 .app {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center; }
