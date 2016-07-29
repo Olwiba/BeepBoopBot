@@ -1,1 +1,46 @@
-@import './nav.scss'
+/* Colors */
+
+$white: #f2f2f2;
+$white-dark: #cbcbcb;
+
+$red: #d53126;
+$red-dark: #a93126;
+
+$green: #78c042;
+$green-dark: #4d9713;
+
+$blue: #1c8da0;
+$blue-dark: #1c8da0;
+$blue-daker: #006073;
+$blue-darkest: #02333a;
+$blue-shadow: #011e22;
+
+$yellow: #f7ec37;
+$yellow-dark: #d8cf00;
+
+/* Import Assets */
+@import './nav.scss';
+
+/* Import Fonts */
+@import 'https://fonts.googleapis.com/css?family=Press+Start+2P';
+
+/* Fonts */
+
+$heading: 'Press Start 2P', cursive;
+$body: 'Press Start 2P', cursive;
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3{
+
+}
+
+p{
+
+}
