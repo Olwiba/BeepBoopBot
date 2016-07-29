@@ -3,3 +3,9 @@ node_modules
 
 # Bundle
 public/bundle.js
+
+# Compiled CSS file
+public/resources/styles/style.css
+
+# Npm debug log 
+npm-debug.log

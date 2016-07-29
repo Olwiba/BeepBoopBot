@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Nav from './Nav'
+import CommandPane from './CommandPane'
 
 class App extends Component {
 
@@ -12,8 +13,9 @@ class App extends Component {
 
   render () {
     return (
-      <div>
+      <div className='app'>
         <Nav />
+        <CommandPane />
       </div>
     )
   }
