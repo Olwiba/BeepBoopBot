@@ -10,8 +10,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
-  align-items: stretch;
-  border-bottom: 7px solid #011e22; }
+  align-items: center;
+  border-bottom: 7px solid #011e22;
+  min-height: 80px; }
   .navigation .invisible-container {
     width: 30%;
     height: 100%;
@@ -37,17 +38,22 @@
           /* Do this */ } }
       .navigation .invisible-container .logo-container .logo {
         height: 95%; }
-  .navigation .levels {
-    height: 50px;
-    width: 250px;
-    margin: 30px;
-    border-radius: 10px;
-    padding: 10px;
-    background: #1c8da0;
-    font-family: 'Press Start 2P', cursive; }
-    @media screen and (max-width: 450px) {
-      .navigation .levels {
-        /* Do this */ } }
+  .navigation .levels-container {
+    height: 60%;
+    margin-right: 4%; }
+    .navigation .levels-container .levels {
+      height: 100%;
+      width: 250px;
+      border-radius: 10px;
+      border: 2px solid #1c8da0;
+      background: #02333a;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 14px;
+      color: #1c8da0;
+      padding-left: 40px; }
+      @media screen and (max-width: 450px) {
+        .navigation .levels-container .levels {
+          /* Do this */ } }
 
 .command-pane {
   position: absolute;
