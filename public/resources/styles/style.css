@@ -29,3 +29,8 @@
   padding: 10px;
   background: #1c6e8c;
   font-family: 'Press Start 2P', cursive; }
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }

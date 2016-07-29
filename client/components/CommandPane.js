@@ -6,7 +6,7 @@ class CommandPane extends Component {
 
   render () {
     return (
-      <div>
+      <div className='command-pane'>
         <CommandQueue />
         <GoButton />
         <p>
