@@ -22,7 +22,7 @@ test('Robot movement', (t) => {
 
   robot.moveForward()
 
-  t.equal(robot.positionY, startY, 'Robot can move forward')
+  t.equal(robot.positionY, startY + 1, 'Robot can move forward')
 
   robot = new Robot()
   robot.right()
