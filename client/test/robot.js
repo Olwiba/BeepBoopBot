@@ -1,4 +1,4 @@
-import Robot from '../robot.js'
+import Robot from '../model/Robot.js'
 import test from 'tape'
 
 test('Creating a new robot', (t) => {
