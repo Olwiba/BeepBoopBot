@@ -20,6 +20,10 @@ $yellow-dark: #d8cf00;
 /* Import Assets */
 @import './nav.scss';
 @import './commandPane.scss';
+@import './about.scss';
+@import './board.scss';
+@import './commandQueue.scss';
+@import './runButton.scss';
 
 /* Import Fonts */
 @import 'https://fonts.googleapis.com/css?family=Press+Start+2P';
@@ -30,7 +34,7 @@ $heading: 'Press Start 2P', cursive;
 $body: 'Press Start 2P', cursive;
 
 h1 {
-
+	margin: 0;
 }
 
 h2 {
@@ -43,8 +47,11 @@ h3{
 
 p{
 
+}
+
 .app {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
 }
