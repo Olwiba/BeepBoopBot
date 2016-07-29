@@ -12,6 +12,7 @@ test('Creating a new robot', (t) => {
   t.false(robot.isOnBox, 'Robot is not on a box')
 
   t.equal(robot.direction, 0, 'Robot starts looking straight ahead')
+  t.end()
 })
 
 test('Robot movement', (t) => {
@@ -36,4 +37,5 @@ test('Robot movement', (t) => {
   robot.moveForward()
 
   t.equal(robot.positionX, startX + 1, 'Robot moves in correct direction after turning left')
+  t.end()
 })
