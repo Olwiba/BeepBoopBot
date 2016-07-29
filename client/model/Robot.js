@@ -10,9 +10,8 @@ export default class Robot {
   moveForward () {
     let normalisedDirection = this.direction
     if (this.direction < 0) {
-      normalisedDirection = 360 - normalisedDirection
+      normalisedDirection = 360 + normalisedDirection
     }
-    normalisedDirection = normalisedDirection / 4
     switch (normalisedDirection) {
       case 0:
         // 0 is forwards along Y axis
