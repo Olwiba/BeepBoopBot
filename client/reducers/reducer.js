@@ -1,3 +1,5 @@
+// import { immutable, fromJS, toJS} from 'immutable'
+
 const INITIAL_STATE = {
   robot: {
     direction: 0,
@@ -23,9 +25,20 @@ const reducer = (state = INITIAL_STATE, action) => {
       return state
 
     case 'ADD_FORWARD':
-      console.log('Adding fwd')
-      return state
+      // const newState = state.get('robot').toJS()
+      // newState.positionX += 1
+      const newState = {
+        robot: {...state.robot},
+        board: {...state.board}
+      }
+      newState.robot.positionX = 4
+      return newState
+      // // Just move posnX +1 for now
+      // const newState = Object.assign({}, state, {robot.positionX: 1})
+      // // newState.robot.positionX = 1
 
+      // console.log(state.set('robot', newState).toJS())
+      // return state.set('robot', newState)
     default:
       return state
 
