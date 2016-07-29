@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Nav from './Nav'
 import CommandPane from './CommandPane'
+import CommandPaneContainer from '../containers/CommandPaneContainer'
 
 class App extends Component {
 
@@ -15,7 +16,7 @@ class App extends Component {
     return (
       <div className='app'>
         <Nav />
-        <CommandPane />
+        <CommandPaneContainer />
       </div>
      )
   }
