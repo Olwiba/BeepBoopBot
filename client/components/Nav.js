@@ -17,7 +17,7 @@ class Nav extends Component {
             <img src='/resources/images/b3-logo.svg' alt='Logo' className='logo' />
           </div>
         </div>
-        <div>
+        <div className="levels-container">
           <select className='levels' onChange={this.selectLevel}>
             <option className='level-option'>
               Select Level

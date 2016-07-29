@@ -7,8 +7,9 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: center;
-    align-items: stretch;
+    align-items: center;
     border-bottom: 7px solid $blue-shadow;
+    min-height: 80px;
 
         .invisible-container {
             width: 30%;
@@ -43,19 +44,28 @@
             }
         }
 
-        .levels {
-            height: 50px;
-            width: 250px;
-            margin: 30px;
-            border-radius: 10px;
-            padding: 10px;
-            background: $blue;
-            font-family: 'Press Start 2P', cursive;
+        .levels-container {
+            height: 60%;
+            margin-right: 4%;
+                        
+                .levels {
+                height: 100%;
+                width: 250px;
+                border-radius: 10px;
+                border: 2px solid $blue;
+                background: $blue-darkest;
+                font-family: 'Press Start 2P', cursive;
+                font-size: 14px;
+                color: $blue;
+                padding-left: 40px;
 
-            @media screen and (max-width: 450px) {
-            /* Do this */
-            }
+                    @media screen and (max-width: 450px) {
+                    /* Do this */
+                    }
+                }
         }
+
+        
 }
 
 
