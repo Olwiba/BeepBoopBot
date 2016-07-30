@@ -1,8 +1,11 @@
 import { connect } from 'react-redux'
 import CommandPane from '../components/CommandPane'
+import * as actions from '../reducers/action'
 
 function mapStateToProps (state) {
-  return state
+  return {
+    commandQueue: state.commandQueue
+  }
 }
 
 function mapDispatchToProps (dispatch) {
@@ -25,6 +28,17 @@ function mapDispatchToProps (dispatch) {
     ADD_JUMP: () => {
       dispatch({
         type: 'ADD_JUMP'
+      })
+    },
+    GO_BUTTON: () => {
+      dispatch({
+        type: 'GO_BUTTON'
+      }),
+      dispatch(actions.command())
+    },
+    STOP_BUTTON: () => {
+      dispatch({
+        type: 'STOP_BUTTON'
       })
     }
   }
