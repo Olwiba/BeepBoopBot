@@ -1,10 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
+import createLogger from 'redux-logger'
+import App from './components/App'
+import reducer from './reducers/reducer'
 
-const reactRoot = document.getElementById('app');
+const logger = createLogger()
+const store = createStore(reducer, applyMiddleware(logger))
 
-ReactDOM.render(
-  <App />,
-  reactRoot
-);
+document.addEventListener('DOMContentLoaded', () => {
+  ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.getElementById('app')
+  )
+})

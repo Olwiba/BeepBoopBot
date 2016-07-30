@@ -10,6 +10,8 @@
     "start": "node server/index",
     "dev-nm": "nodemon server/index",
     "dev-wp": "cd client && webpack-dev-server --hot --inline",
+    "build-css": "node-sass --include-path scss client/scss/main.scss public/resources/styles/style.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "build": "cd client && webpack --progress --profile --colors",
     "build:watch": "cd client && webpack --progress --profile --colors --watch",
     "test": "cd client && babel-tape-runner test/*.js | tap-spec"
@@ -18,8 +20,11 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.14.0",
+    "immutable": "^3.8.1",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
+    "react-motion": "^0.4.4",
+    "react-redux": "^4.4.5",
     "redux": "^3.5.2"
   },
   "devDependencies": {
@@ -30,8 +35,10 @@
     "babel-tape-runner": "^2.0.1",
     "colors": "^1.1.2",
     "enzyme": "^2.4.1",
+    "node-sass": "^3.8.0",
     "nodemon": "^1.10.0",
     "react-addons-test-utils": "^15.2.1",
+    "redux-logger": "^2.6.1",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.0",
     "webpack": "^1.13.1",
