@@ -5,25 +5,25 @@
 
 function tileInFront (robot, board) {
   const clonedRobot = {...robot}
-  switch (normalisedDirection) {
+  switch (clonedRobot.direction) {
     case 0:
-      // 0 is forwards along Y axis
-      clonedRobot.positionY++
+      // 0 is backwards along Y axis
+      clonedRobot.positionY--
       break
     case 90:
-      // 90 is backwards along X axis
+      // 90 is forwards along X axis
       clonedRobot.positionX++
       break
     case 180:
-      // 180 is backwards along Y axis
+      // 180 is forwards along Y axis
       clonedRobot.positionY++
       break
     case 270:
-      // 270 is forwards along X axis
-      clonedRobot.positionX++
+      // 270 is backwards along X axis
+      clonedRobot.positionX--
       break
   }
-  return board[robot.positionY][robot.positionX]
+  return board[clonedRobot.positionY][clonedRobot.positionX]
 }
 
 /*
@@ -34,5 +34,4 @@ function tileInFront (robot, board) {
  * given a Robot
  */
 
-module.exports = {
-}
+module.exports = tileInFront
