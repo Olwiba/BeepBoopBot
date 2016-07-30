@@ -57,7 +57,7 @@ const reducer = (state = INITIAL_STATE, action) => {
         robot: {...state.robot},
         board: {...state.board}
       }
-      moveForward(jumpState.robot, jumpState.board)    
+      jump(jumpState.robot, jumpState.board)    
       return jumpState
 
     default:
