@@ -7,8 +7,12 @@ class CommandPane extends Component {
   render () {
     return (
       <section className='command-pane'>
-        <CommandQueue commandQueue={this.props.commandQueue} />
-        <RunButtons {...this.props}/>
+        <div className="command-container">
+          <CommandQueue commandQueue={this.props.commandQueue} />
+        </div>
+        <div className="runButtons-container">
+          <RunButtons {...this.props}/>
+        </div>
         <div className="action-button-container">
           <a className="action-button action-animate action-forward" onClick={() => { this.props.ADD_FORWARD() }}>
             <img src="/resources/images/move-forward.svg" className="action-icon"/>
