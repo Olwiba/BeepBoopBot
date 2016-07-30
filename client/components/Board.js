@@ -14,9 +14,7 @@ class Board extends Component {
                       [0,0,0,2,1]
                     ]
 
-      const idNum = [0,0,2,0,1,0,0,2,0,1,0,0,2,0,1,0,0,2,0,1]
       this.state = { levelOne };
-
   }
 
 
@@ -44,11 +42,3 @@ class Board extends Component {
 }
 
 export default Board
-
-
-// <Motion defaultStyle={{size: 1, }} style={{size: spring(18, {stiffness: 180, damping: 12})}}>
-//   {value => <div className="tile" style={{
-//     height: value.size + '%',
-//     width: value.size + '%'
-//   }}>{value.x}</div>}
-// </Motion>
