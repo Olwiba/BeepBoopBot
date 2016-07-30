@@ -149,7 +149,9 @@
   border: 2px solid white;
   background-color: #f2f2f2;
   border-bottom: 3px solid #cbcbcb;
-  border-left: 3px solid #cbcbcb; }
+  border-left: 3px solid #cbcbcb;
+  width: 18%;
+  height: 18%; }
 
 /* Import Fonts */
 /* Fonts */
