@@ -151,7 +151,6 @@ const reducer = (state = INITIAL_STATE, action) => {
       return addJumpState
 
     case 'ADD_TILE_INFO':
-      console.log('adding tile info', action.tileInfo['00'].getBoundingClientRect())
       const addTileInfoState = {
         robot: {...state.robot},
         board: [...state.board],
