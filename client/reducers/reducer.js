@@ -13,7 +13,7 @@ const INITIAL_STATE = {
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
+    [2, 0, 0, 0, 0],
     [0, 0, 0, 0, 1]
   ],
   commandQueue: [] // commands are the same as the action types. e.g. 'MOVE_FORWARD'
