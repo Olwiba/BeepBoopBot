@@ -1,11 +1,85 @@
 .command-pane {
-    position: absolute;
-    bottom: 0;
-    background: $green;
+    background: $blue;
     width: 100%;
     height: 30%;
 
     .command-queue {
     background-color: #c2c2f0;
     }
+
+    .action-button-container {
+        height: 50%;
+        display:flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;        
+
+        .action-button {
+            margin: 10px;
+            height: 100px;
+            width: 100px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center; 
+        }
+
+        .action-icon {
+            height: 50%;
+            width: 50%;
+        }
+
+        .action-icon::selection {
+            background-color: rgba(255,255,255, 0.0)
+        }
+
+        .action-forward {
+            background: $green;
+            border-bottom: 7px solid $green-dark;
+        }
+
+        .action-forward:hover {
+            background: #93cc67;
+            border-bottom: 7px solid #70ab42;
+        }
+
+        .action-rotate {
+            background: $orange;
+            border-bottom: 7px solid $orange-dark;
+        }
+
+        .action-rotate:hover {
+            background: #ee9272;
+            border-bottom: 7px solid #cf7d6a;
+        }
+
+        .action-jump {
+            background: $yellow;
+            border-bottom: 7px solid $yellow-dark;
+        }
+
+        .action-jump:hover {
+            background: #ecdf32;
+            border-bottom: 7px solid #cfc336;
+        }
+
+        .action-animate {
+            transition: all 0.1s;
+            -webkit-transition: all 0.1s;
+        }
+
+        .action-button:active {
+            transform: translate(0px,7px);
+              -webkit-transform: translate(0px,7px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        }
+
+
+    }
+
+    
 }
+

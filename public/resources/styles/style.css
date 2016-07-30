@@ -66,13 +66,58 @@
       appearance: none; }
 
 .command-pane {
-  position: absolute;
-  bottom: 0;
-  background: #78c042;
+  background: #1c8da0;
   width: 100%;
   height: 30%; }
   .command-pane .command-queue {
     background-color: #c2c2f0; }
+  .command-pane .action-button-container {
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center; }
+    .command-pane .action-button-container .action-button {
+      margin: 10px;
+      height: 100px;
+      width: 100px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center; }
+    .command-pane .action-button-container .action-icon {
+      height: 50%;
+      width: 50%; }
+    .command-pane .action-button-container .action-icon::selection {
+      background-color: rgba(255, 255, 255, 0); }
+    .command-pane .action-button-container .action-forward {
+      background: #78c042;
+      border-bottom: 7px solid #4d9713; }
+    .command-pane .action-button-container .action-forward:hover {
+      background: #93cc67;
+      border-bottom: 7px solid #70ab42; }
+    .command-pane .action-button-container .action-rotate {
+      background: #ea7750;
+      border-bottom: 7px solid #c45d45; }
+    .command-pane .action-button-container .action-rotate:hover {
+      background: #ee9272;
+      border-bottom: 7px solid #cf7d6a; }
+    .command-pane .action-button-container .action-jump {
+      background: #e8d700;
+      border-bottom: 7px solid #c4b505; }
+    .command-pane .action-button-container .action-jump:hover {
+      background: #ecdf32;
+      border-bottom: 7px solid #cfc336; }
+    .command-pane .action-button-container .action-animate {
+      transition: all 0.1s;
+      -webkit-transition: all 0.1s; }
+    .command-pane .action-button-container .action-button:active {
+      transform: translate(0px, 7px);
+      -webkit-transform: translate(0px, 7px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
 
 #board {
   width: 100%;
