@@ -42,6 +42,25 @@ const reducer = (state = INITIAL_STATE, action) => {
 
       // console.log(state.set('robot', newState).toJS())
       // return state.set('robot', newState)
+
+    case 'ADD_LEFT':
+      const newLeftState = {
+        robot: {...state.robot},
+        board: {...state.board}
+      }
+      // If direction is 0, set it to 270, otherwise subtract 90
+      newLeftState.robot.direction = newLeftState.robot.direction ? newLeftState.robot.direction - 90 : 270
+      return newLeftState
+
+    case 'ADD_RIGHT':
+      const newRightState = {
+        robot: {...state.robot},
+        board: {...state.board}
+      }
+      // If direction is 270, set it to 0, otherwise add 90
+      newRightState.robot.direction = newRightState.robot.direction === 270 ? 0 : newRightState.robot.direction + 90
+      return newRightState
+
     default:
       return state
 

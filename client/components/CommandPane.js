@@ -17,10 +17,10 @@ class CommandPane extends Component {
         <button onClick={() => { this.props.ADD_FORWARD() }}>
           FWD
         </button>
-        <button>
+        <button onClick={() => { this.props.ADD_LEFT() }}>
           LEFT
         </button>
-        <button>
+        <button onClick={() => { this.props.ADD_RIGHT() }}>
           RIGHT
         </button>
         <button>

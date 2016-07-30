@@ -11,6 +11,16 @@ function mapDispatchToProps (dispatch) {
       dispatch({
         type: 'ADD_FORWARD'
       })
+    },
+    ADD_LEFT: () => {
+      dispatch({
+        type: 'ADD_LEFT'
+      })
+    },
+    ADD_RIGHT: () => {
+      dispatch({
+        type: 'ADD_RIGHT'
+      })
     }
   }
 }
