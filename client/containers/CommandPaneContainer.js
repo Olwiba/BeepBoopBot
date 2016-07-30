@@ -21,6 +21,11 @@ function mapDispatchToProps (dispatch) {
       dispatch({
         type: 'ADD_RIGHT'
       })
+    },
+    ADD_JUMP: () => {
+      dispatch({
+        type: 'ADD_JUMP'
+      })
     }
   }
 }

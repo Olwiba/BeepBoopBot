@@ -23,7 +23,7 @@ class CommandPane extends Component {
         <button onClick={() => { this.props.ADD_RIGHT() }}>
           RIGHT
         </button>
-        <button>
+        <button onClick={() => { this.props.ADD_JUMP() }}>
           JUMP
         </button>
       </section>
