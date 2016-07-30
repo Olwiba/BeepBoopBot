@@ -2,8 +2,8 @@ import tileInFront from './tileInFront'
 
 // moves the robot forward if it can
 export default function (robot, board) {
-  // an empty tile is in front
-  if (tileInFront(robot, board) === 0) {
+  const nextTileCode = tileInFront(robot, board)
+  if (nextTileCode === 0 || nextTileCode === 1) {
     switch (robot.direction) {
       case 0:
         // 0 is backwards along Y axis
