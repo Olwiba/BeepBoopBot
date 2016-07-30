@@ -16,9 +16,7 @@ const INITIAL_STATE = {
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 1]
   ],
-  commandQueue: [
-
-  ]
+  commandQueue: [] // commands are the same as the action types. e.g. 'MOVE_FORWARD'
 }
 
 const reducer = (state = INITIAL_STATE, action) => {
@@ -68,36 +66,40 @@ const reducer = (state = INITIAL_STATE, action) => {
       return jumpState
 
     case 'ADD_FORWARD':
-      const newFwdState = {
+      const addFwdState = {
         robot: {...state.robot},
         board: [...state.board],
         commandQueue: [...state.commandQueue]
       }
-      return newFwdState
+      addFwdState.commandQueue.push('MOVE_FORWARD')
+      return addFwdState
 
     case 'ADD_LEFT':
-      const newLeftState = {
+      const addLeftState = {
         robot: {...state.robot},
         board: [...state.board],
         commandQueue: [...state.commandQueue]
       }
-      return newLeftState
+      addLeftState.commandQueue.push('TURN_LEFT')
+      return addLeftState
 
     case 'ADD_RIGHT':
-      const newRightState = {
+      const addRightState = {
         robot: {...state.robot},
         board: [...state.board],
         commandQueue: [...state.commandQueue]
       }
-      return newRightState
+      addRightState.commandQueue.push('TURN_RIGHT')
+      return addRightState
 
     case 'ADD_JUMP':
-      const jumpState = {
+      const addJumpState = {
         robot: {...state.robot},
         board: [...state.board],
         commandQueue: [...state.commandQueue]
       }
-      return jumpState
+      addJumpState.commandQueue.push('JUMP_UP')
+      return addJumpState
 
     default:
       return state

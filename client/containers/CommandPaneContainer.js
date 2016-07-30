@@ -2,7 +2,9 @@ import { connect } from 'react-redux'
 import CommandPane from '../components/CommandPane'
 
 function mapStateToProps (state) {
-  return state
+  return {
+    commandQueue: state.commandQueue
+  }
 }
 
 function mapDispatchToProps (dispatch) {
