@@ -5,8 +5,6 @@ import RunButtons from './RunButtons'
 class CommandPane extends Component {
 
   render () {
-    console.log('props', this.props)
-    console.log('state', this.state)
     return (
       <section className='command-pane'>
         <CommandQueue />
