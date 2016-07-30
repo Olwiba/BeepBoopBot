@@ -1,7 +1,8 @@
-import tileInFront from 'movementCheck'
+import tileInFront from './tileInFront'
 
 function jump (robot, board){
   const tile = tileInFront(robot, board)
+  console.log('tile', tile)
   if(tile === 2){
     switch(robot.direction){
       case 0:
@@ -26,6 +27,8 @@ function jump (robot, board){
     }
     robot.isOnBox = true
   }
+  console.log('bbb', robot)
+  return true
 }
 
 module.exports = jump

@@ -18,5 +18,9 @@ export default function (robot, board) {
       clonedRobot.positionX--
       break
   }
-  return board[clonedRobot.positionY][clonedRobot.positionX]
+  console.log('Do i get here?')
+  console.log('cloned robot', clonedRobot)
+  console.log(board[0][0])
+  // return board[clonedRobot.positionY][clonedRobot.positionX]
+  return 2
 }
