@@ -15,16 +15,15 @@ class Board extends Component {
           {this.state.board.map((row, rowIndex) => {
             return row.map((id, colIndex) => (
               <Motion defaultStyle={{size: 1}} style={{size: spring(18, {stiffness: 180, damping: 12})}}>
-                {value => <div key={colIndex} ref={'temp' + colIndex.toString()} className='tile' style={{
+                {value => <div key={colIndex} className='tile' style={{
                   height: value.size + '%',
                   width: value.size + '%'
-                }}>{id}
-                  {(rowIndex === this.props.robot.positionY && colIndex === this.props.robot.positionX) ? <div style={{height: 30, width: 30, border: '2px solid red'}}>AA</div> : null}
-                </div>}
+                }}>{id}</div>}
               </Motion>
             ))
           })}
         </div>
+        <div style={{}}></div>
       </div>
     )
   }
@@ -32,5 +31,8 @@ class Board extends Component {
 
 export default Board
 
-// TO DO
-// Centre robot on first tile (tile key = 0)
+// {(rowIndex === this.props.robot.positionY && colIndex === this.props.robot.positionX)
+//                     ? <Motion style={{x: spring(100), y: spring(20)}}>
+//                         {val => <div style={{height: 30, width: 30, border: '2px solid red', left: val.x}}>AA</div>}
+//                     </Motion>
+//                     : null}
