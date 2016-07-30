@@ -18,7 +18,8 @@ const INITIAL_STATE = {
     [0, 0, 0, 0, 1]
   ],
   commandQueue: [], // commands are the same as the action types. e.g. 'MOVE_FORWARD'
-  running: false
+  running: false,
+  executed:[]
 }
 
 const reducer = (state = INITIAL_STATE, action) => {
@@ -29,13 +30,13 @@ const reducer = (state = INITIAL_STATE, action) => {
         board: [...state.board],
         commandQueue: [...state.commandQueue],
         running: true,
-        runner: window.setInterval(() => { commandRunner(state.running) }, 300)
+        executed: action.command
       }
 
       return newGoState
 
     case 'STOP_BUTTON':
-      // window.clearInterval(state.runner)
+      window.clearInterval(state.runner)
       const newStopState = {
         robot: {...state.robot},
         board: [...state.board],
@@ -50,9 +51,11 @@ const reducer = (state = INITIAL_STATE, action) => {
         robot: {...state.robot},
         board: [...state.board],
         commandQueue: [...state.commandQueue],
-        running: state.running
+        running: state.running,
+        executed:[...state.executed]
       }
       moveForward(newFwdState.robot, newFwdState.board)
+      newFwdState.executed.push('MOVE_FORWARD')
       return newFwdState
 
     case 'TURN_LEFT':
@@ -60,10 +63,12 @@ const reducer = (state = INITIAL_STATE, action) => {
         robot: {...state.robot},
         board: [...state.board],
         commandQueue: [...state.commandQueue],
-        running: state.running
+        running: state.running,
+        executed:[...state.executed]
       }
       // If direction is 0, set it to 270, otherwise subtract 90
       newLeftState.robot.direction = newLeftState.robot.direction ? newLeftState.robot.direction - 90 : 270
+      newLeftState.executed.push('TURN_LEFT')
       return newLeftState
 
     case 'TURN_RIGHT':
@@ -71,10 +76,12 @@ const reducer = (state = INITIAL_STATE, action) => {
         robot: {...state.robot},
         board: [...state.board],
         commandQueue: [...state.commandQueue],
-        running: state.running
+        running: state.running,
+        executed:[...state.executed]
       }
       // If direction is 270, set it to 0, otherwise add 90
       newRightState.robot.direction = newRightState.robot.direction === 270 ? 0 : newRightState.robot.direction + 90
+      newRightState.executed.push('TURN_RIGHT')
       return newRightState
 
     case 'JUMP_UP':
@@ -82,9 +89,11 @@ const reducer = (state = INITIAL_STATE, action) => {
         robot: {...state.robot},
         board: [...state.board],
         commandQueue: [...state.commandQueue],
-        running: state.running
+        running: state.running,
+        executed:[...state.executed]
       }
       jump(jumpState.robot, jumpState.board)
+      jumpState.executed.push('JUMP_UP')
       return jumpState
 
     case 'ADD_FORWARD':
@@ -92,7 +101,8 @@ const reducer = (state = INITIAL_STATE, action) => {
         robot: {...state.robot},
         board: [...state.board],
         commandQueue: [...state.commandQueue],
-        running: state.running
+        running: state.running,
+        executed: [...state.executed]
       }
       addFwdState.commandQueue.push('MOVE_FORWARD')
       return addFwdState
@@ -102,7 +112,8 @@ const reducer = (state = INITIAL_STATE, action) => {
         robot: {...state.robot},
         board: [...state.board],
         commandQueue: [...state.commandQueue],
-        running: state.running
+        running: state.running,
+        executed: [...state.executed]
       }
       addLeftState.commandQueue.push('TURN_LEFT')
       return addLeftState
@@ -112,7 +123,8 @@ const reducer = (state = INITIAL_STATE, action) => {
         robot: {...state.robot},
         board: [...state.board],
         commandQueue: [...state.commandQueue],
-        running: state.running
+        running: state.running,
+        executed: [...state.executed]
       }
       addRightState.commandQueue.push('TURN_RIGHT')
       return addRightState
@@ -122,7 +134,8 @@ const reducer = (state = INITIAL_STATE, action) => {
         robot: {...state.robot},
         board: [...state.board],
         commandQueue: [...state.commandQueue],
-        running: state.running
+        running: state.running,
+        executed: [...state.executed]
       }
       addJumpState.commandQueue.push('JUMP_UP')
       return addJumpState
@@ -133,4 +146,13 @@ const reducer = (state = INITIAL_STATE, action) => {
   }
 }
 
+function myState (currentState){
+  return {
+    robot: {...state.robot},
+    board: [...state.board],
+    commandQueue: [...state.commandQueue],
+    running: state.running,
+    executed: [...state.executed]
+  }
+}
 export default reducer

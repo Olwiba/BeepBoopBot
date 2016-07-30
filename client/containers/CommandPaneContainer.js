@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import CommandPane from '../components/CommandPane'
+import * as actions from '../reducers/action'
 
 function mapStateToProps (state) {
   return {
@@ -30,9 +31,7 @@ function mapDispatchToProps (dispatch) {
       })
     },
     GO_BUTTON: () => {
-      dispatch({
-        type: 'GO_BUTTON'
-      })
+      dispatch(actions.command())
     },
     STOP_BUTTON: () => {
       dispatch({
