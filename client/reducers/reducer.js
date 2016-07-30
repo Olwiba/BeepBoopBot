@@ -1,4 +1,6 @@
 // import { immutable, fromJS, toJS} from 'immutable'
+import jump from './lib/jump';
+import moveForward from './lib/moveForward.js'
 
 const INITIAL_STATE = {
   robot: {
@@ -25,23 +27,12 @@ const reducer = (state = INITIAL_STATE, action) => {
       return state
 
     case 'ADD_FORWARD':
-      // const newState = state.get('robot').toJS()
-      // newState.positionX += 1
-      // const newState = {
-      //   robot: {...state.robot},
-      //   board: {...state.board}
-      // }
-
-      // moveForward(newState.robot, newState.board)
-
-      // newState.robot.positionX = 4
-      return state
-      // // Just move posnX +1 for now
-      // const newState = Object.assign({}, state, {robot.positionX: 1})
-      // // newState.robot.positionX = 1
-
-      // console.log(state.set('robot', newState).toJS())
-      // return state.set('robot', newState)
+      const newFwdState = {
+        robot: {...state.robot},
+        board: {...state.board}
+      }
+      moveForward(newFwdState.robot, newFwdState.board)    
+      return newFwdState
 
     case 'ADD_LEFT':
       const newLeftState = {
@@ -61,6 +52,14 @@ const reducer = (state = INITIAL_STATE, action) => {
       newRightState.robot.direction = newRightState.robot.direction === 270 ? 0 : newRightState.robot.direction + 90
       return newRightState
 
+    case 'JUMP':
+      const jumpState = {
+        robot: {...state.robot},
+        board: {...state.board}
+      }
+      jump(jumpState.robot, jumpState.board)    
+      return jumpState
+
     default:
       return state
 
@@ -68,8 +67,3 @@ const reducer = (state = INITIAL_STATE, action) => {
 }
 
 export default reducer
-
-// function moveForwad(robot, board) {
-//   //checks
-//   robot.positionX++
-// }
