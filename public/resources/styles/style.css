@@ -66,19 +66,53 @@
       appearance: none; }
 
 .command-pane {
+  position: fixed;
+  bottom: 0;
   background: #1c8da0;
   width: 100%;
-  height: 30%; }
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center; }
   .command-pane .command-queue {
     background-color: #c2c2f0; }
-  .command-pane .action-button-container {
-    height: 50%;
+  .command-pane .command-container {
+    height: 30%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border-left: 7px solid #02333a;
+    border-top: 7px solid #02333a;
+    background: #006073;
+    border-radius: 10px;
+    overflow-y: scroll;
+    overflow-x: none; }
+  .command-pane .runButtons-container {
+    height: 30%;
+    width: 80%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
     align-content: center;
     align-items: center; }
+  .command-pane .action-button-container {
+    height: 30%;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border-top: 5px solid #006073; }
     .command-pane .action-button-container .action-button {
       margin: 10px;
       height: 100px;
@@ -151,10 +185,56 @@
   border-bottom: 3px solid #cbcbcb;
   border-left: 3px solid #cbcbcb; }
 
+.run-button-container {
+  height: 50%;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center; }
+  .run-button-container .run-button {
+    margin: 10px;
+    /*height: 125px;*/
+    /*width: 125px;*/
+    padding: 10px 20px;
+    border-radius: 25%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center; }
+  .run-button-container h3::selection {
+    background-color: rgba(255, 255, 255, 0); }
+  .run-button-container .go-action {
+    background: #78c042;
+    border-bottom: 12px solid #4d9713; }
+  .run-button-container .go-action:hover {
+    background: #93cc67;
+    border-bottom: 12px solid #70ab42; }
+  .run-button-container .stop-action {
+    background: #ea7750;
+    border-bottom: 12px solid #c45d45; }
+  .run-button-container .stop-action:hover {
+    background: #ee9272;
+    border-bottom: 12px solid #cf7d6a; }
+  .run-button-container .run-animate {
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s; }
+  .run-button-container .run-button:active {
+    transform: translate(0px, 12px);
+    -webkit-transform: translate(0px, 12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
+
 /* Import Fonts */
 /* Fonts */
 h1 {
   margin: 0; }
+
+h3 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 25px;
+  color: #f2f2f2; }
 
 .app {
   display: flex;

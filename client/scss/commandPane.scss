@@ -1,20 +1,60 @@
 .command-pane {
+    position: fixed;
+    bottom: 0;
     background: $blue;
     width: 100%;
     height: 30%;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;    
 
     .command-queue {
     background-color: #c2c2f0;
     }
 
-    .action-button-container {
-        height: 50%;
+    .command-container {
+        height: 30%;
+        width: 80%;
+        display:flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        border-left: 7px solid $blue-darkest;
+        border-top: 7px solid $blue-darkest;
+        background: $blue-darker;
+        border-radius: 10px;
+        overflow-y: scroll;
+        overflow-x: none; 
+
+    }
+
+    .runButtons-container {
+        height: 30%;
+        width: 80%;
         display:flex;
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: center;
         align-content: center;
-        align-items: center;        
+        align-items: center;
+    }
+
+    .action-button-container {
+        height: 30%;
+        width: 80%;
+        display:flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;    
+        border-top: 5px solid $blue-darker;
+    
 
         .action-button {
             margin: 10px;
