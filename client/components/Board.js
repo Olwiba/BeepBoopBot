@@ -5,39 +5,25 @@ class Board extends Component {
 
   constructor (props) {
     super(props)
-    this.state = {
-      robot: {
-        direction: 0,
-        isOnBox: false,
-        positionX: 0,
-        positionY: 4
-      },
-      board: [
-        [0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0],
-        [2, 0, 0, 0, 0],
-        [0, 0, 0, 0, 1]
-      ]
-    }
+    this.state = this.props
   }
 
   render () {
-    console.log(this.props)
     return (
       <div id='board'>
         <div className='board-container'>
-          {this.state.board.map((row) => {
-            return row.map((id, index) => (
+          {this.state.board.map((row, rowIndex) => {
+            return row.map((id, colIndex) => (
               <Motion defaultStyle={{size: 1}} style={{size: spring(18, {stiffness: 180, damping: 12})}}>
-                {value => <div key={index} className='tile' style={{
+                {value => <div key={colIndex} ref={'temp' + colIndex.toString()} className='tile' style={{
                   height: value.size + '%',
                   width: value.size + '%'
-                }}>{id}</div>}
+                }}>{id}
+                  {(rowIndex === this.props.robot.positionY && colIndex === this.props.robot.positionX) ? <div style={{height: 30, width: 30, border: '2px solid red'}}>AA</div> : null}
+                </div>}
               </Motion>
             ))
           })}
-          <div id='robot' style={{height: 50, width: 50, border: '2px solid red'}}>Hi</div>
         </div>
       </div>
     )
@@ -45,3 +31,6 @@ class Board extends Component {
 }
 
 export default Board
+
+// TO DO
+// Centre robot on first tile (tile key = 0)
