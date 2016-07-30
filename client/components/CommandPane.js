@@ -8,7 +8,7 @@ class CommandPane extends Component {
     return (
       <section className='command-pane'>
         <CommandQueue commandQueue={this.props.commandQueue} />
-        <RunButtons />
+        <RunButtons {...this.props}/>
         <div>
           Click commands here to add them to the queue
         </div>

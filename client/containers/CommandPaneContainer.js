@@ -28,6 +28,16 @@ function mapDispatchToProps (dispatch) {
       dispatch({
         type: 'ADD_JUMP'
       })
+    },
+    GO_BUTTON: () => {
+      dispatch({
+        type: 'GO_BUTTON'
+      })
+    },
+    STOP_BUTTON: () => {
+      dispatch({
+        type: 'STOP_BUTTON'
+      })
     }
   }
 }

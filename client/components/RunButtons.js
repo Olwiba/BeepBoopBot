@@ -5,10 +5,10 @@ class RunButtons extends Component {
   render () {
     return (
       <div>
-        <button>
+        <button onClick={() => { this.props.GO_BUTTON() }}>
           GO
         </button>
-        <button>
+        <button onClick={() => { this.props.STOP_BUTTON() }}>
           STOP
         </button>
       </div>
