@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 import { Motion, spring } from 'react-motion'
 
 class Board extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      temp: 10
+    }
+  }
 
   render () {
     console.log(this.props)
@@ -10,7 +16,7 @@ class Board extends Component {
         <p>
           THIS IS THE BOARD
         </p>
-        <Motion defaultStyle={{x: 0}} style={{x: spring(200)}}>
+        <Motion style={{x: spring(this.state.temp)}}>
           {value => {
             let style = {
               width: 100,
@@ -23,6 +29,7 @@ class Board extends Component {
             return (<div style={style}>{value.x}</div>)
           }}
         </Motion>
+        <button onClick={() => {this.setState({temp: this.state.temp+20})}}>GGG</button>
       </div>
     )
   }

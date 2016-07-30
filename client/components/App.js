@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Nav from './Nav'
-import Board from './Board'
 import CommandPaneContainer from '../containers/CommandPaneContainer'
+import BoardContainer from '../containers/BoardContainer'
 
 class App extends Component {
 
@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div className='app'>
         <Nav />
-        <Board />
+        <BoardContainer />
         <CommandPaneContainer />
       </div>
     )
