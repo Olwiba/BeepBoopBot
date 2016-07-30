@@ -54,6 +54,16 @@
       @media screen and (max-width: 450px) {
         .navigation .levels-container .levels {
           /* Do this */ } }
+    .navigation .levels-container .levels:hover {
+      color: #60afbc;
+      border: 2px solid #60afbc; }
+    .navigation .levels-container .level-option {
+      background: #02333a;
+      color: #1c8da0; }
+    .navigation .levels-container select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none; }
 
 .command-pane {
   position: absolute;
