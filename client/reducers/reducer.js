@@ -1,7 +1,6 @@
 // import { immutable, fromJS, toJS} from 'immutable'
 import jump from './lib/jump'
 import moveForward from './lib/moveForward.js'
-import commandRunner from './lib/commandRunner'
 
 const INITIAL_STATE = {
   robot: {
@@ -26,24 +25,25 @@ const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'GO_BUTTON':
       const newGoState = {
-        robot: {...state.robot},
+        robot: INITIAL_STATE.robot,
         board: [...state.board],
         commandQueue: [...state.commandQueue],
         running: true,
-        executed: action.command
+        executed: []
       }
 
       return newGoState
 
     case 'STOP_BUTTON':
-      window.clearInterval(state.runner)
       const newStopState = {
-        robot: {...state.robot},
+        robot: INITIAL_STATE.robot,
         board: [...state.board],
         commandQueue: [...state.commandQueue],
-        running: false,
-        runner: null
+        running: true,
+        executed: [...state.executed]
       }
+      newStopState.running = false
+      newStopState.executed = []
       return newStopState
 
     case 'MOVE_FORWARD':
