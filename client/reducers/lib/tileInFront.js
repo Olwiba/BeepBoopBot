@@ -18,9 +18,9 @@ export default function (robot, board) {
       clonedRobot.positionX--
       break
   }
-  console.log('Do i get here?')
-  console.log('cloned robot', clonedRobot)
-  console.log(board[0][0])
-  // return board[clonedRobot.positionY][clonedRobot.positionX]
-  return 2
+  if (board[clonedRobot.positionY] === undefined || board[clonedRobot.positionY][clonedRobot.positionX] === undefined) {
+    return null
+  }
+
+  return board[clonedRobot.positionY][clonedRobot.positionX]
 }
