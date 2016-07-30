@@ -1,3 +1,4 @@
-export default function (commandQueue) {
-  console.log('run a command')
+export default function (running) {
+  console.log('run a command', running)
+
 }

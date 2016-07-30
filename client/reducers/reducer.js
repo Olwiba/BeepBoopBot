@@ -29,13 +29,13 @@ const reducer = (state = INITIAL_STATE, action) => {
         board: [...state.board],
         commandQueue: [...state.commandQueue],
         running: true,
-        runner: window.setInterval(commandRunner, 300)
+        runner: window.setInterval(() => { commandRunner(state.running) }, 300)
       }
 
       return newGoState
 
     case 'STOP_BUTTON':
-      window.clearInterval(state.runner)
+      // window.clearInterval(state.runner)
       const newStopState = {
         robot: {...state.robot},
         board: [...state.board],
