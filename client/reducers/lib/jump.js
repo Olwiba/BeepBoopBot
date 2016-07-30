@@ -1,4 +1,4 @@
-import tileInFront from 'movementCheck'
+import tileInFront from './tileInFront'
 
 function jump (robot, board) {
   const tile = tileInFront(robot, board)
@@ -26,6 +26,7 @@ function jump (robot, board) {
     }
     robot.isOnBox = true
   }
+  return true
 }
 
 module.exports = jump

@@ -1,9 +1,4 @@
-/* Add functions to:
- * Check if a tile has a box in front,
- * given a positionX, positionY and direction angle
- */
-
-function tileInFront (robot, board) {
+export default function (robot, board) {
   const clonedRobot = {...robot}
   switch (clonedRobot.direction) {
     case 0:
@@ -23,15 +18,9 @@ function tileInFront (robot, board) {
       clonedRobot.positionX--
       break
   }
-  return board[clonedRobot.positionY][clonedRobot.positionX]
+  console.log('Do i get here?')
+  console.log('cloned robot', clonedRobot)
+  console.log(board[0][0])
+  // return board[clonedRobot.positionY][clonedRobot.positionX]
+  return 2
 }
-
-/*
- * Check if a tile has nothing in front of it,
- * given a positionX, positionY and direction angle
- *
- * Use above two functions to check if robot can move forwards,
- * given a Robot
- */
-
-module.exports = tileInFront

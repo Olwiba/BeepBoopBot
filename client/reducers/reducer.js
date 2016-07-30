@@ -1,5 +1,5 @@
 // import { immutable, fromJS, toJS} from 'immutable'
-import jump from './lib/jump';
+import jump from './lib/jump'
 import moveForward from './lib/moveForward.js'
 
 const INITIAL_STATE = {
@@ -7,7 +7,7 @@ const INITIAL_STATE = {
     direction: 0,
     isOnBox: false,
     positionX: 0,
-    positionY: 0
+    positionY: 4
   },
   board: [
     [0, 0, 0, 0, 0],
@@ -31,7 +31,7 @@ const reducer = (state = INITIAL_STATE, action) => {
         robot: {...state.robot},
         board: {...state.board}
       }
-      moveForward(newFwdState.robot, newFwdState.board)    
+      moveForward(newFwdState.robot, newFwdState.board)
       return newFwdState
 
     case 'ADD_LEFT':
@@ -52,12 +52,12 @@ const reducer = (state = INITIAL_STATE, action) => {
       newRightState.robot.direction = newRightState.robot.direction === 270 ? 0 : newRightState.robot.direction + 90
       return newRightState
 
-    case 'JUMP':
+    case 'ADD_JUMP':
       const jumpState = {
         robot: {...state.robot},
         board: {...state.board}
       }
-      jump(jumpState.robot, jumpState.board)    
+      jump(jumpState.robot, jumpState.board)
       return jumpState
 
     default:
