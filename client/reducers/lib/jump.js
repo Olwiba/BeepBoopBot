@@ -1,9 +1,9 @@
 import tileInFront from 'movementCheck'
 
-function jump (robot, board){
+function jump (robot, board) {
   const tile = tileInFront(robot, board)
-  if(tile === 2){
-    switch(robot.direction){
+  if (tile === 2) {
+    switch (robot.direction) {
       case 0:
         // 0 is backwards along Y axis Y-- and X is same
         robot.positionY--
@@ -21,7 +21,7 @@ function jump (robot, board){
         robot.positionX--
         break
       default:
-        //does nothing
+        // does nothing
         break
     }
     robot.isOnBox = true
