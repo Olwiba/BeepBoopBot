@@ -11,21 +11,20 @@ class CommandPane extends Component {
       <section className='command-pane'>
         <CommandQueue />
         <RunButtons />
-        <div>
-          Click commands here to add them to the queue
+        <div className="action-button-container">
+          <a className="action-button action-animate action-forward" onClick={() => { this.props.ADD_FORWARD() }}>
+            <img src="/resources/images/move-forward.svg" className="action-icon"/>
+          </a>
+          <a className="action-button action-animate action-rotate" onClick={() => { this.props.ADD_LEFT() }}>
+            <img src="/resources/images/turn-left.svg" className="action-icon"/>
+          </a>
+          <a className="action-button action-animate action-rotate" onClick={() => { this.props.ADD_RIGHT() }}>
+            <img src="/resources/images/turn-right.svg" className="action-icon"/>
+          </a>
+          <a className="action-button action-animate action-jump" onClick={() => { this.props.ADD_JUMP() }}>
+            <img src="/resources/images/jump.svg" className="action-icon"/>
+          </a>
         </div>
-        <button onClick={() => { this.props.ADD_FORWARD() }}>
-          FWD
-        </button>
-        <button onClick={() => { this.props.ADD_LEFT() }}>
-          LEFT
-        </button>
-        <button onClick={() => { this.props.ADD_RIGHT() }}>
-          RIGHT
-        </button>
-        <button onClick={() => { this.props.ADD_JUMP() }}>
-          JUMP
-        </button>
       </section>
     )
   }
