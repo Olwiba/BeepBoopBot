@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Motion, spring, StaggeredMotion, TransitionMotion } from 'react-motion'
+import RobotContainer from '../containers/RobotContainer'
 
 class Board extends Component {
 
@@ -8,29 +8,28 @@ class Board extends Component {
     this.state = this.props
   }
 
+  componentDidMount () {
+    this.props.ADD_TILE_INFO(this.refs)
+  }
+
   render () {
     return (
       <div id='board'>
         <div className='board-container'>
-          {this.state.board.map((row, rowIndex) => {
-            return row.map((id, colIndex) => (
-              <Motion defaultStyle={{size: 1}} style={{size: spring(18, {stiffness: 180, damping: 12})}}>
-                {value => <div key={colIndex} ref={'temp' + colIndex.toString()} className='tile' style={{
-                  height: value.size + '%',
-                  width: value.size + '%'
-                }}>{id}
-                  {(rowIndex === this.props.robot.positionY && colIndex === this.props.robot.positionX) ? <div style={{height: 30, width: 30, border: '2px solid red'}}>AA</div> : null}
-                </div>}
-              </Motion>
-            ))
-          })}
+          {
+            this.state.board.map((row, rowIndex) => {
+              return row.map((col, colIndex) => {
+                return (
+                  <div key={parseInt(rowIndex.toString() + colIndex.toString())} className='tile' ref={rowIndex.toString() + colIndex.toString()}>{col}</div>
+                )
+              })
+            })
+          }
         </div>
+        <RobotContainer />
       </div>
     )
   }
 }
 
 export default Board
-
-// TO DO
-// Centre robot on first tile (tile key = 0)

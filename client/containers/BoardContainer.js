@@ -5,4 +5,15 @@ function mapStateToProps (state) {
   return state
 }
 
-export default connect(mapStateToProps)(Board)
+function mapDispatchToProps (dispatch) {
+  return {
+    ADD_TILE_INFO: (tileInfo) => {
+      dispatch({
+        type: 'ADD_TILE_INFO',
+        tileInfo: tileInfo
+      })
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Board)
