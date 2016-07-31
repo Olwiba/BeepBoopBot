@@ -31,6 +31,7 @@ function cloneState (state) {
 }
 
 const reducer = (state = INITIAL_STATE, action) => {
+  const newState = cloneState(state) 
   switch (action.type) {
     case 'CLEAR_BUTTON':
       // player can't clear while robot is running
@@ -42,16 +43,14 @@ const reducer = (state = INITIAL_STATE, action) => {
       return newClearState
 
     case 'GO_BUTTON':
-      const newGoState = cloneState(state)
-      newGoState.running = true
-      return newGoState
+      newState.running = true
+      return newState
 
     case 'STOP_BUTTON':
-      const newStopState = cloneState(state)
-      newStopState.running = false
-      newStopState.robot = INITIAL_STATE.robot
-      newStopState.executeCommandIndex = 0
-      return newStopState
+      newState.running = false
+      newState.robot = INITIAL_STATE.robot
+      newState.executeCommandIndex = 0
+      return newState
 
     case 'SELECT_LEVEL':
       const tempTileInfo = state.tileInfo
@@ -62,55 +61,32 @@ const reducer = (state = INITIAL_STATE, action) => {
       return newLevelState
 
     case 'MOVE_FORWARD':
-      const newFwdState = cloneState(state)
-      moveForward(newFwdState.robot, newFwdState.board)
-      newFwdState.executeCommandIndex++
-      return newFwdState
+      moveForward(newState.robot, newState.board)
+      newState.executeCommandIndex++
+      return newState
 
     case 'TURN_LEFT':
-      const newLeftState = cloneState(state)
-      // If direction is 0, set it to 270, otherwise subtract 90
-      newLeftState.robot.direction = newLeftState.robot.direction - 90
-      newLeftState.executeCommandIndex++
-      return newLeftState
+      newState.robot.direction = newState.robot.direction - 90
+      newState.executeCommandIndex++
+      return newState
 
     case 'TURN_RIGHT':
-      const newRightState = cloneState(state)
-      // If direction is 270, set it to 0, otherwise add 90
-      newRightState.robot.direction = newRightState.robot.direction + 90
-      newRightState.executeCommandIndex++
-      return newRightState
+      newState.robot.direction = newState.robot.direction + 90
+      newState.executeCommandIndex++
+      return newState
 
     case 'JUMP_UP':
-      const jumpState = cloneState(state)
-      jump(jumpState.robot, jumpState.board)
-      jumpState.executeCommandIndex++
-      return jumpState
-
-    case 'ADD_FORWARD':
-      const addFwdState = cloneState(state)
-      addFwdState.commandQueue.push('MOVE_FORWARD')
-      return addFwdState
-
-    case 'ADD_LEFT':
-      const addLeftState = cloneState(state)
-      addLeftState.commandQueue.push('TURN_LEFT')
-      return addLeftState
-
-    case 'ADD_RIGHT':
-      const addRightState = cloneState(state)
-      addRightState.commandQueue.push('TURN_RIGHT')
-      return addRightState
-
-    case 'ADD_JUMP':
-      const addJumpState = cloneState(state)
-      addJumpState.commandQueue.push('JUMP_UP')
-      return addJumpState
+      jump(newState.robot, newState.board)
+      newState.executeCommandIndex++
+      return newState
 
     case 'ADD_TILE_INFO':
-      const addTileInfoState = cloneState(state)
-      addTileInfoState.tileInfo = action.tileInfo
-      return addTileInfoState
+      newState.tileInfo = action.tileInfo
+      return newState
+
+    case 'QUEUE_ACTION':
+      newState.commandQueue.push(action.payload)  
+      return newState
 
     default:
       return state
