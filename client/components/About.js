@@ -3,12 +3,6 @@ import SkyLight from 'react-skylight';
 
 class About extends Component {
 
-  constructor (props) {
-    super(props)
-    this.state = {
-      // state goes here
-    }
-  }
   componentDidMount() {
     this.refs.aboutBox.show()
   }
