@@ -4,7 +4,8 @@ import * as actions from '../reducers/action'
 
 function mapStateToProps (state) {
   return {
-    commandQueue: state.commandQueue
+    commandQueue: state.commandQueue,
+    running: state.running
   }
 }
 
