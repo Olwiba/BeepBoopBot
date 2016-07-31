@@ -100,7 +100,7 @@
   bottom: 0;
   background: #1c8da0;
   width: 100%;
-  height: 30%;
+  height: 40%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -108,7 +108,6 @@
   align-content: center;
   align-items: center; }
   .command-pane .command-queue {
-    background-color: #c2c2f0;
     display: flex;
     flex-direction: row;
     align-items: flex-start; }
@@ -148,8 +147,8 @@
     border-top: 5px solid #006073; }
     .command-pane .action-button-container .action-button {
       margin: 10px;
-      height: 100px;
-      width: 100px;
+      height: 70px;
+      width: 70px;
       border-radius: 10px;
       display: flex;
       justify-content: center;
@@ -236,19 +235,11 @@
   overflow-y: scroll;
   overflow-x: none; }
 
-.bin-commands {
-  position: absolute;
-  float: right;
-  right: 0;
-  bottom: 0;
-  height: 30%;
-  width: auto; }
-
 .commandQueueIcon {
   width: 40px; }
 
 .run-button-container {
-  height: 50%;
+  height: 40%;
   width: 80%;
   display: flex;
   flex-direction: row;
@@ -258,9 +249,9 @@
   align-items: center; }
   .run-button-container .run-button {
     margin: 10px;
-    /*height: 125px;*/
-    /*width: 125px;*/
-    padding: 10px 20px;
+    height: 60px;
+    width: 60px;
+    padding: 10px 30px;
     border-radius: 25%;
     display: flex;
     justify-content: center;
@@ -280,6 +271,15 @@
   .run-button-container .stop-action:hover {
     background: #ee9272;
     border-bottom: 12px solid #cf7d6a; }
+  .run-button-container .bin-action {
+    background: #e8d700;
+    border-bottom: 12px solid #c4b505; }
+  .run-button-container .bin-action:hover {
+    background: #ecdf32;
+    border-bottom: 12px solid #cfc336; }
+  .run-button-container .bin-commands {
+    height: 70%;
+    width: 70%; }
   .run-button-container .run-animate {
     transition: all 0.2s;
     -webkit-transition: all 0.2s; }
