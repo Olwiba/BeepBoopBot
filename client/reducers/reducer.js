@@ -31,16 +31,19 @@ function cloneState (state) {
 }
 
 const reducer = (state = INITIAL_STATE, action) => {
-  const newState = cloneState(state) 
+  const newState = cloneState(state)
+
   switch (action.type) {
     case 'CLEAR_BUTTON':
-      // player can't clear while robot is running
-      if (state.running) return cloneState(state)
+      if (state.running) {
+        // stop the robot before clearing
+        newState.running = INITIAL_STATE.running
+        newState.robot = INITIAL_STATE.robot
+      }
 
-      const newClearState = cloneState(state)
-      newClearState.commandQueue = INITIAL_STATE.commandQueue
-      newClearState.executeCommandIndex = INITIAL_STATE.executeCommandIndex
-      return newClearState
+      newState.commandQueue = INITIAL_STATE.commandQueue
+      newState.executeCommandIndex = INITIAL_STATE.executeCommandIndex
+      return newState
 
     case 'GO_BUTTON':
       newState.running = true
@@ -85,7 +88,7 @@ const reducer = (state = INITIAL_STATE, action) => {
       return newState
 
     case 'QUEUE_ACTION':
-      newState.commandQueue.push(action.payload)  
+      newState.commandQueue.push(action.payload)
       return newState
 
     default:
