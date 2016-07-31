@@ -5,7 +5,8 @@ import * as actions from '../reducers/action'
 function mapStateToProps (state) {
   return {
     commandQueue: state.commandQueue,
-    running: state.running
+    running: state.running,
+    executeCommandIndex: state.executeCommandIndex
   }
 }
 
