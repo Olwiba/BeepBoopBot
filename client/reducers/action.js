@@ -17,3 +17,9 @@ export const nextCommand = (command) => {
     type: command
   }
 }
+
+const QUEUE_ACTIOM = 'QUEUE_ACTIOM'
+
+export const queueAction (action, payload) => {
+  return {type: QUEUE_ACTIOM, payload: payload}
+}
