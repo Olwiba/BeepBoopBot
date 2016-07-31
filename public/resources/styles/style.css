@@ -271,6 +271,15 @@
   .run-button-container .stop-action:hover {
     background: #ee9272;
     border-bottom: 12px solid #cf7d6a; }
+  .run-button-container .bin-action {
+    background: #e8d700;
+    border-bottom: 12px solid #c4b505; }
+  .run-button-container .bin-action:hover {
+    background: #ecdf32;
+    border-bottom: 12px solid #cfc336; }
+  .run-button-container .bin-commands {
+    height: 70%;
+    width: 70%; }
   .run-button-container .run-animate {
     transition: all 0.2s;
     -webkit-transition: all 0.2s; }

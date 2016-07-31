@@ -26,9 +26,6 @@ class CommandPane extends Component {
           <a className='action-button action-animate action-jump' onClick={this.props.running ? null : () => { this.props.ADD_JUMP() }}>
             <img src='/resources/images/jump.svg' className='action-icon'/>
           </a>
-          <a className='action-button action-animate action-jump' onClick={this.props.running ? null : () => { this.props.CLEAR_BUTTON() }}>
-            <img src='/resources/images/rubbish-bin.svg' className='action-icon'/>
-          </a>
         </div>
       </section>
     )

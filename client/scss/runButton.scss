@@ -45,6 +45,21 @@
             border-bottom: 12px solid #cf7d6a;
         }
 
+        .bin-action {
+            background: $yellow;
+            border-bottom: 12px solid $yellow-dark;
+        }
+
+        .bin-action:hover {
+            background: #ecdf32;
+            border-bottom: 12px solid #cfc336;
+        }
+
+        .bin-commands {
+            height: 70%;
+            width: 70%;
+        }
+
         .run-animate {
             transition: all 0.2s;
             -webkit-transition: all 0.2s;
@@ -55,6 +70,5 @@
               -webkit-transform: translate(0px,12px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.5);
         }
-
 
     }
