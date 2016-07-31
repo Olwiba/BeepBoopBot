@@ -4,7 +4,8 @@ import * as actions from '../reducers/action'
 
 function mapStateToProps (state) {
   return {
-    commandQueue: state.commandQueue
+    commandQueue: state.commandQueue,
+    running: state.running
   }
 }
 
@@ -25,6 +26,11 @@ function mapDispatchToProps (dispatch) {
     STOP_BUTTON: () => {
       dispatch({
         type: 'STOP_BUTTON'
+      })
+    },
+    CLEAR_BUTTON: () => {
+      dispatch({
+        type: 'CLEAR_BUTTON'
       })
     }
   }

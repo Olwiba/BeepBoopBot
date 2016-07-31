@@ -100,7 +100,7 @@
   bottom: 0;
   background: #1c8da0;
   width: 100%;
-  height: 30%;
+  height: 40%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -108,7 +108,9 @@
   align-content: center;
   align-items: center; }
   .command-pane .command-queue {
-    background-color: #c2c2f0; }
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; }
   .command-pane .command-container {
     height: 30%;
     width: 80%;
@@ -145,8 +147,8 @@
     border-top: 5px solid #006073; }
     .command-pane .action-button-container .action-button {
       margin: 10px;
-      height: 100px;
-      width: 100px;
+      height: 70px;
+      width: 70px;
       border-radius: 10px;
       display: flex;
       justify-content: center;
@@ -217,8 +219,27 @@
   width: 18%;
   height: 18%; }
 
+.command-container {
+  height: 30%;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  border-left: 7px solid #02333a;
+  border-top: 7px solid #02333a;
+  background: #006073;
+  border-radius: 10px;
+  overflow-y: scroll;
+  overflow-x: none; }
+
+.commandQueueIcon {
+  width: 40px; }
+
 .run-button-container {
-  height: 50%;
+  height: 40%;
   width: 80%;
   display: flex;
   flex-direction: row;
@@ -228,9 +249,9 @@
   align-items: center; }
   .run-button-container .run-button {
     margin: 10px;
-    /*height: 125px;*/
-    /*width: 125px;*/
-    padding: 10px 20px;
+    height: 60px;
+    width: 60px;
+    padding: 10px 30px;
     border-radius: 25%;
     display: flex;
     justify-content: center;
@@ -250,6 +271,15 @@
   .run-button-container .stop-action:hover {
     background: #ee9272;
     border-bottom: 12px solid #cf7d6a; }
+  .run-button-container .bin-action {
+    background: #e8d700;
+    border-bottom: 12px solid #c4b505; }
+  .run-button-container .bin-action:hover {
+    background: #ecdf32;
+    border-bottom: 12px solid #cfc336; }
+  .run-button-container .bin-commands {
+    height: 70%;
+    width: 70%; }
   .run-button-container .run-animate {
     transition: all 0.2s;
     -webkit-transition: all 0.2s; }
@@ -257,6 +287,28 @@
     transform: translate(0px, 12px);
     -webkit-transform: translate(0px, 12px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
+
+.robot-container {
+  position: absolute;
+  overflow: visible; }
+
+.b3-robot {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../images/b3-robot.svg") no-repeat;
+  background-size: 100%;
+  z-index: 10; }
+
+.shadow {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 5; }
 
 /* Import Fonts */
 /* Fonts */
