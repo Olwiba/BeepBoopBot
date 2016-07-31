@@ -23,9 +23,11 @@ class Robot extends Component {
     console.log('robot props', this.props)
     console.log('robot state', this.state)
     return (
-      <div
-        style={{height: 30, width: 30, border: 'solid 1px blue', position: 'absolute', top: this.state.centerY, left: this.state.centerX}}
-      >HI2</div>
+      <Motion defaultStyle={{x: 0, y: 0}} style={{x: spring(this.state.centerX), y: spring(this.state.centerY)}}>
+        {value => <div
+          style={{height: 30, width: 30, border: 'solid 1px blue', position: 'absolute', top: value.y, left: value.x, transform: `rotate(${0}deg)`}}
+      >HI2</div>}
+      </Motion>
     )
   }
 }
