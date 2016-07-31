@@ -21,3 +21,13 @@ test('ADD_LEFT action adds action to command queue', function(t) {
   t.equal(newState.commandQueue[0], 'TURN_LEFT' , 'queue has turn left action added')
   t.end()
 })
+
+test('QUEUE_ACTION action adds action to command queue', function(t) {
+  var initialState = reducer(undefined, {})
+  freeze(initialState)
+  t.equal(initialState.commandQueue.length, 0, 'initial queue length is zero')
+  var newState = reducer(initialState, {type: 'QUEUE_ACTION', payload: 'TURN_LEFT'}) 
+  t.equal(newState.commandQueue.length, 1, 'newState queue length is one')
+  t.equal(newState.commandQueue[0], 'TURN_LEFT' , 'queue has turn left action added')
+  t.end()
+})

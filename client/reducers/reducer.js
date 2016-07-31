@@ -78,6 +78,11 @@ const reducer = (state = INITIAL_STATE, action) => {
       jumpState.executeCommandIndex++
       return jumpState
 
+    case 'QUEUE_ACTION':
+      const newState = cloneState(state)
+      newState.commandQueue.push(action.payload)  
+      return newState
+
     case 'ADD_FORWARD':
       const addFwdState = cloneState(state)
       addFwdState.commandQueue.push('MOVE_FORWARD')
