@@ -96,7 +96,6 @@
       appearance: none; }
 
 .command-pane {
-  position: fixed;
   bottom: 0;
   background: #1c8da0;
   width: 100%;
@@ -219,6 +218,30 @@
   border-left: 3px solid #cbcbcb;
   width: 18%;
   height: 18%; }
+
+.command-container {
+  height: 30%;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  border-left: 7px solid #02333a;
+  border-top: 7px solid #02333a;
+  background: #006073;
+  border-radius: 10px;
+  overflow-y: scroll;
+  overflow-x: none; }
+
+.bin-commands {
+  position: absolute;
+  float: right;
+  right: 0;
+  bottom: 0;
+  height: 30%;
+  width: auto; }
 
 .commandQueueIcon {
   width: 40px; }
