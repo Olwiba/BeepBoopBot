@@ -3,17 +3,21 @@ import React, { Component } from 'react'
 class CommandQueue extends Component {
 
   render () {
-    const commands = {
-      MOVE_FORWARD: 'FORWARD',
-      JUMP_UP: 'JUMP',
-      TURN_LEFT: 'LEFT',
-      TURN_RIGHT: 'RIGHT'
+    const commandImgs = {
+      MOVE_FORWARD: '/resources/images/move-forward.svg',
+      JUMP_UP: '/resources/images/jump.svg',
+      TURN_LEFT: '/resources/images/turn-left.svg',
+      TURN_RIGHT: '/resources/images/turn-right.svg'
     }
     return (
       <div className='command-queue'>
         {this.props.commandQueue.map((e, i) => {
-           return <div key={i}>{commands[e]}</div>
-         })
+          return (
+            <div key={i} className='commandQueueIcon'>
+              <img src={commandImgs[e]} />
+            </div>
+        )
+        })
         }
       </div>
     )

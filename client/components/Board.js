@@ -9,7 +9,6 @@ class Board extends Component {
   }
 
   componentDidMount () {
-    console.log('board mounted')
     this.props.ADD_TILE_INFO(this.refs)
     this.setState({ hasMounted: true })
   }
