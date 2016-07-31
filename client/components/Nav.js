@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import About from './About';
 
 class Nav extends Component {
 
@@ -53,6 +54,9 @@ class Nav extends Component {
               Level 10
             </option>
           </select>
+        </div>
+        <div className='about'>
+          <About />
         </div>
       </div>
     )
