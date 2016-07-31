@@ -7,7 +7,8 @@ console.log(actions)
 function mapStateToProps (state) {
   return {
     commandQueue: state.commandQueue,
-    running: state.running
+    running: state.running,
+    executeCommandIndex: state.executeCommandIndex
   }
 }
 
