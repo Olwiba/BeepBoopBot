@@ -19,7 +19,6 @@ class CommandQueue extends Component {
         )
         })
         }
-        <img src="/resources/images/rubbish-bin.png" className="bin-commands" />
       </div>
     )
   }
