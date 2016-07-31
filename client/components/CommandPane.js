@@ -8,7 +8,7 @@ class CommandPane extends Component {
     return (
       <section className='command-pane'>
         <div className='command-container'>
-          <CommandQueue commandQueue={this.props.commandQueue} />
+          <CommandQueue {...this.props} />
         </div>
         <div className='runButtons-container'>
           <RunButtons {...this.props} />
