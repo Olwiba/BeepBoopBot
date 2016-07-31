@@ -1,5 +1,6 @@
 export const command = () => {
   return (dispatch, getState) => {
+    console.log('DD', dispatch, getState)
     var interval = setInterval(() => {
       var state = getState()
       if (state.running === false || state.executeCommandIndex === state.commandQueue.length) {
