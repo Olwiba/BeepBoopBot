@@ -80,6 +80,10 @@ const reducer = (state = INITIAL_STATE, action) => {
       newState.executeCommandIndex++
       return newState
 
+    case 'ADD_TILE_INFO':
+      newState.tileInfo = action.tileInfo
+      return newState
+
     case 'QUEUE_ACTION':
       newState.commandQueue.push(action.payload)  
       return newState
