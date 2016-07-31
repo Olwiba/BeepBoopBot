@@ -18,7 +18,7 @@ class CommandQueue extends Component {
       <div className='command-queue'>
         {this.props.commandQueue.map((e, i) => {
           return (
-            <div 
+            <div
               key={i}
               className='commandQueueIcon'
               style={ this.props.executeCommandIndex - 1 === i && this.props.running ? activeStyle : null }
