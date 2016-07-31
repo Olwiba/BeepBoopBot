@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 class RunButtons extends Component {
 
   render () {
-  console.log('asdasdas', this.props)
     return (
       <div className="run-button-container">
         <a className="run-button run-animate go-action" onClick={() => { this.props.GO_BUTTON() }}>
