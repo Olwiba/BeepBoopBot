@@ -11,14 +11,14 @@ const INITIAL_STATE = {
   },
   board: [
     [0, 0, 0, 0, 0],
+    [0, 0, 2, 0, 0],
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0],
-    [2, 0, 0, 0, 0],
     [0, 0, 0, 0, 1]
   ],
   commandQueue: [], // commands are the same as the action types. e.g. 'MOVE_FORWARD'
   running: false,
-  executed: [],
+  executeCommandIndex: 0,
   tileInfo: {}
 }
 
@@ -28,7 +28,7 @@ function cloneState (state) {
     board: state.board.map(row => row.slice()),
     commandQueue: [...state.commandQueue],
     running: state.running,
-    executed: [...state.executed],
+    executeCommandIndex: state.executeCommandIndex,
     tileInfo: {...state.tileInfo}
   }
 }
@@ -43,33 +43,33 @@ const reducer = (state = INITIAL_STATE, action) => {
     case 'STOP_BUTTON':
       const newStopState = cloneState(state)
       newStopState.running = false
-      newStopState.executed = []
+      newStopState.executeCommandIndex = 0
       return newStopState
 
     case 'MOVE_FORWARD':
       const newFwdState = cloneState(state)
       moveForward(newFwdState.robot, newFwdState.board)
-      newFwdState.executed.push('MOVE_FORWARD')
+      newFwdState.executeCommandIndex++
       return newFwdState
 
     case 'TURN_LEFT':
       const newLeftState = cloneState(state)
       // If direction is 0, set it to 270, otherwise subtract 90
       newLeftState.robot.direction = newLeftState.robot.direction ? newLeftState.robot.direction - 90 : 270
-      newLeftState.executed.push('TURN_LEFT')
+      newLeftState.executeCommandIndex++
       return newLeftState
 
     case 'TURN_RIGHT':
       const newRightState = cloneState(state)
       // If direction is 270, set it to 0, otherwise add 90
       newRightState.robot.direction = newRightState.robot.direction === 270 ? 0 : newRightState.robot.direction + 90
-      newRightState.executed.push('TURN_RIGHT')
+      newRightState.executeCommandIndex++
       return newRightState
 
     case 'JUMP_UP':
       const jumpState = cloneState(state)
       jump(jumpState.robot, jumpState.board)
-      jumpState.executed.push('JUMP_UP')
+      jumpState.executeCommandIndex++
       return jumpState
 
     case 'ADD_FORWARD':
