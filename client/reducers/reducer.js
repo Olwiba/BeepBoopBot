@@ -15,7 +15,8 @@ const INITIAL_STATE = {
   running: false,
   executeCommandIndex: 0,
   tileInfo: {},
-  currentLevel: 1
+  currentLevel: 1,
+  hasFinshed: false
 }
 
 function cloneState (state) {
