@@ -33,7 +33,7 @@ function mapDispatchToProps (dispatch) {
     GO_BUTTON: () => {
       dispatch({
         type: 'GO_BUTTON'
-      }),
+      })
       dispatch(actions.command())
     },
     STOP_BUTTON: () => {

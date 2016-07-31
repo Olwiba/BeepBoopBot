@@ -18,8 +18,8 @@ class Nav extends Component {
           </div>
         </div>
         <div className='levels-container'>
-          <select className='levels' onChange={this.props.SELECT_LEVEL}>
-            <option className='level-option' value='1'>
+          <select className='levels' onChange={(e) => { this.props.SELECT_LEVEL(e.target.value) }}>
+            <option className='level-option'>
               Select Level
             </option>
             <option className='level-option' value='1'>
