@@ -108,7 +108,10 @@
   align-content: center;
   align-items: center; }
   .command-pane .command-queue {
-    background-color: #c2c2f0; }
+    background-color: #c2c2f0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; }
   .command-pane .command-container {
     height: 30%;
     width: 80%;
@@ -216,6 +219,9 @@
   border-left: 3px solid #cbcbcb;
   width: 18%;
   height: 18%; }
+
+.commandQueueIcon {
+  width: 40px; }
 
 .run-button-container {
   height: 50%;
