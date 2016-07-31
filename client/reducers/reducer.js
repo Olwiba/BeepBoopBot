@@ -40,6 +40,7 @@ const reducer = (state = INITIAL_STATE, action) => {
     case 'STOP_BUTTON':
       const newStopState = cloneState(state)
       newStopState.running = false
+      newStopState.robot = INITIAL_STATE.robot
       newStopState.executeCommandIndex = 0
       return newStopState
 
@@ -60,14 +61,14 @@ const reducer = (state = INITIAL_STATE, action) => {
     case 'TURN_LEFT':
       const newLeftState = cloneState(state)
       // If direction is 0, set it to 270, otherwise subtract 90
-      newLeftState.robot.direction = newLeftState.robot.direction ? newLeftState.robot.direction - 90 : 270
+      newLeftState.robot.direction = newLeftState.robot.direction - 90
       newLeftState.executeCommandIndex++
       return newLeftState
 
     case 'TURN_RIGHT':
       const newRightState = cloneState(state)
       // If direction is 270, set it to 0, otherwise add 90
-      newRightState.robot.direction = newRightState.robot.direction === 270 ? 0 : newRightState.robot.direction + 90
+      newRightState.robot.direction = newRightState.robot.direction + 90
       newRightState.executeCommandIndex++
       return newRightState
 
