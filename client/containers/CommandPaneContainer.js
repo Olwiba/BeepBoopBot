@@ -41,6 +41,11 @@ function mapDispatchToProps (dispatch) {
       dispatch({
         type: 'STOP_BUTTON'
       })
+    },
+    CLEAR_BUTTON: () => {
+      dispatch({
+        type: 'CLEAR_BUTTON'
+      })
     }
   }
 }
