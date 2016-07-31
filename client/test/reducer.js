@@ -12,16 +12,6 @@ test('GO_BUTTON action sets state running to true', function(t) {
   t.end()
 })
 
-test('ADD_LEFT action adds action to command queue', function(t) {
-  var initialState = reducer(undefined, {})
-  freeze(initialState)
-  t.equal(initialState.commandQueue.length, 0, 'initial queue length is zero')
-  var newState = reducer(initialState, {type: 'ADD_LEFT'}) 
-  t.equal(newState.commandQueue.length, 1, 'newState queue length is one')
-  t.equal(newState.commandQueue[0], 'TURN_LEFT' , 'queue has turn left action added')
-  t.end()
-})
-
 test('QUEUE_ACTION action adds action to command queue', function(t) {
   var initialState = reducer(undefined, {})
   freeze(initialState)
@@ -29,5 +19,14 @@ test('QUEUE_ACTION action adds action to command queue', function(t) {
   var newState = reducer(initialState, {type: 'QUEUE_ACTION', payload: 'TURN_LEFT'}) 
   t.equal(newState.commandQueue.length, 1, 'newState queue length is one')
   t.equal(newState.commandQueue[0], 'TURN_LEFT' , 'queue has turn left action added')
+  t.end()
+})
+
+test('TURN_LEFT action turns B3 to left', function(t) {
+  var initialState = reducer(undefined, {})
+  freeze(initialState)
+  t.equal(initialState.commandQueue.length, 0, 'initial queue length is zero')
+  var newState = reducer(initialState, {type: 'TURN_LEFT'})
+  t.equal(newState.robot.direction, -90 , 'B3 turned left')
   t.end()
 })

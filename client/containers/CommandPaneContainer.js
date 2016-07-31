@@ -10,24 +10,10 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
   return {
-    ADD_FORWARD: () => {
+    QUEUE_ACTION: (payload) => {
       dispatch({
-        type: 'ADD_FORWARD'
-      })
-    },
-    ADD_LEFT: () => {
-      dispatch({
-        type: 'ADD_LEFT'
-      })
-    },
-    ADD_RIGHT: () => {
-      dispatch({
-        type: 'ADD_RIGHT'
-      })
-    },
-    ADD_JUMP: () => {
-      dispatch({
-        type: 'ADD_JUMP'
+        type: 'QUEUE_ACTION', 
+        payload: payload
       })
     },
     GO_BUTTON: () => {

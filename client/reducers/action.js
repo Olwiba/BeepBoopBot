@@ -1,5 +1,6 @@
 export const command = () => {
   return (dispatch, getState) => {
+    console.log('DD', dispatch, getState)
     var interval = setInterval(() => {
       var state = getState()
       if (state.running === false || state.executeCommandIndex === state.commandQueue.length) {
@@ -16,10 +17,4 @@ export const nextCommand = (command) => {
   return {
     type: command
   }
-}
-
-const QUEUE_ACTIOM = 'QUEUE_ACTIOM'
-
-export const queueAction (action, payload) => {
-  return {type: QUEUE_ACTIOM, payload: payload}
 }
