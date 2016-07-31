@@ -96,6 +96,7 @@
       appearance: none; }
 
 .command-pane {
+  position: fixed;
   bottom: 0;
   background: #1c8da0;
   width: 100%;
