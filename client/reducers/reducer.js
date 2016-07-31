@@ -1,6 +1,7 @@
 // import { immutable, fromJS, toJS} from 'immutable'
 import jump from './lib/jump'
 import moveForward from './lib/moveForward.js'
+import levels from '../levels'
 
 const INITIAL_STATE = {
   robot: {
@@ -9,13 +10,7 @@ const INITIAL_STATE = {
     positionX: 0,
     positionY: 4
   },
-  board: [
-    [0, 0, 0, 0, 0],
-    [0, 0, 2, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 1]
-  ],
+  board: levels[1],
   commandQueue: [], // commands are the same as the action types. e.g. 'MOVE_FORWARD'
   running: false,
   executeCommandIndex: 0,
@@ -49,8 +44,11 @@ const reducer = (state = INITIAL_STATE, action) => {
       return newStopState
 
     case 'SELECT_LEVEL':
+      const tempTileInfo = state.tileInfo
       const newLevelState = cloneState(INITIAL_STATE)
       newLevelState.board = action.board
+      newLevelState.tileInfo = tempTileInfo
+
       return newLevelState
 
     case 'MOVE_FORWARD':
