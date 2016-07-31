@@ -9,9 +9,6 @@ class Robot extends Component {
     var bounds = this.props.tileInfo[y + x].getBoundingClientRect()
     var centerX = (bounds.right + bounds.left) / 2
     var centerY = (bounds.top + bounds.bottom) / 2
-    console.log('x', x)
-    console.log('y', y)
-    console.log('bounds', bounds)
     return [centerX, centerY]
   }
 
