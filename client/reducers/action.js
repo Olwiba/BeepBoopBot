@@ -18,3 +18,8 @@ export const nextCommand = (command) => {
     type: command
   }
 }
+
+
+export const queueAction = function(actionToQueue) {
+ return {type: 'QUEUE_ACTION', payload: actionToQueue} 
+}
