@@ -19,7 +19,8 @@ const INITIAL_STATE = {
   commandQueue: [], // commands are the same as the action types. e.g. 'MOVE_FORWARD'
   running: false,
   executeCommandIndex: 0,
-  tileInfo: {}
+  tileInfo: {},
+  currentLevel: 1
 }
 
 function cloneState (state) {
@@ -29,7 +30,8 @@ function cloneState (state) {
     commandQueue: [...state.commandQueue],
     running: state.running,
     executeCommandIndex: state.executeCommandIndex,
-    tileInfo: {...state.tileInfo}
+    tileInfo: {...state.tileInfo},
+    currentLevel: state.currentLevel
   }
 }
 
@@ -45,6 +47,11 @@ const reducer = (state = INITIAL_STATE, action) => {
       newStopState.running = false
       newStopState.executeCommandIndex = 0
       return newStopState
+
+    case 'SELECT_LEVEL':
+      const newLevelState = cloneState(INITIAL_STATE)
+      newLevelState.board = action.board
+      return newLevelState
 
     case 'MOVE_FORWARD':
       const newFwdState = cloneState(state)
