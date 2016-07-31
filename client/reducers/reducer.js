@@ -18,147 +18,82 @@ const INITIAL_STATE = {
   ],
   commandQueue: [], // commands are the same as the action types. e.g. 'MOVE_FORWARD'
   running: false,
-  executed:[],
+  executed: [],
   tileInfo: {}
+}
+
+function cloneState (state) {
+  return {
+    robot: {...state.robot},
+    board: state.board.map(row => row.slice()),
+    commandQueue: [...state.commandQueue],
+    running: state.running,
+    executed: [...state.executed],
+    tileInfo: {...state.tileInfo}
+  }
 }
 
 const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'GO_BUTTON':
-      const newGoState = {
-        robot: INITIAL_STATE.robot,
-        board: [...state.board],
-        commandQueue: [...state.commandQueue],
-        running: true,
-        executed: [],
-        tileInfo: {...state.tileInfo}
-      }
+      const newGoState = cloneState(state)
+      newGoState.running = true
       return newGoState
 
     case 'STOP_BUTTON':
-      const newStopState = {
-        robot: INITIAL_STATE.robot,
-        board: [...state.board],
-        commandQueue: [...state.commandQueue],
-        running: true,
-        executed: [...state.executed],
-        tileInfo: {...state.tileInfo}
-      }
+      const newStopState = cloneState(state)
       newStopState.running = false
       newStopState.executed = []
       return newStopState
 
     case 'MOVE_FORWARD':
-      const newFwdState = {
-        robot: {...state.robot},
-        board: [...state.board],
-        commandQueue: [...state.commandQueue],
-        running: state.running,
-        executed:[...state.executed],
-        tileInfo: {...state.tileInfo}
-      }
+      const newFwdState = cloneState(state)
       moveForward(newFwdState.robot, newFwdState.board)
       newFwdState.executed.push('MOVE_FORWARD')
       return newFwdState
 
     case 'TURN_LEFT':
-      const newLeftState = {
-        robot: {...state.robot},
-        board: [...state.board],
-        commandQueue: [...state.commandQueue],
-        running: state.running,
-        executed:[...state.executed],
-        tileInfo: {...state.tileInfo}
-      }
+      const newLeftState = cloneState(state)
       // If direction is 0, set it to 270, otherwise subtract 90
       newLeftState.robot.direction = newLeftState.robot.direction ? newLeftState.robot.direction - 90 : 270
       newLeftState.executed.push('TURN_LEFT')
       return newLeftState
 
     case 'TURN_RIGHT':
-      const newRightState = {
-        robot: {...state.robot},
-        board: [...state.board],
-        commandQueue: [...state.commandQueue],
-        running: state.running,
-        executed:[...state.executed],
-        tileInfo: {...state.tileInfo}
-      }
+      const newRightState = cloneState(state)
       // If direction is 270, set it to 0, otherwise add 90
       newRightState.robot.direction = newRightState.robot.direction === 270 ? 0 : newRightState.robot.direction + 90
       newRightState.executed.push('TURN_RIGHT')
       return newRightState
 
     case 'JUMP_UP':
-      const jumpState = {
-        robot: {...state.robot},
-        board: [...state.board],
-        commandQueue: [...state.commandQueue],
-        running: state.running,
-        executed:[...state.executed],
-        tileInfo: {...state.tileInfo}
-      }
+      const jumpState = cloneState(state)
       jump(jumpState.robot, jumpState.board)
       jumpState.executed.push('JUMP_UP')
       return jumpState
 
     case 'ADD_FORWARD':
-      const addFwdState = {
-        robot: {...state.robot},
-        board: [...state.board],
-        commandQueue: [...state.commandQueue],
-        running: state.running,
-        executed: [...state.executed],
-        tileInfo: {...state.tileInfo}
-      }
+      const addFwdState = cloneState(state)
       addFwdState.commandQueue.push('MOVE_FORWARD')
       return addFwdState
 
     case 'ADD_LEFT':
-      const addLeftState = {
-        robot: {...state.robot},
-        board: [...state.board],
-        commandQueue: [...state.commandQueue],
-        running: state.running,
-        executed: [...state.executed],
-        tileInfo: {...state.tileInfo}
-      }
+      const addLeftState = cloneState(state)
       addLeftState.commandQueue.push('TURN_LEFT')
       return addLeftState
 
     case 'ADD_RIGHT':
-      const addRightState = {
-        robot: {...state.robot},
-        board: [...state.board],
-        commandQueue: [...state.commandQueue],
-        running: state.running,
-        executed: [...state.executed],
-        tileInfo: {...state.tileInfo}
-      }
+      const addRightState = cloneState(state)
       addRightState.commandQueue.push('TURN_RIGHT')
       return addRightState
 
     case 'ADD_JUMP':
-      const addJumpState = {
-        robot: {...state.robot},
-        board: [...state.board],
-        commandQueue: [...state.commandQueue],
-        running: state.running,
-        executed: [...state.executed],
-        tileInfo: {...state.tileInfo}
-      }
+      const addJumpState = cloneState(state)
       addJumpState.commandQueue.push('JUMP_UP')
       return addJumpState
 
     case 'ADD_TILE_INFO':
-      const addTileInfoState = {
-        robot: {...state.robot},
-        board: [...state.board],
-        commandQueue: [...state.commandQueue],
-        running: state.running,
-        executed: [...state.executed],
-        tileInfo: {...state.tileInfo}
-      }
+      const addTileInfoState = cloneState(state)
       addTileInfoState.tileInfo = action.tileInfo
       return addTileInfoState
 
@@ -168,13 +103,4 @@ const reducer = (state = INITIAL_STATE, action) => {
   }
 }
 
-function myState (currentState){
-  return {
-    robot: {...state.robot},
-    board: [...state.board],
-    commandQueue: [...state.commandQueue],
-    running: state.running,
-    executed: [...state.executed]
-  }
-}
 export default reducer
