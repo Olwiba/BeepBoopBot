@@ -1,0 +1,28 @@
+.command-container {
+	position: absolute;
+    height: 30%;
+    width: 80%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border-left: 7px solid $blue-darkest;
+    border-top: 7px solid $blue-darkest;
+    background: $blue-darker;
+    border-radius: 10px;
+    overflow-y: scroll;
+    overflow-x: none; 
+
+}
+
+
+.bin-commands	{
+	position: absolute;
+	float: right;
+	right: 0;
+	bottom: 0;
+	height: 30%;
+	width: auto;
+}

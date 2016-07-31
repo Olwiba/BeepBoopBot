@@ -15,6 +15,7 @@ class CommandQueue extends Component {
            return <div key={i}>{commands[e]}</div>
          })
         }
+        <img src="/resources/images/rubbish-bin.png" className="bin-commands" />
       </div>
     )
   }
