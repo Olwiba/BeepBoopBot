@@ -3,9 +3,10 @@ import SkyLight from 'react-skylight';
 
 class About extends Component {
 
-  componentDidMount() {
-    this.refs.aboutBox.show()
-  }
+// DON'T FORGET TO COMMENT ME BACK IN
+  // componentDidMount() {
+  //   this.refs.aboutBox.show()
+  // }
 
   render () {
     const style = {
