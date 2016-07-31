@@ -11,6 +11,15 @@
     border-bottom: 7px solid $blue-shadow;
     min-height: 80px;
 
+    @media screen and (max-width: 600px) {
+        display:flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+    }
+
         .invisible-container {
             width: 30%;
             height: 100%;
@@ -21,8 +30,10 @@
             align-content: center;
             overflow: visible;
 
-            @media screen and (max-width: 450px) {
-            /* Do this */
+            @media screen and (max-width: 600px) {
+                width: 30%;
+                top: 0;
+                left: 0;
             }
 
             .logo-container {
@@ -34,12 +45,27 @@
                 border-radius: 40px;
                 border-bottom: 7px solid $blue-shadow;
 
-                @media screen and (max-width: 450px) {
-                /* Do this */
+                @media screen and (max-width: 600px) {
+                    height: 100%;
+                    border-radius: 0px;
+                    border-bottom: 0;
+                    overflow: none;
+                    margin-left: 10px;
+                    margin-top: 10px;
+                    background: none;
+                }
+
+                @media screen and (max-width: 380px) {
+                    margin-left: 50%;
                 }
 
                 .logo {
                     height: 95%;
+
+                @media screen and (max-width: 600px) {
+                    height: 80%;
+                }
+
                 }
             }
         }
@@ -47,6 +73,11 @@
         .levels-container {
             height: 60%;
             margin-right: 4%;
+
+            @media screen and (max-width: 450px) {
+                width: 10%;
+                margin-right: 10%;
+            }
 
                         
                 .levels {
@@ -61,7 +92,11 @@
                 padding-left: 40px;
 
                     @media screen and (max-width: 450px) {
-                    /* Do this */
+                        width: 25%;
+                        background: url('/resources/images/burger-button.png') no-repeat;
+                        background-position: center center;
+                        background-size: 90%;
+                        border: none;
                     }
                 }
 
