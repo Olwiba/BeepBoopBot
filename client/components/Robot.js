@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Motion, spring, StaggeredMotion, TransitionMotion } from 'react-motion'
+import { Motion, spring } from 'react-motion'
 
 class Robot extends Component {
 
