@@ -3,6 +3,8 @@ import jump from './lib/jump'
 import moveForward from './lib/moveForward.js'
 import levels from '../levels'
 
+import {QUEUE_ACTION} from './action'
+
 const INITIAL_STATE = {
   robot: {
     direction: 0,
@@ -84,7 +86,7 @@ const reducer = (state = INITIAL_STATE, action) => {
       newState.tileInfo = action.tileInfo
       return newState
 
-    case 'QUEUE_ACTION':
+    case QUEUE_ACTION:
       newState.commandQueue.push(action.payload)  
       return newState
 
