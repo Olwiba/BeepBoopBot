@@ -20,7 +20,7 @@ const INITIAL_STATE = {
   currentLevel: 1
 }
 
-function cloneState (state) {
+export function cloneState (state) {
   return {
     robot: {...state.robot},
     board: state.board.map(row => row.slice()),
