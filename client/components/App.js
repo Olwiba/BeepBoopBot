@@ -8,10 +8,8 @@ import SkyLight from 'react-skylight'
 class App extends Component {
 
   componentDidMount () {
-    console.log('refs', this.refs)
     var cookies = cookie.load('knownUser')
     if (!cookies) {
-      console.log('user doesnt exist, set cookie, show modal')
       cookie.save('knownUser', 'User has been here before')
       this.refs.welcomeModal.show()
     }
