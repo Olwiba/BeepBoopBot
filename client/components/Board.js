@@ -21,7 +21,10 @@ class Board extends Component {
             this.props.board.map((row, rowIndex) => {
               return row.map((col, colIndex) => {
                 return (
-                  <div key={parseInt(rowIndex.toString() + colIndex.toString())} className='tile' ref={rowIndex.toString() + colIndex.toString()}>{col}</div>
+                col == 2 ? 
+                <div key={parseInt(rowIndex.toString() + colIndex.toString())} className='tile' ref={rowIndex.toString() + colIndex.toString()}> <img src='/resources/images/box-tile.svg' className='box-tile' /> </div>  :
+                 col == 1 ?  <div key={parseInt(rowIndex.toString() + colIndex.toString())} className='tile' ref={rowIndex.toString() + colIndex.toString()}> <div className='elevator-bottom'> <img src='/resources/images/elevator-top.svg' className='elevator-tile' /> </div> </div> :
+                  <div key={parseInt(rowIndex.toString() + colIndex.toString())} className='tile' ref={rowIndex.toString() + colIndex.toString()}></div>
                 )
               })
             })

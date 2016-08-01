@@ -30,17 +30,39 @@
 	background-color: $white;
 	border-bottom: 2vh solid $blue-darkest;
 	background: $blue;
+
+		.tile {
+		display:flex;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
+		margin: 0 1px 0 1px;
+		border-radius: 20px;
+		background-color: $white;
+		border-bottom: 2vh solid rgba(0,0,0,0.3);
+		width: 18%;
+		height: 18%;
+		}
+
+		.box-tile {
+			width: 70%;
+			margin-bottom: 10%; 
+		}
+
+		.elevator-tile {
+			width: 70%;
+			margin-bottom: 10%; 
+		}
+
+		.elevator-bottom {	
+			background: url('/resources/images/elevator-below.svg') no-repeat ;
+			background-size: 75%;
+			background-position: center center;
+			margin-bottom: 10%; 
+			display:flex;
+			justify-content: center;
+			align-content: center; 		
+		}
+
 }
 
-.tile {
-	display:flex;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	margin: 0 1px 0 1px;
-	border-radius: 20px;
-	background-color: $white;
-	border-bottom: 2vh solid rgba(0,0,0,0.3);
-	width: 18%;
-	height: 18%;
-}
