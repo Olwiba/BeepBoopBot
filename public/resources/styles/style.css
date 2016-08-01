@@ -292,7 +292,7 @@
   border-radius: 5px;
   cursor: pointer; }
 
-.commandQueueIcon:hover {
+.commandQueueIcon-removable:hover {
   background-color: #c45d45; }
 
 .commandQueueIcon-active {
