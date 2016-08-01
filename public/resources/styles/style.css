@@ -333,10 +333,18 @@
 
 .commandQueueIcon {
   width: 40px;
-  padding: 5px; }
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer; }
   @media screen and (max-width: 850px) {
     .commandQueueIcon {
       width: 25px; } }
+
+.commandQueueIcon-removable:hover {
+  background-color: #c45d45; }
+
+.commandQueueIcon-active {
+  background-color: #1c8da0; }
 
 .run-button-container {
   height: 40%;
@@ -452,7 +460,7 @@ h1 {
 
 h3 {
   font-family: "Press Start 2P", cursive;
-  font-size: 18px;
+  font-size: 25px;
   color: #f2f2f2; }
 
 .app {
