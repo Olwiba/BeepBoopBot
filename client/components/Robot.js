@@ -18,8 +18,8 @@ class Robot extends Component {
     return (
       <div>
         <Motion defaultStyle={{
-          x: 0,
-          y: 0,
+          x: centerPoints[0],
+          y: centerPoints[1],
           rot: 0
         }} style={{
           x: spring(centerPoints[0]),
