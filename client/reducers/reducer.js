@@ -90,14 +90,14 @@ const reducer = (state = INITIAL_STATE, action) => {
       return newState
 
     case a.ADD_TILE_INFO:
-      newState.tileInfo = action.tileInfo
+      newState.tileInfo = action.payload
       return newState
 
     case a.QUEUE_ACTION:
       newState.commandQueue.push(action.payload)
       return newState
 
-    case 'LEVEL_WON':
+    case a.LEVEL_WON:
       newState.levelWon = !(newState.levelWon)
       return newState
 
