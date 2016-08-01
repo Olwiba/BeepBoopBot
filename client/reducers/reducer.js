@@ -15,7 +15,8 @@ const INITIAL_STATE = {
   running: false,
   executeCommandIndex: 0,
   tileInfo: {},
-  currentLevel: 1
+  currentLevel: 1,
+  hasFinished: false // Has the command queue finished running? i.e. executed all commands
 }
 
 function cloneState (state) {
@@ -26,7 +27,8 @@ function cloneState (state) {
     running: state.running,
     executeCommandIndex: state.executeCommandIndex,
     tileInfo: {...state.tileInfo},
-    currentLevel: state.currentLevel
+    currentLevel: state.currentLevel,
+    hasFinished: state.hasFinished
   }
 }
 
@@ -47,12 +49,14 @@ const reducer = (state = INITIAL_STATE, action) => {
 
     case 'GO_BUTTON':
       newState.running = true
+      newState.hasFinished = false
       return newState
 
     case 'STOP_BUTTON':
       newState.running = false
       newState.robot = INITIAL_STATE.robot
       newState.executeCommandIndex = 0
+      newState.hasFinished = false
       return newState
 
     case 'SELECT_LEVEL':
@@ -89,6 +93,11 @@ const reducer = (state = INITIAL_STATE, action) => {
 
     case 'QUEUE_ACTION':
       newState.commandQueue.push(action.payload)
+      return newState
+
+    // Has the command queue finished running? i.e. executed all commands
+    case 'HAS_FINISHED':
+      newState.hasFinished = true
       return newState
 
     default:

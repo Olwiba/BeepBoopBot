@@ -4,6 +4,7 @@ export const command = () => {
       var state = getState()
       if (state.running === false || state.executeCommandIndex === state.commandQueue.length) {
         // dispatch(nextCommand("STOP_BUTTON")) command at game over
+        dispatch({type: 'HAS_FINISHED'})
         clearInterval(interval)
       } else {
         dispatch(nextCommand(state.commandQueue[state.executeCommandIndex]))
