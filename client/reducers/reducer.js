@@ -8,7 +8,8 @@ const INITIAL_STATE = {
     direction: 0,
     isOnBox: false,
     positionX: 0,
-    positionY: 4
+    positionY: 4,
+    isAlive: true
   },
   board: levels[1],
   commandQueue: [], // commands are the same as the action types. e.g. MOVE_FORWARD
@@ -18,7 +19,6 @@ const INITIAL_STATE = {
   currentLevel: 1,
   levelWon: false,
   hasFinished: false // Has the command queue finished running? i.e. executed all commands
-
 }
 
 function cloneState (state) {

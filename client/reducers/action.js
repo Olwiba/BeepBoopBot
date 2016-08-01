@@ -14,7 +14,7 @@ export const runCommands = () => {
   return (dispatch, getState) => {
     var interval = setInterval(() => {
       var state = getState()
-      if (state.running === false) {
+      if (state.running === false || state.robot.isAlive == false) {
         clearInterval(interval)
         return 
       }
