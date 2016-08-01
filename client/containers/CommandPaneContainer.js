@@ -6,7 +6,8 @@ function mapStateToProps (state) {
   return {
     commandQueue: state.commandQueue,
     running: state.running,
-    executeCommandIndex: state.executeCommandIndex
+    executeCommandIndex: state.executeCommandIndex,
+    hasFinished: state.hasFinished
   }
 }
 
@@ -14,7 +15,7 @@ function mapDispatchToProps (dispatch) {
   return {
     QUEUE_ACTION: (payload) => {
       dispatch({
-        type: 'QUEUE_ACTION', 
+        type: 'QUEUE_ACTION',
         payload: payload
       })
     },
@@ -32,6 +33,16 @@ function mapDispatchToProps (dispatch) {
     CLEAR_BUTTON: () => {
       dispatch({
         type: 'CLEAR_BUTTON'
+      })
+    },
+    HAS_FINISHED: () => {
+      dispatch({
+        type: 'HAS_FINISHED'
+      })
+    },
+    RETRY: () => {
+      dispatch({
+        type: 'RETRY'
       })
     }
   }

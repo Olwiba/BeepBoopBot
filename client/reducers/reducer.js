@@ -16,7 +16,7 @@ const INITIAL_STATE = {
   executeCommandIndex: 0,
   tileInfo: {},
   currentLevel: 1,
-  hasFinshed: false
+  hasFinished: false // Has the command queue finished running? i.e. executed all commands
 }
 
 function cloneState (state) {
@@ -27,21 +27,25 @@ function cloneState (state) {
     running: state.running,
     executeCommandIndex: state.executeCommandIndex,
     tileInfo: {...state.tileInfo},
-    currentLevel: state.currentLevel
+    currentLevel: state.currentLevel,
+    hasFinished: state.hasFinished
   }
 }
 
 const reducer = (state = INITIAL_STATE, action) => {
-  const newState = cloneState(state) 
+  const newState = cloneState(state)
+
   switch (action.type) {
     case 'CLEAR_BUTTON':
-      // player can't clear while robot is running
-      if (state.running) return cloneState(state)
+      if (state.running) {
+        // stop the robot before clearing
+        newState.running = INITIAL_STATE.running
+        newState.robot = INITIAL_STATE.robot
+      }
 
-      const newClearState = cloneState(state)
-      newClearState.commandQueue = INITIAL_STATE.commandQueue
-      newClearState.executeCommandIndex = INITIAL_STATE.executeCommandIndex
-      return newClearState
+      newState.commandQueue = INITIAL_STATE.commandQueue
+      newState.executeCommandIndex = INITIAL_STATE.executeCommandIndex
+      return newState
 
     case 'GO_BUTTON':
       newState.running = true
@@ -86,7 +90,21 @@ const reducer = (state = INITIAL_STATE, action) => {
       return newState
 
     case 'QUEUE_ACTION':
-      newState.commandQueue.push(action.payload)  
+      newState.commandQueue.push(action.payload)
+      return newState
+
+    // Has the command queue finished running? i.e. executed all commands
+    case 'HAS_FINISHED':
+    console.log('finished at reducer')
+      newState.hasFinished = true
+      return newState
+
+    case 'RETRY':
+    console.log('retrying at reducer')
+      newState.running = false
+      newState.robot = INITIAL_STATE.robot
+      newState.executeCommandIndex = 0
+      newState.hasFinished = false
       return newState
 
     default:

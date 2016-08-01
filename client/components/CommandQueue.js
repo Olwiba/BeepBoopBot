@@ -21,7 +21,7 @@ class CommandQueue extends Component {
             <div
               key={i}
               className='commandQueueIcon'
-              style={ this.props.executeCommandIndex - 1 === i && this.props.running ? activeStyle : null }
+              style={ this.props.executeCommandIndex - 1 === i && this.props.running && !this.props.hasFinished ? activeStyle : null }
             >
               <img src={commandImgs[e]} />
             </div>

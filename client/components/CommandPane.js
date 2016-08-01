@@ -4,7 +4,7 @@ import RunButtons from './RunButtons'
 
 class CommandPane extends Component {
 
-  render () { 
+  render () {
     return (
       <section className='command-pane'>
         <div className='command-container'>
