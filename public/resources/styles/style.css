@@ -288,10 +288,14 @@
 
 .commandQueueIcon {
   width: 40px;
-  padding: 5px; }
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer; }
+
+.commandQueueIcon:hover {
+  background-color: #c45d45; }
 
 .commandQueueIcon-active {
-  border-radius: 5px;
   background-color: #1c8da0; }
 
 .run-button-container {
