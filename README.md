@@ -4,20 +4,20 @@ Beep Boop Bot is an education game aimed at children to teach the basis of progr
 
 ## MVP
 
-* Single page Game ✓
-* Renders grid/board 5 x 5 ✓
-* Board shows boxes and Exit ✓
-* Move Forward ✓
-* Rotate 90' left ✓
-* Rotate 90' right ✓
-* Jump (deobsticalize...) ✓
-* Wont be able to leave the play board ✓
-* Go + Stop buttons ✓
-* Clear button ✓
-* Command queue box ✓
-* Two sections (Input, Game) ✓
-* Mobile First
-* Can only edit commands when not running ✓
+- [x] Single page Game
+- [x] Renders grid/board 5 x 5
+- [x] Board shows boxes and Exit
+- [x] Move Forward
+- [x] Rotate 90' left
+- [x] Rotate 90' right
+- [x] Jump (deobsticalize...)
+- [x] Wont be able to leave the play board
+- [x] Go + Stop buttons
+- [x] Clear button
+- [x] Command queue box
+- [x] Two sections (Input, Game)
+- [ ] Mobile First
+- [x] Can only edit commands when not running
 
 ## React Components
 
@@ -31,29 +31,31 @@ Beep Boop Bot is an education game aimed at children to teach the basis of progr
 
 ## User stories
 
-* As a user, I can see an 'About' page with a back story and instructions
-* As a user, I can click a '?' and see the about page again ✓
-* As a user, I can learn from the crucial levels how to play the game ✓
-* As a user, I can select what level I want to play ✓
-* As a user, I can add commands to be executed by B3 ✓
-* As a user, I can click 'Go' to have B3 execute the commands ✓
-* As a user, I can click 'Stop' and B3 will reset position so that I can add more commands ✓
-* As a user, I can pass the level, see a pop up and click to the next level ✓
-* As a user, I can see B3 fail and the 'Stop' button change to 'Retry' ✓
-* As a user, I can only edit commands while B3 is not running ✓
-* As a user, I can click commands to remove them from the list ✓
-* As a user, I can click clear to clear all the commands ✓
+- [ ] As a user, I can see an 'About' page with a back story and instructions
+- [x] As a user, I can click a '?' and see the about page again
+- [x] As a user, I can learn from the crucial levels how to play the game
+- [x] As a user, I can select what level I want to play
+- [x] As a user, I can add commands to be executed by B3
+- [x] As a user, I can click 'Go' to have B3 execute the commands
+- [x] As a user, I can click 'Stop' and B3 will reset position so that I can add more commands
+- [x] As a user, I can pass the level, see a pop up and click to the next level
+- [x] As a user, I can see B3 fail and the 'Stop' button change to 'Retry'
+- [x] As a user, I can only edit commands while B3 is not running
+- [x] As a user, I can click commands to remove them from the list
+- [x] As a user, I can click clear to clear all the commands
 
 ## Data Model
 
 ### B3
 B3 is represented as an object in the store:
+```
 robot = {
 	direction: <integer>: 0 = North, 90 = East, 180 = South, 270 = West
 	isOnBox: Boolean
-	positionX: integer 0 - 4
-	positionY: integer 0 - 4
+	positionX: <integer> 0-4
+	positionY: <integer> 0-4
 }
+```
 
 ### The board
 The board is represented as an array of arrays in the store. Each array represents a row of tiles. Each array element represents a tile.
@@ -95,24 +97,24 @@ The command pane and nav bar have a number of assocaited components that can dis
 
 ## Design
 Credit to Sean Johnson for his awesome design work!
-###Colour Palette
+### Colour Palette
 ![The colour palette](https://s32.postimg.org/5aq42p8hx/colours.png "Colour Palette")
 
-###Intro Design
+### Intro Design
 ![Intro design](https://s32.postimg.org/7hqkqxyed/Layout_B3_Intro.png "Intro Design")
 
-###Desktop Design
+### Desktop Design
 ![Desktop layout](https://s31.postimg.org/dqi2d0l7f/Layout_B3.png "Desktop Design")
 
-###Mobile Design
+### Mobile Design
 ![Mobile layout](https://s32.postimg.org/4dzj6o89h/Layout_B3_Mobile.png "Mobile Design")
 
 ## Wireframes
 
-###About Page
+### About Page
 ![The about page wireframe](https://s31.postimg.org/crq66ae1n/About_Page.png "About Page")
 
-###Home Page
+### Home Page
 ![The home page wireframe](https://s31.postimg.org/dh3g2brdn/Home_Wireframe.png "Home Page")
 
 ## Team learning objectives
