@@ -28,7 +28,6 @@ class Win extends Component {
   }
 
   render () {
-    console.log('win props', this.props)
     return (
       <SkyLight beforeClose={this._executeBeforeModalClose.bind(this)} hideOnOverlayClicked={true} ref='winBox' >
         <p>You win!!</p>

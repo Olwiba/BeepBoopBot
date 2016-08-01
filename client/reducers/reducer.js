@@ -11,7 +11,8 @@ const INITIAL_STATE = {
     positionY: 4,
     isAlive: true
   },
-  board: levels[1],
+  board: levels[1].board,
+  moveLimit: levels[1].moveLimit,
   commandQueue: [], // commands are the same as the action types. e.g. MOVE_FORWARD
   running: false,
   executeCommandIndex: 0,
@@ -62,12 +63,11 @@ const reducer = (state = INITIAL_STATE, action) => {
       return newState
 
     case a.SELECT_LEVEL:
-      const newLevelState = cloneState(INITIAL_STATE)
-      newLevelState.board = levels[action.payload]
-      newLevelState.tileInfo = state.tileInfo
-      newLevelState.currentLevel = action.payload
-      newLevelState.robot.isAlive = true
-      return newLevelState
+      newState.board = levels[action.payload].board
+      newState.tileInfo = state.tileInfo
+      newState.currentLevel = action.payload
+      newState.robot.isAlive = true
+      return newState
 
     case a.MOVE_FORWARD:
       moveForward(newState.robot, newState.board)
