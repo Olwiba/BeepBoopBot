@@ -62,15 +62,30 @@
             height: 80%; } }
   .navigation .levels-container {
     height: 60%;
-    margin-right: 4%; }
+    margin-right: 4%;
+    display: flex;
+    flex-wrap: nowrap; }
     @media screen and (max-width: 450px) {
       .navigation .levels-container {
         width: 10%;
         margin-right: 10%; } }
+    .navigation .levels-container .about {
+      height: 92%;
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0 10px 10px 0;
+      border: 2px solid #1c8da0;
+      border-left: 0;
+      background: #02333a;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 20px;
+      color: #1c8da0; }
     .navigation .levels-container .levels {
       height: 100%;
       width: 250px;
-      border-radius: 10px;
+      border-radius: 10px 0 0 10px;
       border: 2px solid #1c8da0;
       background: #02333a;
       font-family: 'Press Start 2P', cursive;
