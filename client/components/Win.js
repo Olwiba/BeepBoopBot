@@ -1,16 +1,37 @@
-import React, {Component} from 'react'
-import SkyLight from 'react-skylight';
+import {Component} from 'react'
+import SkyLight from 'react-skylight'
 
 class Win extends Component {
+  constructor(props){
+    super(props);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+  }
 
-  componentDidUpdate() {
+  handleKeyPress(e) {
+    if(e.which === 27) {
+      this.refs.winBox.hide()
+    }
+  }
+
+  componentDidMount () {
+    document.addEventListener('keyup', this.handleKeyPress)
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keyup', this.handleKeyPress);
+  }
+
+  componentDidUpdate () {
     this.props.levelWon ? this.refs.winBox.show() : this.refs.winBox.hide()
   }
-  _executeBeforeModalClose(){
+
+  _executeBeforeModalClose () {
     this.props.LEVEL_WON()
-    const newLevel = this.props.currentLevel + 1
+    const newLevel = parseInt(this.props.currentLevel) + 1
     this.props.SELECT_LEVEL(newLevel)
   }
+
+
 
   render() {
     const style = {
@@ -19,18 +40,16 @@ class Win extends Component {
       width: '70%',
       height: '600px',
       marginTop: '-300px',
-      marginLeft: '-35%',
-    };
-    const divStyle ={
+      marginLeft: '-35%'
+    }
+    const divStyle = {
       width: '100%',
-      height:'100%'
+      height: '100%'
     }
     return (
       <SkyLight dialogStyles={style} beforeClose={this._executeBeforeModalClose.bind(this)} hideOnOverlayClicked={true} ref="winBox" >
-      <div style={divStyle}onClick={()=>{this.refs.winBox.hide()}}> Click Me to Close </div>
+        <div style={divStyle}onClick={()=>{this.refs.winBox.hide()}}> Click Me to Close </div>
       </SkyLight>
-      
-
     )
   }
 }
