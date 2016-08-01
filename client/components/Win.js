@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import {Motion, spring} from 'react-motion'
 import SkyLight from 'react-skylight';
 
 class Win extends Component {
