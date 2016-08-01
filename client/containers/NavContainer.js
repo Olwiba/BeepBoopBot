@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Nav from '../components/Nav'
-import levels from '../levels'
+import * as actions from '../reducers/action'
 
 function mapStateToProps (state) {
   return {
@@ -11,10 +11,7 @@ function mapStateToProps (state) {
 function mapDispatchToProps (dispatch) {
   return {
     SELECT_LEVEL: (levelNum) => {
-      dispatch({
-        type: 'SELECT_LEVEL',
-        board: levels[levelNum]
-      })
+      dispatch(actions.selectLevel(levelNum))
     }
   }
 }

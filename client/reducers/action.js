@@ -53,3 +53,10 @@ export const clearButton = {
 export const hasFinished = {
   type: HAS_FINISHED
 }
+
+export const selectLevel = (levelNum) => {
+  return {
+    type: SELECT_LEVEL,
+    payload: levelNum
+  }
+}
