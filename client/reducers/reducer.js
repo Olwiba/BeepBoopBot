@@ -1,4 +1,3 @@
-// import { immutable, fromJS, toJS} from a.immutable
 import jump from './lib/jump'
 import moveForward from './lib/moveForward.js'
 import levels from '../levels'
@@ -12,7 +11,7 @@ const INITIAL_STATE = {
     positionY: 4
   },
   board: levels[1],
-  commandQueue: [], // commands are the same as the action types. e.g. a.MOVE_FORWARD
+  commandQueue: [], // commands are the same as the action types. e.g. MOVE_FORWARD
   running: false,
   executeCommandIndex: 0,
   tileInfo: {},
