@@ -10,6 +10,7 @@ export const ADD_TILE_INFO = 'ADD_TILE_INFO'
 export const QUEUE_ACTION = 'QUEUE_ACTION'
 export const HAS_FINISHED = 'HAS_FINISHED'
 export const LEVEL_WON = 'LEVEL_WON'
+export const REMOVE_ACTION = 'REMOVE_ACTION'
 
 export const runCommands = () => {
   return (dispatch, getState) => {
@@ -17,10 +18,10 @@ export const runCommands = () => {
       var state = getState()
       if (state.running === false) {
         clearInterval(interval)
-        return 
+        return
       }
-     if(state.executeCommandIndex === state.commandQueue.length) {
-        if (state.board[state.robot.positionY][state.robot.positionX] === 1){
+      if (state.executeCommandIndex === state.commandQueue.length) {
+        if (state.board[state.robot.positionY][state.robot.positionX] === 1) {
           dispatch(nextCommand("LEVEL_WON"))
         }
         dispatch({type: 'HAS_FINISHED'})
@@ -78,5 +79,12 @@ export const addTileInfo = (tileInfo) => {
 export const levelWon = () => {
   return {
     type: LEVEL_WON
+  }
+}
+
+export const deleteCommand = (commandIndex) => {
+  return {
+    type: REMOVE_ACTION,
+    payload: commandIndex
   }
 }

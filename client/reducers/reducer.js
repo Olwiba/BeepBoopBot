@@ -97,6 +97,10 @@ const reducer = (state = INITIAL_STATE, action) => {
       newState.commandQueue.push(action.payload)
       return newState
 
+    case a.REMOVE_ACTION:
+      newState.commandQueue.splice(action.payload, 1)
+      return newState
+
     case a.LEVEL_WON:
       newState.levelWon = !(newState.levelWon)
       return newState
