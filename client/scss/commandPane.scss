@@ -103,10 +103,6 @@ $actionButtonElevation: 7px;
             width: 50%;
         }
 
-        .action-icon::selection {
-            background-color: rgba(255,255,255, 0.0)
-        }
-
         .action-forward {
             background: $green;
             border-bottom: $actionButtonElevation solid $green-dark;
