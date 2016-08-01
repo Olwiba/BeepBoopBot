@@ -31,9 +31,8 @@ class Win extends Component {
     this.props.SELECT_LEVEL(newLevel)
   }
 
-
-
   render() {
+    console.log('win props', this.props)
     const style = {
       backgroundColor: '#00897B',
       color: '#ffffff',
