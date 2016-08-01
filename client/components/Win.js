@@ -5,13 +5,11 @@ import SkyLight from 'react-skylight';
 class Win extends Component {
 
   componentDidUpdate() {
-    this.props.levelClear ? this.refs.winBox.show() : this.refs.winBox.hide()
+    this.props.levelWon ? this.refs.winBox.show() : this.refs.winBox.hide()
   }
   _executeBeforeModalClose(){
-    this.props.LEVEL_CLEARED()
-    const level = this.props.currentLevel
-    const newLevel = level + 1
-    console.log(this.props)
+    this.props.LEVEL_WON()
+    const newLevel = this.props.currentLevel + 1
     this.props.SELECT_LEVEL(newLevel)
   }
 

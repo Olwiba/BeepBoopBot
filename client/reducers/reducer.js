@@ -16,8 +16,9 @@ const INITIAL_STATE = {
   executeCommandIndex: 0,
   tileInfo: {},
   currentLevel: 1,
-  levelClear: false,
-  win: [0,1]
+  levelWon: false,
+  hasFinished: false // Has the command queue finished running? i.e. executed all commands
+
 }
 
 function cloneState (state) {
@@ -29,13 +30,13 @@ function cloneState (state) {
     executeCommandIndex: state.executeCommandIndex,
     tileInfo: {...state.tileInfo},
     currentLevel: state.currentLevel,
-    levelClear: state.levelClear
+    levelWon: state.levelWon,
+    hasFinished: state.hasFinished
   }
 }
 
 const reducer = (state = INITIAL_STATE, action) => {
   const newState = cloneState(state)
-  console.log(newState)
   switch (action.type) {
     case 'CLEAR_BUTTON':
       if (state.running) {
@@ -50,12 +51,14 @@ const reducer = (state = INITIAL_STATE, action) => {
 
     case 'GO_BUTTON':
       newState.running = true
+      newState.hasFinished = false
       return newState
 
     case 'STOP_BUTTON':
       newState.running = false
       newState.robot = INITIAL_STATE.robot
       newState.executeCommandIndex = 0
+      newState.hasFinished = false
       return newState
 
     case 'SELECT_LEVEL':
@@ -94,8 +97,13 @@ const reducer = (state = INITIAL_STATE, action) => {
       newState.commandQueue.push(action.payload)
       return newState
 
-    case 'LEVEL_CLEARED':
-      newState.levelClear = !(newState.levelClear)
+    case 'LEVEL_WON':
+      newState.levelWon = !(newState.levelWon)
+      return newState
+
+    // Has the command queue finished running? i.e. executed all commands
+    case 'HAS_FINISHED':
+      newState.hasFinished = true
       return newState
 
     default:

@@ -1,22 +1,49 @@
 $actionButtonElevation: 7px;
 
 .command-pane {
-    position: fixed;
-    bottom: 0;
     background: $blue;
-    width: 100%;
-    height: 40%;
+    width: 30%;
+    height: 90%;
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    align-items: center;    
+    align-items: center;
+    padding-top: 2%;
+
+    @media screen and (max-width: 850px) {
+        width: 100%;
+        height: 42%;
+        order: 2;
+    }
 
     .command-queue {
+        width: 100%;
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         align-items: flex-start;
+        overflow-y: scroll;
+
+    }
+
+    .command-queue::-webkit-scrollbar-track
+    {
+        border-radius: 10px;
+        background-color: rgba(0,0,0,0.0);
+    }
+
+    .command-queue::-webkit-scrollbar
+    {
+        width: 12px;
+        background-color: rgba(0,0,0,0.0);
+    }
+
+    .command-queue::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        background-color: $blue-darkest;
     }
 
     .command-container {
@@ -25,16 +52,14 @@ $actionButtonElevation: 7px;
         display:flex;
         flex-direction: column;
         flex-wrap: nowrap;
-        justify-content: center;
-        align-content: center;
-        align-items: center;
+        justify-content: flex-start;
+        align-content: flex-start;
+        align-items: flex-start;
         border-left: 7px solid $blue-darkest;
         border-top: 7px solid $blue-darkest;
         background: $blue-darker;
         border-radius: 10px;
         overflow-y: scroll;
-        overflow-x: none; 
-
     }
 
     .runButtons-container {
@@ -56,9 +81,9 @@ $actionButtonElevation: 7px;
         flex-wrap: nowrap;
         justify-content: center;
         align-content: center;
-        align-items: center;    
+        align-items: center;
         border-top: 5px solid $blue-darker;
-    
+
 
         .action-button {
             margin: 10px;
@@ -76,10 +101,6 @@ $actionButtonElevation: 7px;
         .action-icon {
             height: 50%;
             width: 50%;
-        }
-
-        .action-icon::selection {
-            background-color: rgba(255,255,255, 0.0)
         }
 
         .action-forward {
@@ -126,6 +147,5 @@ $actionButtonElevation: 7px;
 
     }
 
-    
-}
 
+}

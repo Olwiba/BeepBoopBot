@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 class CommandQueue extends Component {
 
   render () {
-    console.log('command queue', this.props)
     const commandImgs = {
       MOVE_FORWARD: '/resources/images/move-forward.svg',
       JUMP_UP: '/resources/images/jump.svg',
@@ -18,10 +17,10 @@ class CommandQueue extends Component {
       <div className='command-queue'>
         {this.props.commandQueue.map((e, i) => {
           return (
-            <div 
+            <div
               key={i}
               className='commandQueueIcon'
-              style={ this.props.executeCommandIndex - 1 === i && this.props.running ? activeStyle : null }
+              style={ this.props.executeCommandIndex - 1 === i && this.props.running && !this.props.hasFinished ? activeStyle : null }
             >
               <img src={commandImgs[e]} />
             </div>

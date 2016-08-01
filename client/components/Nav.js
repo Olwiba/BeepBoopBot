@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import About from './About';
+import SkyLight from 'react-skylight';
 
 class Nav extends Component {
 
@@ -11,6 +11,16 @@ class Nav extends Component {
   }
 
   render () {
+
+    const style = {
+      backgroundColor: '#00897B',
+      color: '#ffffff',
+      width: '70%',
+      height: '600px',
+      marginTop: '-300px',
+      marginLeft: '-35%',
+    };
+
     return (
       <div className='navigation'>
         <div className='invisible-container'>
@@ -54,9 +64,10 @@ class Nav extends Component {
               Level 10
             </option>
           </select>
-        </div>
-        <div className='about'>
-          <About />
+          <div className="about" onClick={() => this.refs.aboutBox.show()}>i</div>
+          <SkyLight dialogStyles={style} hideOnOverlayClicked ref="aboutBox" >
+            I"'"m a custom modal!
+          </SkyLight>
         </div>
       </div>
     )

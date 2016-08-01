@@ -7,15 +7,15 @@ function mapStateToProps (state) {
 }
 function mapDispatchToProps (dispatch) {
   return {
-    LEVEL_CLEARED: () => {
+    LEVEL_WON: () => {
       dispatch({
-        type: 'LEVEL_CLEARED'
+        type: 'LEVEL_WON'
       })
     },
     SELECT_LEVEL: (levelNum) => {
       dispatch({
         type: 'SELECT_LEVEL',
-        board: levels[levelNum]
+        payload: levelNum
       })
     }
   }

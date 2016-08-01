@@ -14,11 +14,11 @@ Beep Boop Bot is an education game aimed at children to teach the basis of progr
 * Wont be able to leave the play board ✓
 * ~~Model View Controller~~
 * Go + Stop buttons ✓
-* Clear button 
-* Command queue box
+* Clear button ✓
+* Command queue box ✓
 * Two sections (Input, Game) ✓
 * Mobile First
-* Can only edit commands when not running
+* Can only edit commands when not running ✓
 
 ## React Components
 
