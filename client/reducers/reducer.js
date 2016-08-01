@@ -62,10 +62,9 @@ const reducer = (state = INITIAL_STATE, action) => {
       return newState
 
     case a.SELECT_LEVEL:
-      const tempTileInfo = state.tileInfo
       const newLevelState = cloneState(INITIAL_STATE)
       newLevelState.board = levels[action.payload]
-      newLevelState.tileInfo = tempTileInfo
+      newLevelState.tileInfo = state.tileInfo
       newLevelState.currentLevel = action.payload
 
       return newLevelState
