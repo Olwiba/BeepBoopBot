@@ -32,7 +32,9 @@ class Robot extends Component {
             position: 'absolute',
             top: value.y - 30,
             left: value.x - 30,
-            transform: `rotate(${value.rot}deg)`
+            transform: `rotate(${value.rot}deg)`     
+                  
+            
           }}>
             <div className="b3-robot"></div>
             <div className="shadow"></div>

@@ -60,6 +60,11 @@ $actionButtonElevation: 7px;
         background: $blue-darker;
         border-radius: 10px;
         overflow-y: scroll;
+
+        @media screen and (max-width: 850px) {
+            height: 25%;
+            width: 93%;
+        }
     }
 
     .runButtons-container {
@@ -71,6 +76,11 @@ $actionButtonElevation: 7px;
         justify-content: center;
         align-content: center;
         align-items: center;
+
+        @media screen and (max-width: 850px) {
+            height: 31%;
+            width: 58%;
+        }
     }
 
     .action-button-container {
@@ -84,6 +94,10 @@ $actionButtonElevation: 7px;
         align-items: center;
         border-top: 5px solid $blue-darker;
 
+        @media screen and (max-width: 850px) {
+            height: 39%;
+            width: 70%;
+        }
 
         .action-button {
             margin: 10px;
@@ -96,6 +110,12 @@ $actionButtonElevation: 7px;
             align-items: center;
             background: $white-dark;
             border-bottom: $actionButtonElevation solid #a4a4a4; 
+
+            @media screen and (max-width: 850px) {
+                margin: 9px 0 37px 9px;
+                height: 46px;
+                width: 70px;
+            }
         }
 
         .action-icon {
