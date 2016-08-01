@@ -1,7 +1,7 @@
-// import { immutable, fromJS, toJS} from 'immutable'
 import jump from './lib/jump'
 import moveForward from './lib/moveForward.js'
 import levels from '../levels'
+import * as a from './action'
 
 import {QUEUE_ACTION} from './action'
 
@@ -13,11 +13,14 @@ const INITIAL_STATE = {
     positionY: 4
   },
   board: levels[1],
-  commandQueue: [], // commands are the same as the action types. e.g. 'MOVE_FORWARD'
+  commandQueue: [], // commands are the same as the action types. e.g. MOVE_FORWARD
   running: false,
   executeCommandIndex: 0,
   tileInfo: {},
-  currentLevel: 1
+  currentLevel: 1,
+  levelWon: false,
+  hasFinished: false // Has the command queue finished running? i.e. executed all commands
+
 }
 
 export function cloneState (state) {
@@ -28,66 +31,81 @@ export function cloneState (state) {
     running: state.running,
     executeCommandIndex: state.executeCommandIndex,
     tileInfo: {...state.tileInfo},
-    currentLevel: state.currentLevel
+    currentLevel: state.currentLevel,
+    levelWon: state.levelWon,
+    hasFinished: state.hasFinished
   }
 }
 
 const reducer = (state = INITIAL_STATE, action) => {
-  const newState = cloneState(state) 
+  const newState = cloneState(state)
   switch (action.type) {
-    case 'CLEAR_BUTTON':
-      // player can't clear while robot is running
-      if (state.running) return cloneState(state)
+    case a.CLEAR_BUTTON:
+      if (state.running) {
+        // stop the robot before clearing
+        newState.running = INITIAL_STATE.running
+        newState.robot = INITIAL_STATE.robot
+      }
 
-      const newClearState = cloneState(state)
-      newClearState.commandQueue = INITIAL_STATE.commandQueue
-      newClearState.executeCommandIndex = INITIAL_STATE.executeCommandIndex
-      return newClearState
-
-    case 'GO_BUTTON':
-      newState.running = true
+      newState.commandQueue = INITIAL_STATE.commandQueue
+      newState.executeCommandIndex = INITIAL_STATE.executeCommandIndex
       return newState
 
-    case 'STOP_BUTTON':
+    case a.GO_BUTTON:
+      newState.running = true
+      newState.hasFinished = false
+      return newState
+
+    case a.STOP_BUTTON:
       newState.running = false
       newState.robot = INITIAL_STATE.robot
       newState.executeCommandIndex = 0
+      newState.hasFinished = false
       return newState
 
-    case 'SELECT_LEVEL':
-      const tempTileInfo = state.tileInfo
+    case a.SELECT_LEVEL:
       const newLevelState = cloneState(INITIAL_STATE)
-      newLevelState.board = action.board
-      newLevelState.tileInfo = tempTileInfo
+      newLevelState.board = levels[action.payload]
+      newLevelState.tileInfo = state.tileInfo
+      newLevelState.currentLevel = action.payload
 
       return newLevelState
 
-    case 'MOVE_FORWARD':
+    case a.MOVE_FORWARD:
       moveForward(newState.robot, newState.board)
       newState.executeCommandIndex++
       return newState
 
-    case 'TURN_LEFT':
+    case a.TURN_LEFT:
       newState.robot.direction = newState.robot.direction - 90
       newState.executeCommandIndex++
       return newState
 
-    case 'TURN_RIGHT':
+    case a.TURN_RIGHT:
       newState.robot.direction = newState.robot.direction + 90
       newState.executeCommandIndex++
       return newState
 
-    case 'JUMP_UP':
+    case a.JUMP_UP:
       jump(newState.robot, newState.board)
       newState.executeCommandIndex++
       return newState
 
-    case 'ADD_TILE_INFO':
+    case a.ADD_TILE_INFO:
       newState.tileInfo = action.tileInfo
       return newState
 
-    case QUEUE_ACTION:
-      newState.commandQueue.push(action.payload)  
+    case a.QUEUE_ACTION:
+      newState.commandQueue.push(action.payload)
+      return newState
+
+    case 'LEVEL_WON':
+      newState.levelWon = !(newState.levelWon)
+      return newState
+
+    // Has the command queue finished running? i.e. executed all commands
+    case a.HAS_FINISHED:
+      newState.hasFinished = true
       return newState
 
     default:

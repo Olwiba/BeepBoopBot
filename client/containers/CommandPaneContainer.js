@@ -7,28 +7,28 @@ function mapStateToProps (state) {
   return {
     commandQueue: state.commandQueue,
     running: state.running,
-    executeCommandIndex: state.executeCommandIndex
+    executeCommandIndex: state.executeCommandIndex,
+    hasFinished: state.hasFinished
   }
 }
 
 function mapDispatchToProps (dispatch) {
   return {
-    QUEUE_ACTION: (payload) => dispatch(actions.queueAction(payload)), 
+    QUEUE_ACTION: (payload) => {
+      dispatch(actions.queueAction(payload))
+    },
     GO_BUTTON: () => {
-      dispatch({
-        type: 'GO_BUTTON'
-      })
-      dispatch(actions.command())
+      dispatch(actions.goButton)
+      dispatch(actions.runCommands())
     },
     STOP_BUTTON: () => {
-      dispatch({
-        type: 'STOP_BUTTON'
-      })
+      dispatch(actions.stopButton)
     },
     CLEAR_BUTTON: () => {
-      dispatch({
-        type: 'CLEAR_BUTTON'
-      })
+      dispatch(actions.clearButton)
+    },
+    HAS_FINISHED: () => {
+      dispatch(actions.hasFinished)
     }
   }
 }
