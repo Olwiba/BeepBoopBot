@@ -5,13 +5,26 @@ import levels from '../levels'
 
 class Nav extends Component {
 
+  handleKeyPress (e) {
+    if (e.which === 27) {
+      this.refs.storyBox.hide()
+      this.refs.howToPlayBox.hide()
+    }
+  }
+
   componentDidMount () {
     var cookies = cookie.load('knownUser')
     // Check if cookie exists. If not, show modal and set cookie.
     if (!cookies) {
       cookie.save('knownUser', 'User has been here before')
-      this.refs.aboutBox.show()
+      this.refs.storyBox.show()
     }
+    // Listen for escape keypress to close modal
+    document.addEventListener('keyup', this.handleKeyPress.bind(this))
+  }
+
+  componentWillUnmount () {
+    document.removeEventListener('keyup', this.handleKeyPress.bind(this))
   }
 
   render () {
@@ -41,9 +54,14 @@ class Nav extends Component {
               })
             }
           </select>
-          <div className='about' onClick={() => this.refs.aboutBox.show()}>i</div>
-          <SkyLight hideOnOverlayClicked ref='aboutBox' title='Hi, welcome to B3'>
-            Do a bunch of stuff to get B3 to the exit.
+          <div className='about' onClick={() => this.refs.storyBox.show()}>i</div>
+          <SkyLight hideOnOverlayClicked={true} ref='storyBox' title='Here is the back story'  >
+            <p>B3 is a little robot that is stuck on a space freighter that is hurtling towards earth...</p>
+            <button onClick={() => { this.refs.storyBox.hide(); this.refs.howToPlayBox.show() }} >How to play</button>
+          </SkyLight>
+          <SkyLight hideOnOverlayClicked={true} ref='howToPlayBox' title='Here are the instructions'  >
+            <p>Queue commands with the buttons below! Get B3 to the exit!</p>
+            <button onClick={() => { this.refs.howToPlayBox.hide() }}>OK</button>
           </SkyLight>
         </div>
       </div>
@@ -52,3 +70,9 @@ class Nav extends Component {
 }
 
 export default Nav
+
+// STYLE FROM VAI.
+// close on esc     YES FOR FIRST MODAL
+// how to play button
+
+// onClick={() => { this.refs.storyBox.hide() }}

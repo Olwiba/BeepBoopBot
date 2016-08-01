@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import Board from '../components/Board'
+import * as actions from '../reducers/action'
 
 function mapStateToProps (state) {
   return state
@@ -8,10 +9,7 @@ function mapStateToProps (state) {
 function mapDispatchToProps (dispatch) {
   return {
     ADD_TILE_INFO: (tileInfo) => {
-      dispatch({
-        type: 'ADD_TILE_INFO',
-        tileInfo: tileInfo
-      })
+      dispatch(actions.addTileInfo(tileInfo))
     }
   }
 }

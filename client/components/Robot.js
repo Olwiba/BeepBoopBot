@@ -19,8 +19,8 @@ class Robot extends Component {
     return (
       <div>
         <Motion defaultStyle={{
-          x: 0,
-          y: 0,
+          x: centerPoints[0],
+          y: centerPoints[1],
           rot: 0
         }} style={{
           x: spring(centerPoints[0]),
@@ -33,7 +33,9 @@ class Robot extends Component {
             position: 'absolute',
             top: value.y - 30,
             left: value.x - 30,
-            transform: `rotate(${value.rot}deg)`
+            transform: `rotate(${value.rot}deg)`     
+                  
+            
           }}>
           <ReactMotionLoop
             styleFrom={{width: spring(63, {stiffness: 120, damping: 9}), height: spring(63)}}
