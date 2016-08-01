@@ -25,7 +25,7 @@ class Nav extends Component {
           <select
             className='levels'
             onChange={(e) => { this.props.SELECT_LEVEL(e.target.value) }}
-            defaultValue={this.props.currentLevel.toString()}>
+            value={this.props.currentLevel.toString()}>
             {Object.keys(levels).map(
               num => {
                 return (
