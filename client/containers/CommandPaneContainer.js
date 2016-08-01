@@ -39,11 +39,6 @@ function mapDispatchToProps (dispatch) {
       dispatch({
         type: 'HAS_FINISHED'
       })
-    },
-    RETRY: () => {
-      dispatch({
-        type: 'RETRY'
-      })
     }
   }
 }

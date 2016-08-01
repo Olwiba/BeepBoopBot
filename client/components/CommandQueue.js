@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 class CommandQueue extends Component {
 
   render () {
-    console.log('command queue', this.props)
     const commandImgs = {
       MOVE_FORWARD: '/resources/images/move-forward.svg',
       JUMP_UP: '/resources/images/jump.svg',

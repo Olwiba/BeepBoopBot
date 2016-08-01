@@ -49,12 +49,14 @@ const reducer = (state = INITIAL_STATE, action) => {
 
     case 'GO_BUTTON':
       newState.running = true
+      newState.hasFinished = false
       return newState
 
     case 'STOP_BUTTON':
       newState.running = false
       newState.robot = INITIAL_STATE.robot
       newState.executeCommandIndex = 0
+      newState.hasFinished = false
       return newState
 
     case 'SELECT_LEVEL':
@@ -95,16 +97,7 @@ const reducer = (state = INITIAL_STATE, action) => {
 
     // Has the command queue finished running? i.e. executed all commands
     case 'HAS_FINISHED':
-    console.log('finished at reducer')
       newState.hasFinished = true
-      return newState
-
-    case 'RETRY':
-    console.log('retrying at reducer')
-      newState.running = false
-      newState.robot = INITIAL_STATE.robot
-      newState.executeCommandIndex = 0
-      newState.hasFinished = false
       return newState
 
     default:

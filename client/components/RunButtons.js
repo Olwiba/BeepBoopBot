@@ -5,11 +5,10 @@ class RunButtons extends Component {
   render () {
     var running = this.props.running
     var hasFinished = this.props.hasFinished
-    console.log('run button props', this.props)
     return (
       <div className='run-button-container'>
         <div>
-          {(running && hasFinished) ? <a className='run-button run-animate retry-action' onClick={this.props.RETRY}><h3>RETRY</h3></a>
+          {(running && hasFinished) ? <a className='run-button run-animate retry-action' onClick={this.props.STOP_BUTTON}><h3>RETRY</h3></a>
           : (running && !hasFinished) ? <a className='run-button run-animate stop-action' onClick={this.props.STOP_BUTTON}><h3>STOP</h3></a> : <a className='run-button run-animate go-action' onClick={this.props.GO_BUTTON}><h3>GO</h3></a>
         }
         </div>
@@ -22,9 +21,3 @@ class RunButtons extends Component {
 }
 
 export default RunButtons
-
-          // {this.props.hasFinished ? console.log('it has finished') : console.log('it has NOTTT finished')}
-          // {this.props.running
-          //   ? <a className='run-button run-animate stop-action' onClick={this.props.STOP_BUTTON}><h3>STOP</h3></a>
-          //   : <a className='run-button run-animate go-action' onClick={this.props.GO_BUTTON}><h3>GO</h3></a>
-          // }
