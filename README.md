@@ -78,18 +78,23 @@ For example, the board setup for level one can be got by levels[1].
 ### Actions
 The command pane and nav bar have a number of assocaited components that can dispatch actions.
 * GO_BUTTON: Starts executed the queued up actions
-* Stop: STOP_BUTTON
-* Clear: CLEAR_QUEUE
-* ADD_FORWARD: Adds a forward action to the queue
-* ADD_LEFT: Adds a rotate left action to the queue 
-* ADD_RIGHT: Adds a rotate right action to the queue
-* ADD_JUMP: Adds a jump action to the queue
+* STOP_BUTTON: Stops execution of the queued up actions, and returns B3 to the start
 * SELECT_LEVEL: Changes to a new level (action.payload = <integer> the level number)
+* MOVE_FORWARD: Moves B3 forward one tile if tile in front is empty
+* TURN_LEFT: Turns B3 90 degrees anticlockwise
+* TURN_RIGHT: Turns B3 90 degrees clockwise
+* JUMP_UP: Moves B3 onto the box on the tile in front, if there is one
+* ADD_TILE_INFO: Stores references to all the tile elements
+* QUEUE_ACTION: Adds an action to the queue (action.payload = <string> e.g. 'TURN_LEFT')
+* CLEAR_QUEUE: Clear all actions from the queue
+* REMOVE_ACTION: Removes the specified action from the queue (action.payload = <integer> the action's index)
+* LEVEL_WON: Toggles the state of the levelWon boolean
+* HAS_FINISHED: Sets the state of hasFinished to true, indicating that the queue has finished running the actions
 
 ## Design
 Credit to Sean Johnson for his awesome design work!
-###Colour Pellet 
-![alt tag](https://s32.postimg.org/5aq42p8hx/colours.png "Colour Pellet")
+###Colour Palette 
+![The colour palette](https://s32.postimg.org/5aq42p8hx/colours.png "Colour Palette")
 
 ###Intro Design 
 ![alt tag](https://s32.postimg.org/7hqkqxyed/Layout_B3_Intro.png "Intro Design")
@@ -103,10 +108,10 @@ Credit to Sean Johnson for his awesome design work!
 ## Wireframes
 
 ###About Page
-![alt tag](https://s31.postimg.org/crq66ae1n/About_Page.png "About Page")
+![The about page wireframe](https://s31.postimg.org/crq66ae1n/About_Page.png "About Page")
 
 ###Home Page
-![alt tag](https://s31.postimg.org/dh3g2brdn/Home_Wireframe.png "Home Page")
+![The home page wireframe](https://s31.postimg.org/dh3g2brdn/Home_Wireframe.png "Home Page")
 
 ## Stretch goals
 Fun features we would like to add.
