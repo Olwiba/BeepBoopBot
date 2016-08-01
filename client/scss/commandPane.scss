@@ -1,3 +1,5 @@
+$actionButtonElevation: 7px;
+
 .command-pane {
     position: fixed;
     bottom: 0;
@@ -66,7 +68,9 @@
             display: flex;
             justify-content: center;
             align-content: center;
-            align-items: center; 
+            align-items: center;
+            background: $white-dark;
+            border-bottom: $actionButtonElevation solid #a4a4a4; 
         }
 
         .action-icon {
@@ -80,32 +84,32 @@
 
         .action-forward {
             background: $green;
-            border-bottom: 7px solid $green-dark;
+            border-bottom: $actionButtonElevation solid $green-dark;
         }
 
         .action-forward:hover {
             background: #93cc67;
-            border-bottom: 7px solid #70ab42;
+            border-bottom: $actionButtonElevation solid #70ab42;
         }
 
         .action-rotate {
             background: $orange;
-            border-bottom: 7px solid $orange-dark;
+            border-bottom: $actionButtonElevation solid $orange-dark;
         }
 
         .action-rotate:hover {
             background: #ee9272;
-            border-bottom: 7px solid #cf7d6a;
+            border-bottom: $actionButtonElevation solid #cf7d6a;
         }
 
         .action-jump {
             background: $yellow;
-            border-bottom: 7px solid $yellow-dark;
+            border-bottom: $actionButtonElevation solid $yellow-dark;
         }
 
         .action-jump:hover {
             background: #ecdf32;
-            border-bottom: 7px solid #cfc336;
+            border-bottom: $actionButtonElevation solid #cfc336;
         }
 
         .action-animate {
@@ -114,8 +118,8 @@
         }
 
         .action-button:active {
-            transform: translate(0px,7px);
-              -webkit-transform: translate(0px,7px);
+            transform: translate(0px,$actionButtonElevation);
+              -webkit-transform: translate(0px,$actionButtonElevation);
             border-bottom: 1px solid rgba(0, 0, 0, 0.5);
         }
 
