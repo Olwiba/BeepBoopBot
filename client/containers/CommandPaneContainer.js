@@ -14,31 +14,20 @@ function mapStateToProps (state) {
 function mapDispatchToProps (dispatch) {
   return {
     QUEUE_ACTION: (payload) => {
-      dispatch({
-        type: 'QUEUE_ACTION',
-        payload: payload
-      })
+      dispatch(actions.queueAction(payload))
     },
     GO_BUTTON: () => {
-      dispatch({
-        type: 'GO_BUTTON'
-      })
-      dispatch(actions.command())
+      dispatch(actions.goButton)
+      dispatch(actions.runCommands())
     },
     STOP_BUTTON: () => {
-      dispatch({
-        type: 'STOP_BUTTON'
-      })
+      dispatch(actions.stopButton)
     },
     CLEAR_BUTTON: () => {
-      dispatch({
-        type: 'CLEAR_BUTTON'
-      })
+      dispatch(actions.clearButton)
     },
     HAS_FINISHED: () => {
-      dispatch({
-        type: 'HAS_FINISHED'
-      })
+      dispatch(actions.hasFinished)
     }
   }
 }

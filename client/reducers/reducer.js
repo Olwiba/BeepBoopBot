@@ -1,7 +1,8 @@
-// import { immutable, fromJS, toJS} from 'immutable'
+// import { immutable, fromJS, toJS} from a.immutable
 import jump from './lib/jump'
 import moveForward from './lib/moveForward.js'
 import levels from '../levels'
+import * as a from './action'
 
 const INITIAL_STATE = {
   robot: {
@@ -11,7 +12,7 @@ const INITIAL_STATE = {
     positionY: 4
   },
   board: levels[1],
-  commandQueue: [], // commands are the same as the action types. e.g. 'MOVE_FORWARD'
+  commandQueue: [], // commands are the same as the action types. e.g. a.MOVE_FORWARD
   running: false,
   executeCommandIndex: 0,
   tileInfo: {},
@@ -36,7 +37,7 @@ const reducer = (state = INITIAL_STATE, action) => {
   const newState = cloneState(state)
 
   switch (action.type) {
-    case 'CLEAR_BUTTON':
+    case a.CLEAR_BUTTON:
       if (state.running) {
         // stop the robot before clearing
         newState.running = INITIAL_STATE.running
@@ -47,19 +48,19 @@ const reducer = (state = INITIAL_STATE, action) => {
       newState.executeCommandIndex = INITIAL_STATE.executeCommandIndex
       return newState
 
-    case 'GO_BUTTON':
+    case a.GO_BUTTON:
       newState.running = true
       newState.hasFinished = false
       return newState
 
-    case 'STOP_BUTTON':
+    case a.STOP_BUTTON:
       newState.running = false
       newState.robot = INITIAL_STATE.robot
       newState.executeCommandIndex = 0
       newState.hasFinished = false
       return newState
 
-    case 'SELECT_LEVEL':
+    case a.SELECT_LEVEL:
       const tempTileInfo = state.tileInfo
       const newLevelState = cloneState(INITIAL_STATE)
       newLevelState.board = action.board
@@ -67,36 +68,36 @@ const reducer = (state = INITIAL_STATE, action) => {
 
       return newLevelState
 
-    case 'MOVE_FORWARD':
+    case a.MOVE_FORWARD:
       moveForward(newState.robot, newState.board)
       newState.executeCommandIndex++
       return newState
 
-    case 'TURN_LEFT':
+    case a.TURN_LEFT:
       newState.robot.direction = newState.robot.direction - 90
       newState.executeCommandIndex++
       return newState
 
-    case 'TURN_RIGHT':
+    case a.TURN_RIGHT:
       newState.robot.direction = newState.robot.direction + 90
       newState.executeCommandIndex++
       return newState
 
-    case 'JUMP_UP':
+    case a.JUMP_UP:
       jump(newState.robot, newState.board)
       newState.executeCommandIndex++
       return newState
 
-    case 'ADD_TILE_INFO':
+    case a.ADD_TILE_INFO:
       newState.tileInfo = action.tileInfo
       return newState
 
-    case 'QUEUE_ACTION':
+    case a.QUEUE_ACTION:
       newState.commandQueue.push(action.payload)
       return newState
 
     // Has the command queue finished running? i.e. executed all commands
-    case 'HAS_FINISHED':
+    case a.HAS_FINISHED:
       newState.hasFinished = true
       return newState
 
