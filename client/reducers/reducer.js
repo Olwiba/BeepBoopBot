@@ -21,7 +21,7 @@ const INITIAL_STATE = {
   hasFinished: false // Has the command queue finished running? i.e. executed all commands
 }
 
-function cloneState (state) {
+export function cloneState (state) {
   return {
     robot: {...state.robot},
     board: state.board.map(row => row.slice()),

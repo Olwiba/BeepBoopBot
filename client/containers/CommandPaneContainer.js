@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import CommandPane from '../components/CommandPane'
-import * as actions from '../reducers/action'
+import * as actions from '../reducers/action.js'
+
 
 function mapStateToProps (state) {
   return {

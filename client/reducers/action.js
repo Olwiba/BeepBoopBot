@@ -19,7 +19,6 @@ export const runCommands = () => {
         return 
       }
      if(state.executeCommandIndex === state.commandQueue.length) {
-        // dispatch(nextCommand("STOP_BUTTON")) command at game over
         if (state.board[state.robot.positionY][state.robot.positionX] === 1){
           dispatch(nextCommand("LEVEL_WON"))
         }
