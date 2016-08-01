@@ -74,6 +74,11 @@
 			}
 		}
 
+		.clear {
+			background: rgba(0,0,0,0.0);
+			border-bottom: 2vh solid rgba(0,0,0,0.0);
+		}
+
 		.basement.odd {
 			background: url('/resources/images/wall.png') $orange;
 		}
