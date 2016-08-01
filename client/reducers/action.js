@@ -82,7 +82,7 @@ export const levelWon = () => {
   }
 }
 
-export const deleteCommand = (commandIndex) => {
+export const removeAction = (commandIndex) => {
   return {
     type: REMOVE_ACTION,
     payload: commandIndex
