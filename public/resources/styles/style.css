@@ -340,7 +340,11 @@
 .robot-container {
   z-index: 100;
   position: absolute;
-  overflow: visible; }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center; }
 
 .b3-robot {
   position: absolute;
@@ -353,9 +357,8 @@
 .shadow {
   position: absolute;
   top: 20%;
-  left: 5%;
-  width: 90%;
-  height: 90%;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 5; }

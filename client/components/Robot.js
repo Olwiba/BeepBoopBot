@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Motion, spring} from 'react-motion'
+import {ReactMotionLoop} from 'react-motion-loop'
 import WinContainer from '../containers/WinContainer'
 
 class Robot extends Component {
@@ -26,7 +27,7 @@ class Robot extends Component {
           y: spring(centerPoints[1]),
           rot: spring(this.props.robot.direction)
         }}>
-          {value => <div style={{
+          {value => <div className="robot-container" style={{
             height: 60,
             width: 60,
             position: 'absolute',
@@ -34,8 +35,16 @@ class Robot extends Component {
             left: value.x - 30,
             transform: `rotate(${value.rot}deg)`
           }}>
-            <div className="b3-robot"></div>
-            <div className="shadow"></div>
+          <ReactMotionLoop
+            styleFrom={{width: spring(63, {stiffness: 120, damping: 9}), height: spring(63)}}
+            styleTo={{width: spring(60, {stiffness: 120, damping: 9}), height: spring(60)}}>
+            {style => <div className="b3-robot" style={style} />}
+          </ReactMotionLoop>
+          <ReactMotionLoop
+            styleFrom={{width: spring(57, {stiffness: 120, damping: 9}), height: spring(57)}}
+            styleTo={{width: spring(60, {stiffness: 120, damping: 9}), height: spring(60)}}>
+            {style => <div className="shadow" style={style} />}
+          </ReactMotionLoop>
           </div>}
         </Motion>
         <WinContainer {...this.props}/>
