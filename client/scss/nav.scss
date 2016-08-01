@@ -1,0 +1,130 @@
+.navigation {
+    width: 100%;
+    height: 8%;
+    background: $blue-darkest;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    border-bottom: 7px solid $blue-shadow;
+    min-height: 80px;
+
+    @media screen and (max-width: 600px) {
+        display:flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+    }
+
+        .invisible-container {
+            width: 30%;
+            height: 100%;
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            overflow: visible;
+
+            @media screen and (max-width: 600px) {
+                width: 30%;
+                top: 0;
+                left: 0;
+            }
+
+            .logo-container {
+                z-index: 1;
+                height: 120%;
+                padding: 2%;
+                background: $blue-darkest;
+                overflow: visible;
+                border-radius: 40px;
+                border-bottom: 7px solid $blue-shadow;
+
+                @media screen and (max-width: 600px) {
+                    height: 100%;
+                    border-radius: 0px;
+                    border-bottom: 0;
+                    overflow: none;
+                    margin-left: 10px;
+                    margin-top: 10px;
+                    background: none;
+                }
+
+                @media screen and (max-width: 380px) {
+                    margin-left: 50%;
+                }
+
+                .logo {
+                    height: 95%;
+
+                @media screen and (max-width: 600px) {
+                    height: 80%;
+                }
+
+                }
+            }
+        }
+
+        .levels-container {
+            height: 60%;
+            margin-right: 4%;
+
+            @media screen and (max-width: 450px) {
+                width: 10%;
+                margin-right: 10%;
+            }
+
+                        
+                .levels {
+                height: 100%;
+                width: 250px;
+                border-radius: 10px;
+                border: 2px solid $blue;
+                background: $blue-darkest;
+                font-family: 'Press Start 2P', cursive;
+                font-size: 14px;
+                color: $blue;
+                padding-left: 40px;
+
+                    @media screen and (max-width: 450px) {
+                        width: 25%;
+                        background: url('/resources/images/burger-button.png') no-repeat;
+                        background-position: center center;
+                        background-size: 90%;
+                        border: none;
+                    }
+                }
+
+                .levels:hover {
+                    color: $blue-light;
+                    border: 2px solid $blue-light;
+                }
+
+                .level-option{
+                    background: $blue-darkest;
+                    color: $blue;
+                }
+
+                select {
+                   -webkit-appearance: none;
+                   -moz-appearance: none;
+                   appearance: none;
+                }
+        }
+
+        
+}
+
+
+
+
+
+
+
+
+
