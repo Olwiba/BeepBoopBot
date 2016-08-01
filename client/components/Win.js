@@ -1,4 +1,4 @@
-import {Component} from 'react'
+import React, {Component} from 'react'
 import SkyLight from 'react-skylight'
 
 class Win extends Component {

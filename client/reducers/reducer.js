@@ -21,7 +21,7 @@ const INITIAL_STATE = {
 
 }
 
-function cloneState (state) {
+export function cloneState (state) {
   return {
     robot: {...state.robot},
     board: state.board.map(row => row.slice()),
