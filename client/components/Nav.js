@@ -1,25 +1,26 @@
 import React, { Component } from 'react'
-import SkyLight from 'react-skylight';
+import cookie from 'react-cookie'
+import SkyLight from 'react-skylight'
 
 class Nav extends Component {
 
-  constructor (props) {
-    super(props)
-    this.state = {
-      // state goes here
+  componentDidMount () {
+    var cookies = cookie.load('knownUser')
+    if (!cookies) {
+      cookie.save('knownUser', 'User has been here before')
+      this.refs.aboutBox.show()
     }
   }
 
   render () {
-
     const style = {
       backgroundColor: '#00897B',
       color: '#ffffff',
       width: '70%',
       height: '600px',
       marginTop: '-300px',
-      marginLeft: '-35%',
-    };
+      marginLeft: '-35%'
+    }
 
     return (
       <div className='navigation'>
@@ -64,9 +65,9 @@ class Nav extends Component {
               Level 10
             </option>
           </select>
-          <div className="about" onClick={() => this.refs.aboutBox.show()}>i</div>
-          <SkyLight dialogStyles={style} hideOnOverlayClicked ref="aboutBox" >
-            I"'"m a custom modal!
+          <div className='about' onClick={() => this.refs.aboutBox.show()}>i</div>
+          <SkyLight hideOnOverlayClicked ref='aboutBox' title='Hi, welcome to B3'>
+            Do a bunch of stuff to get B3 to the exit.
           </SkyLight>
         </div>
       </div>
