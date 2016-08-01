@@ -97,7 +97,7 @@ const reducer = (state = INITIAL_STATE, action) => {
       newState.commandQueue.push(action.payload)
       return newState
 
-    case 'LEVEL_WON':
+    case a.LEVEL_WON:
       newState.levelWon = !(newState.levelWon)
       return newState
 

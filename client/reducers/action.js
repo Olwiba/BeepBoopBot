@@ -9,6 +9,7 @@ export const JUMP_UP = 'JUMP_UP'
 export const ADD_TILE_INFO = 'ADD_TILE_INFO'
 export const QUEUE_ACTION = 'QUEUE_ACTION'
 export const HAS_FINISHED = 'HAS_FINISHED'
+export const LEVEL_WON = 'LEVEL_WON'
 
 export const runCommands = () => {
   return (dispatch, getState) => {
@@ -19,7 +20,6 @@ export const runCommands = () => {
         return 
       }
      if(state.executeCommandIndex === state.commandQueue.length) {
-        // dispatch(nextCommand("STOP_BUTTON")) command at game over
         if (state.board[state.robot.positionY][state.robot.positionX] === 1){
           dispatch(nextCommand("LEVEL_WON"))
         }
@@ -65,5 +65,18 @@ export const selectLevel = (levelNum) => {
   return {
     type: SELECT_LEVEL,
     payload: levelNum
+  }
+}
+
+export const addTileInfo = (tileInfo) => {
+  return {
+    type: ADD_TILE_INFO,
+    payload: tileInfo
+  }
+}
+
+export const levelWon = () => {
+  return {
+    type: LEVEL_WON
   }
 }

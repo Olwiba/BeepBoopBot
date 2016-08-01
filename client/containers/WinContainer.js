@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import Win from '../components/Win'
 import levels from '../levels'
+import * as actions from '../reducers/action'
 
 function mapStateToProps (state) {
   return state
@@ -8,15 +9,10 @@ function mapStateToProps (state) {
 function mapDispatchToProps (dispatch) {
   return {
     LEVEL_WON: () => {
-      dispatch({
-        type: 'LEVEL_WON'
-      })
+      dispatch({actions.levelWon())
     },
     SELECT_LEVEL: (levelNum) => {
-      dispatch({
-        type: 'SELECT_LEVEL',
-        payload: levelNum
-      })
+      dispatch(actions.selectLevel(levelNum))
     }
   }
 }
