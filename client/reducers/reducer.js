@@ -8,7 +8,8 @@ const INITIAL_STATE = {
     direction: 0,
     isOnBox: false,
     positionX: 0,
-    positionY: 4
+    positionY: 4,
+    isAlive: true
   },
   board: levels[1],
   commandQueue: [], // commands are the same as the action types. e.g. MOVE_FORWARD
@@ -18,10 +19,9 @@ const INITIAL_STATE = {
   currentLevel: 1,
   levelWon: false,
   hasFinished: false // Has the command queue finished running? i.e. executed all commands
-
 }
 
-function cloneState (state) {
+export function cloneState (state) {
   return {
     robot: {...state.robot},
     board: state.board.map(row => row.slice()),
@@ -66,7 +66,7 @@ const reducer = (state = INITIAL_STATE, action) => {
       newLevelState.board = levels[action.payload]
       newLevelState.tileInfo = state.tileInfo
       newLevelState.currentLevel = action.payload
-
+      newLevelState.robot.isAlive = true
       return newLevelState
 
     case a.MOVE_FORWARD:
@@ -90,14 +90,14 @@ const reducer = (state = INITIAL_STATE, action) => {
       return newState
 
     case a.ADD_TILE_INFO:
-      newState.tileInfo = action.tileInfo
+      newState.tileInfo = action.payload
       return newState
 
     case a.QUEUE_ACTION:
       newState.commandQueue.push(action.payload)
       return newState
 
-    case 'LEVEL_WON':
+    case a.LEVEL_WON:
       newState.levelWon = !(newState.levelWon)
       return newState
 
