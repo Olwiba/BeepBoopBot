@@ -77,11 +77,14 @@
       align-items: center;
       border-radius: 0 10px 10px 0;
       border: 2px solid #1c8da0;
-      border-left: 0;
       background: #02333a;
       font-family: 'Press Start 2P', cursive;
       font-size: 20px;
-      color: #1c8da0; }
+      color: #1c8da0;
+      cursor: help; }
+    .navigation .levels-container .about:hover {
+      color: #60afbc;
+      border: 2px solid #60afbc; }
     .navigation .levels-container .levels {
       height: 100%;
       width: 250px;

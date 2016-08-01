@@ -9,7 +9,7 @@ function mapStateToProps (state) {
 function mapDispatchToProps (dispatch) {
   return {
     LEVEL_WON: () => {
-      dispatch({actions.levelWon())
+      dispatch(actions.levelWon())
     },
     SELECT_LEVEL: (levelNum) => {
       dispatch(actions.selectLevel(levelNum))
