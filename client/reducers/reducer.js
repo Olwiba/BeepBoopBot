@@ -66,7 +66,7 @@ const reducer = (state = INITIAL_STATE, action) => {
       newLevelState.board = levels[action.payload]
       newLevelState.tileInfo = state.tileInfo
       newLevelState.currentLevel = action.payload
-
+      newLevelState.robot.isAlive = true
       return newLevelState
 
     case a.MOVE_FORWARD:
