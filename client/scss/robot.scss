@@ -10,7 +10,17 @@
   height: 100%;
   background: url('../images/b3-robot.svg') no-repeat;
   background-size: 100%;
-  z-index: 100;
+  z-index: 100; 
+
+  @media screen and (max-width: 850px) {
+      position: absolute;
+      width: 72%;
+      height: 79%;
+      left: 10;
+      background: url("../images/b3-robot.svg") no-repeat;
+      background-size: 100%;
+      z-index: 100;
+    }
 }
 
 .shadow {
@@ -22,4 +32,16 @@
   border-radius: 50%;
   background-color: rgba(0,0,0,0.2);
   z-index: 5;
+
+  @media screen and (max-width: 850px) {
+
+    position: absolute;
+    top: 20%;
+    left: 18%;
+    width: 69%;
+    height: 69%;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 5;
+  }
 }
