@@ -9,7 +9,7 @@ initialState.running = true
 initialState.commandQueue.push('TURN_LEFT')
 
 test('command dispatches queued action when running and has a command queued', function(t) {
-  const thunk = action.command()
+  const thunk = action.runCommands()
   thunk(
     function(action) {
       t.deepEqual(action, {type:'TURN_LEFT'}) 
