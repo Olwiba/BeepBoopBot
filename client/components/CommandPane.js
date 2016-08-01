@@ -20,7 +20,7 @@ class CommandPane extends Component {
             'action-animate',
             {'action-forward': !this.props.running}
             )}
-            onClick={this.props.running ? null : this.props.ADD_FORWARD}>
+            onClick={this.props.running ? null : () => { this.props.QUEUE_ACTION('MOVE_FORWARD') }}>
             <img src='/resources/images/move-forward.svg' className='action-icon' />
           </a>
           <a className={classNames(
@@ -28,7 +28,7 @@ class CommandPane extends Component {
             'action-animate',
             {'action-rotate': !this.props.running}
             )}
-            onClick={this.props.running ? null : this.props.ADD_LEFT}>
+            onClick={this.props.running ? null : () => { this.props.QUEUE_ACTION('TURN_LEFT') }}>
             <img src='/resources/images/turn-left.svg' className='action-icon' />
           </a>
           <a className={classNames(
@@ -36,7 +36,7 @@ class CommandPane extends Component {
             'action-animate',
             {'action-rotate': !this.props.running}
             )}
-            onClick={this.props.running ? null : this.props.ADD_RIGHT}>
+            onClick={this.props.running ? null : () => { this.props.QUEUE_ACTION('TURN_RIGHT') }}>
             <img src='/resources/images/turn-right.svg' className='action-icon' />
           </a>
           <a className={classNames(
@@ -44,7 +44,7 @@ class CommandPane extends Component {
             'action-animate',
             {'action-jump': !this.props.running}
             )}
-            onClick={this.props.running ? null : this.props.ADD_JUMP}>
+            onClick={this.props.running ? null : () => { this.props.QUEUE_ACTION('JUMP_UP') }}>
             <img src='/resources/images/jump.svg' className='action-icon' />
           </a>
         </div>
