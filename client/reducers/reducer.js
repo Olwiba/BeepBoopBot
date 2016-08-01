@@ -15,7 +15,9 @@ const INITIAL_STATE = {
   running: false,
   executeCommandIndex: 0,
   tileInfo: {},
-  currentLevel: 1
+  currentLevel: 1,
+  levelClear: false,
+  win: [0,1]
 }
 
 function cloneState (state) {
@@ -26,13 +28,14 @@ function cloneState (state) {
     running: state.running,
     executeCommandIndex: state.executeCommandIndex,
     tileInfo: {...state.tileInfo},
-    currentLevel: state.currentLevel
+    currentLevel: state.currentLevel,
+    levelClear: state.levelClear
   }
 }
 
 const reducer = (state = INITIAL_STATE, action) => {
   const newState = cloneState(state)
-
+  console.log(newState)
   switch (action.type) {
     case 'CLEAR_BUTTON':
       if (state.running) {
@@ -89,6 +92,10 @@ const reducer = (state = INITIAL_STATE, action) => {
 
     case 'QUEUE_ACTION':
       newState.commandQueue.push(action.payload)
+      return newState
+
+    case 'LEVEL_CLEARED':
+      newState.levelClear = !(newState.levelClear)
       return newState
 
     default:
