@@ -35,24 +35,19 @@ $orange-dark: #c45d45;
 /* Fonts */
 
 $heading: 'Press Start 2P', cursive;
-$body: 'Press Start 2P', cursive;
+
+body {
+	overflow-y: hidden;
+}
 
 h1 {
 	margin: 0;
-}
-
-h2 {
-
 }
 
 h3{
 	font-family: $heading;
 	font-size: 25px;
 	color: $white;
-}
-
-p{
-
 }
 
 .app {
@@ -63,6 +58,10 @@ p{
 	align-content: flex-start;
 	align-items: flex-start;
 
+	user-select: none;
+	-moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 	@media screen and (max-width: 850px) {
 			flex-direction: column;
 	}
