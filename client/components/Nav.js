@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
+import cookie from 'react-cookie'
 import SkyLight from 'react-skylight'
 import levels from '../levels'
 
 class Nav extends Component {
 
-  render () {
-    const style = {
-      backgroundColor: '#00897B',
-      color: '#ffffff',
-      width: '70%',
-      height: '600px',
-      marginTop: '-300px',
-      marginLeft: '-35%'
+  componentDidMount () {
+    var cookies = cookie.load('knownUser')
+    // Check if cookie exists. If not, show modal and set cookie.
+    if (!cookies) {
+      cookie.save('knownUser', 'User has been here before')
+      this.refs.aboutBox.show()
     }
+  }
 
+  render () {
     return (
       <div className='navigation'>
         <div className='invisible-container'>
@@ -40,9 +41,9 @@ class Nav extends Component {
               })
             }
           </select>
-          <div className="about" onClick={() => this.refs.aboutBox.show()}>i</div>
-          <SkyLight dialogStyles={style} hideOnOverlayClicked ref="aboutBox" >
-            I"'"m a custom modal!
+          <div className='about' onClick={() => this.refs.aboutBox.show()}>i</div>
+          <SkyLight hideOnOverlayClicked ref='aboutBox' title='Hi, welcome to B3'>
+            Do a bunch of stuff to get B3 to the exit.
           </SkyLight>
         </div>
       </div>

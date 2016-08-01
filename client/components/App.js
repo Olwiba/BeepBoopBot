@@ -5,13 +5,6 @@ import BoardContainer from '../containers/BoardContainer'
 
 class App extends Component {
 
-  constructor (props) {
-    super(props)
-    this.state = {
-      // state goes here
-    }
-  }
-
   render () {
     return (
       <div className='app'>
