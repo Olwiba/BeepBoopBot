@@ -3,8 +3,6 @@ import moveForward from './lib/moveForward.js'
 import levels from '../levels'
 import * as a from './action'
 
-import {QUEUE_ACTION} from './action'
-
 const INITIAL_STATE = {
   robot: {
     direction: 0,
