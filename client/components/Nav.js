@@ -42,7 +42,7 @@ class Nav extends Component {
             }
           </select>
           <div className='about' onClick={() => this.refs.aboutBox.show()}>i</div>
-          <SkyLight hideOnOverlayClicked ref='aboutBox' title='Hi, welcome to B3'>
+          <SkyLight ref='aboutBox' title='Hi, welcome to B3' onClick={()=>{this.refs.aboutBox.hide()}} >
             Do a bunch of stuff to get B3 to the exit.
           </SkyLight>
         </div>
@@ -52,3 +52,5 @@ class Nav extends Component {
 }
 
 export default Nav
+
+// COPY VAI'S WIN CLICK BOX DIV THING.
