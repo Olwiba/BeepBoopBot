@@ -28,8 +28,9 @@ class Win extends Component {
     }
     return (
       <SkyLight dialogStyles={style} beforeClose={this._executeBeforeModalClose.bind(this)} hideOnOverlayClicked={true} ref="winBox" >
-        <div style={divStyle}onClick={this._executeBeforeModalClose.bind(this)}>Click me to close</div>
+      <div style={divStyle}onClick={()=>{this.refs.winBox.hide()}}> Click Me to Close </div>
       </SkyLight>
+      
 
     )
   }
