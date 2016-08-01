@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Motion, spring} from 'react-motion'
+import WinContainer from '../containers/WinContainer'
 
 class Robot extends Component {
 
@@ -15,27 +16,30 @@ class Robot extends Component {
   render() {
     var centerPoints = this.calcCenter()
     return (
-      <Motion defaultStyle={{
-        x: 0,
-        y: 0,
-        rot: 0
-      }} style={{
-        x: spring(centerPoints[0]),
-        y: spring(centerPoints[1]),
-        rot: spring(this.props.robot.direction)
-      }}>
-        {value => <div style={{
-          height: 60,
-          width: 60,
-          position: 'absolute',
-          top: value.y - 30,
-          left: value.x - 30,
-          transform: `rotate(${value.rot}deg)`
+      <div>
+        <Motion defaultStyle={{
+          x: 0,
+          y: 0,
+          rot: 0
+        }} style={{
+          x: spring(centerPoints[0]),
+          y: spring(centerPoints[1]),
+          rot: spring(this.props.robot.direction)
         }}>
-          <div className="b3-robot"></div>
-          <div className="shadow"></div>
-        </div>}
-      </Motion>
+          {value => <div style={{
+            height: 60,
+            width: 60,
+            position: 'absolute',
+            top: value.y - 30,
+            left: value.x - 30,
+            transform: `rotate(${value.rot}deg)`
+          }}>
+            <div className="b3-robot"></div>
+            <div className="shadow"></div>
+          </div>}
+        </Motion>
+        <WinContainer {...this.props}/>
+      </div>
     )
   }
 }

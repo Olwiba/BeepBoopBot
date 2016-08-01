@@ -16,7 +16,9 @@ const INITIAL_STATE = {
   executeCommandIndex: 0,
   tileInfo: {},
   currentLevel: 1,
+  levelWon: false,
   hasFinished: false // Has the command queue finished running? i.e. executed all commands
+
 }
 
 function cloneState (state) {
@@ -28,13 +30,13 @@ function cloneState (state) {
     executeCommandIndex: state.executeCommandIndex,
     tileInfo: {...state.tileInfo},
     currentLevel: state.currentLevel,
+    levelWon: state.levelWon,
     hasFinished: state.hasFinished
   }
 }
 
 const reducer = (state = INITIAL_STATE, action) => {
   const newState = cloneState(state)
-
   switch (action.type) {
     case a.CLEAR_BUTTON:
       if (state.running) {
@@ -94,6 +96,10 @@ const reducer = (state = INITIAL_STATE, action) => {
 
     case a.QUEUE_ACTION:
       newState.commandQueue.push(action.payload)
+      return newState
+
+    case 'LEVEL_WON':
+      newState.levelWon = !(newState.levelWon)
       return newState
 
     // Has the command queue finished running? i.e. executed all commands
