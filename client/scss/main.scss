@@ -24,7 +24,6 @@ $orange-dark: #c45d45;
 /* Import Assets */
 @import './nav.scss';
 @import './commandPane.scss';
-@import './about.scss';
 @import './board.scss';
 @import './commandQueue.scss';
 @import './runButton.scss';
@@ -57,8 +56,14 @@ p{
 }
 
 .app {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-content: flex-start;
+	align-items: flex-start;
+
+	@media screen and (max-width: 850px) {
+			flex-direction: column;
+	}
 }

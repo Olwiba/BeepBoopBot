@@ -73,17 +73,33 @@
         .levels-container {
             height: 60%;
             margin-right: 4%;
+            display: flex;
+            flex-wrap: nowrap;
 
             @media screen and (max-width: 450px) {
                 width: 10%;
                 margin-right: 10%;
             }
 
-                        
+                .about {
+                  height: 92%;
+                  width:  50px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border-radius: 0 10px 10px 0;
+                  border: 2px solid $blue;
+                  border-left: 0;
+                  background: $blue-darkest;
+                  font-family: 'Press Start 2P', cursive;
+                  font-size: 20px;
+                  color: $blue;
+                }
+
                 .levels {
                 height: 100%;
                 width: 250px;
-                border-radius: 10px;
+                border-radius: 10px 0 0 10px;
                 border: 2px solid $blue;
                 background: $blue-darkest;
                 font-family: 'Press Start 2P', cursive;
@@ -117,14 +133,5 @@
                 }
         }
 
-        
+
 }
-
-
-
-
-
-
-
-
-
