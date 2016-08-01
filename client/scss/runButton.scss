@@ -6,7 +6,12 @@
         flex-wrap: nowrap;
         justify-content: center;
         align-content: center;
-        align-items: center;    
+        align-items: center;   
+
+         @media screen and (max-width: 850px) {
+            height: 30%;
+            width: 76%;
+        } 
     
 
         .run-button {
@@ -21,6 +26,12 @@
             align-content: center;
             align-items: center;
             text-shadow: 0px -2px rgba(0, 0, 0, 0.2);
+
+            @media screen and (max-width: 850px) {
+                margin: 8px;
+                height: 42px;
+                min-width: 27px;
+            }
         }
 
         .go-action {
@@ -54,8 +65,12 @@
         }
 
         .bin-icon {
-            height: 70%;
-            width: 70%;
+            height: 100%;
+            width: 100%;
+
+            @media screen and (max-width: 850px) {
+                width: 150%;
+            }
         }
 
         .run-animate {
@@ -65,7 +80,7 @@
 
         .run-button:active {
             transform: translate(0px,6px);
-              -webkit-transform: translate(0px,6px);
+            -webkit-transform: translate(0px,6px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.5);
         }
 
