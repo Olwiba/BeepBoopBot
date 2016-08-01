@@ -12,12 +12,11 @@ Beep Boop Bot is an education game aimed at children to teach the basis of progr
 * Rotate 90' right ✓
 * Jump (deobsticalize...) ✓
 * Wont be able to leave the play board ✓
-* ~~Model View Controller~~
 * Go + Stop buttons ✓
 * Clear button ✓
 * Command queue box ✓
 * Two sections (Input, Game) ✓
-* Mobile First 
+* Mobile First
 * Can only edit commands when not running ✓
 
 ## React Components
@@ -32,7 +31,7 @@ Beep Boop Bot is an education game aimed at children to teach the basis of progr
 
 ## User stories
 
-* As a user, I can see an 'About' page with a back story and instructions 
+* As a user, I can see an 'About' page with a back story and instructions
 * As a user, I can click a '?' and see the about page again ✓
 * As a user, I can learn from the crucial levels how to play the game ✓
 * As a user, I can select what level I want to play ✓
@@ -62,13 +61,16 @@ The board is represented as an array of arrays in the store. Each array represen
 1 = exit
 2 = box on square
 
-eg: board = [
-	[0,0,2,0,0]
-	[0,0,0,0,0]
-	[0,2,0,0,0]
-	[0,0,0,0,0]
+Example board:
+```
+[
+	[0,0,2,0,0],
+	[0,0,0,0,0],
+	[0,2,0,0,0],
+	[0,0,0,0,0],
 	[0,0,0,2,1]
 ]
+```
 
 ### Levels
 Board setups for the levels are stored in a levels.js, which is imported. The levels are stored in an object where the level number is the key and the board setup is the value.
@@ -93,17 +95,17 @@ The command pane and nav bar have a number of assocaited components that can dis
 
 ## Design
 Credit to Sean Johnson for his awesome design work!
-###Colour Palette 
+###Colour Palette
 ![The colour palette](https://s32.postimg.org/5aq42p8hx/colours.png "Colour Palette")
 
-###Intro Design 
-![alt tag](https://s32.postimg.org/7hqkqxyed/Layout_B3_Intro.png "Intro Design")
+###Intro Design
+![Intro design](https://s32.postimg.org/7hqkqxyed/Layout_B3_Intro.png "Intro Design")
 
 ###Desktop Design
-![alt tag](https://s31.postimg.org/dqi2d0l7f/Layout_B3.png "Desktop Design")
+![Desktop layout](https://s31.postimg.org/dqi2d0l7f/Layout_B3.png "Desktop Design")
 
-###Mobile Design 
-![alt tag](https://s32.postimg.org/4dzj6o89h/Layout_B3_Mobile.png "Mobile Design")
+###Mobile Design
+![Mobile layout](https://s32.postimg.org/4dzj6o89h/Layout_B3_Mobile.png "Mobile Design")
 
 ## Wireframes
 
@@ -112,9 +114,6 @@ Credit to Sean Johnson for his awesome design work!
 
 ###Home Page
 ![The home page wireframe](https://s31.postimg.org/dh3g2brdn/Home_Wireframe.png "Home Page")
-
-## Stretch goals
-Fun features we would like to add.
 
 ## Team learning objectives
 
@@ -145,14 +144,10 @@ Fun features we would like to add.
 * Sean
 * Vai
 
-### MVC
-
-### Immutable (Stretch)
-
 ## Information for the team
 
-Each team member is to install standardJS (npm i standard -g) and standard-format (npm i standard-format -g).
-Run standard (linter) with 'standard'. It checks all of the files in your current dir for formatting and linting problems and prints a list of problems. Fix the problems before pushing to github. You can also run 'standard-format -w', which usually automatically fixes most of the errors.
+Each team member is to install standardJS (npm i standard -g).
+Run standard (linter) with 'standard'. It checks all of the files in your current dir for formatting and linting problems and prints a list of problems. Fix the problems before pushing to github. You can also run 'standard --fix', which automatically fixes most of the errors.
 
 Sublime and Atom packages available. See https://github.com/feross/standard and https://www.npmjs.com/package/standard-format for details. Ask Miles if you have installation problems.
 
