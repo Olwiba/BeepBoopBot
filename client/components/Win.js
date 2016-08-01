@@ -9,7 +9,6 @@ class Win extends Component {
 
   handleKeyPress(e) {
     if(e.which === 27) {
-      console.log("ESC pressed")
       this.refs.winBox.hide()
     }
   }
