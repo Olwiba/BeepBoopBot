@@ -42,7 +42,7 @@ Beep Boop Bot is an education game aimed at children to teach the basis of progr
 * As a user, I can pass the level, see a pop up and click to the next level ✓
 * As a user, I can see B3 fail and the 'Stop' button change to 'Retry' ✓
 * As a user, I can only edit commands while B3 is not running ✓
-* As a user, I can click commands to remove them from the list 
+* As a user, I can click commands to remove them from the list ✓
 * As a user, I can click clear to clear all the commands ✓
 
 ## Data Model
@@ -50,7 +50,7 @@ Beep Boop Bot is an education game aimed at children to teach the basis of progr
 ### B3
 B3 is represented as an object in the store:
 robot = {
-	direction: intger: 0 = North, 90 = East, 180 = South, 270 = West
+	direction: <integer>: 0 = North, 90 = East, 180 = South, 270 = West
 	isOnBox: Boolean
 	positionX: integer 0 - 4
 	positionY: integer 0 - 4
@@ -70,18 +70,21 @@ eg: board = [
 	[0,0,0,2,1]
 ]
 
-All 10 boards are stored in a data.json object, which are required in. Level one = levels.one etc.
+### Levels
+Board setups for the levels are stored in a levels.js, which is imported. The levels are stored in an object where the level number is the key and the board setup is the value.
+
+For example, the board setup for level one can be got by levels[1].
 
 ### Actions
 The command pane and nav bar have a number of assocaited components that can dispatch actions.
-Go: GO_BUTTON
-Stop: STOP_BUTTON
-Clear: CLEAR_QUEUE
-Add forward command: ADD_FORWARD
-Add rotate left command: ADD_LEFT
-Add rotate right command: ADD_RIGHT
-Add jump command: ADD_JUMP
-Select level: SELECT_LEVEL (action.level = 'one' - 'ten')
+* GO_BUTTON: Starts executed the queued up actions
+* Stop: STOP_BUTTON
+* Clear: CLEAR_QUEUE
+* ADD_FORWARD: Adds a forward action to the queue
+* ADD_LEFT: Adds a rotate left action to the queue 
+* ADD_RIGHT: Adds a rotate right action to the queue
+* ADD_JUMP: Adds a jump action to the queue
+* SELECT_LEVEL: Changes to a new level (action.payload = <integer> the level number)
 
 ## Design
 Credit to Sean Johnson for his awesome design work!
