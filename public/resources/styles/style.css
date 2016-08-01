@@ -290,6 +290,10 @@
   width: 40px;
   padding: 5px; }
 
+.commandQueueIcon-active {
+  border-radius: 5px;
+  background-color: #1c8da0; }
+
 .run-button-container {
   height: 40%;
   width: 80%;
