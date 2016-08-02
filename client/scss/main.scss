@@ -31,10 +31,12 @@ $orange-dark: #c45d45;
 
 /* Import Fonts */
 @import 'https://fonts.googleapis.com/css?family=Press+Start+2P';
+@import 'https://fonts.googleapis.com/css?family=Space+Mono';
 
 /* Fonts */
 
 $heading: 'Press Start 2P', cursive;
+$text: 'Space Mono', monospace;
 
 body {
 	overflow-y: hidden;
