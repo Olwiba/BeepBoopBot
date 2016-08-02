@@ -61,7 +61,6 @@ const reducer = (state = INITIAL_STATE, action) => {
       newState.robot = INITIAL_STATE.robot
       newState.executeCommandIndex = 0
       newState.hasFinished = false
-      // newState.movesLeft = newState.board
       return newState
 
     case a.SELECT_LEVEL:
@@ -111,10 +110,6 @@ const reducer = (state = INITIAL_STATE, action) => {
     case a.HAS_FINISHED:
       newState.hasFinished = true
       return newState
-
-    // case a.DECREASE_MOVES_LEFT:
-    //   newState.movesLeft--
-    //   return newState
 
     default:
       return state
