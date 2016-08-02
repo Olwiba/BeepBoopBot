@@ -464,7 +464,7 @@
   .run-button-container .run-button {
     margin: 10px;
     height: 60px;
-    width: 60px;
+    width: 70px;
     min-width: 45px;
     padding: 10px 30px;
     border-radius: 25%;
@@ -489,9 +489,15 @@
     background: #93cc67;
     border-bottom: 12px solid #70ab42; }
   .run-button-container .stop-action {
+    background: #d53126;
+    border-bottom: 12px solid #a93126; }
+  .run-button-container .stop-action:hover {
+    background: #dd5a51;
+    border-bottom: 12px solid #ba5a51; }
+  .run-button-container .retry-action {
     background: #ea7750;
     border-bottom: 12px solid #c45d45; }
-  .run-button-container .stop-action:hover {
+  .run-button-container .retry-action:hover {
     background: #ee9272;
     border-bottom: 12px solid #cf7d6a; }
   .run-button-container .bin-action {
@@ -619,7 +625,7 @@ h1 {
 
 h3 {
   font-family: "Press Start 2P", cursive;
-  font-size: 25px;
+  font-size: 22px;
   color: #f2f2f2; }
 
 .app {
