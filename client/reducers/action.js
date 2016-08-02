@@ -16,17 +16,21 @@ export const runCommands = () => {
   return (dispatch, getState) => {
     var interval = setInterval(() => {
       var state = getState()
-      if (state.running === false || state.robot.isAlive == false) {
+      if (!state.running) {
         clearInterval(interval)
-        return
       }
-      if (state.executeCommandIndex === state.commandQueue.length) {
-        if (state.board[state.robot.positionY][state.robot.positionX] === 1) {
-          dispatch(nextCommand("LEVEL_WON"))
-        }
-        dispatch({type: 'HAS_FINISHED'})
+      else if (state.robot.isAlive === false || state.moveLimit === state.executeCommandIndex) {
+        dispatch(nextCommand('HAS_FINISHED'))
         clearInterval(interval)
-      } else {
+      }
+      else if (state.executeCommandIndex === state.commandQueue.length) {
+        if (state.board[state.robot.positionY][state.robot.positionX] === 1) {
+          dispatch(levelWon())
+        }
+        dispatch({type: HAS_FINISHED})
+        clearInterval(interval)
+      }
+      else {
         dispatch(nextCommand(state.commandQueue[state.executeCommandIndex]))
       }
     }, 800)
@@ -88,3 +92,9 @@ export const removeAction = (commandIndex) => {
     payload: commandIndex
   }
 }
+
+// export const decreaseMovesLeft = () => {
+//   return {
+//     type: DECREASE_MOVES_LEFT
+//   }
+// }

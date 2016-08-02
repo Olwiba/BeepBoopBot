@@ -4,7 +4,6 @@ import {ReactMotionLoop} from 'react-motion-loop'
 import WinContainer from '../containers/WinContainer'
 
 class Robot extends Component {
-
   calcCenter() {
     var y = this.props.robot.positionY.toString()
     var x = this.props.robot.positionX.toString()
@@ -25,6 +24,7 @@ class Robot extends Component {
       posX = posX + 50
     }
     return (
+      this.props.robot.isAlive ?
       <div>
         <Motion defaultStyle={{
           x: centerPoints[0],
@@ -35,14 +35,13 @@ class Robot extends Component {
           y: spring(centerPoints[1]),
           rot: spring(this.props.robot.direction)
         }}>
-          {value => <div className="robot-container" style={{
-            height: width,
-            width: width,
+          {value => <div style={{
+            height: 100,
+            width: 100,
             position: 'absolute',
-            top: value.y - 30,
-            left: value.x - 30,
-            transform: `rotate(${value.rot}deg)`,
-            overflow: 'visible'
+            top: value.y - 50,
+            left: value.x - 50,
+            transform: `rotate(${value.rot}deg)`     
           }}>
             <ReactMotionLoop styleFrom={{
               width: spring(width, {
@@ -80,8 +79,10 @@ class Robot extends Component {
             </ReactMotionLoop>
           </div>}
         </Motion>
-        <WinContainer {...this.props}/>
+        <WinContainer/>
       </div>
+      :
+      null
     )
   }
 }
