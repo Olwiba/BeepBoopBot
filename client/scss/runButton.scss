@@ -31,20 +31,20 @@
 
             @media screen and (max-width: 1000px) {
                 height: 54px;
-                width: 27px
+                width: 10px
                 
             }
 
             @media screen and (max-width: 850px) {
                 margin: 8px;
-                height: 42px;
-                min-width: 27px;
+                height: 22px;
+                min-width: 11px;
             }
         }
 
         .go-action {
             background: $green;
-            border-bottom: 12px solid $green-dark;
+            border-bottom: 9px solid $green-dark;
         }
 
         .go-action:hover {
