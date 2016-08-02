@@ -7,7 +7,7 @@ $actionButtonElevation: 7px;
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: center;
     align-items: center;
     padding-top: 2%;
@@ -28,26 +28,27 @@ $actionButtonElevation: 7px;
 
     }
 
-    .command-queue::-webkit-scrollbar-track
-    {
+    .command-queue::-webkit-scrollbar-track {
         border-radius: 10px;
         background-color: rgba(0,0,0,0.0);
     }
 
-    .command-queue::-webkit-scrollbar
-    {
+    .command-queue::-webkit-scrollbar {
         width: 12px;
         background-color: rgba(0,0,0,0.0);
     }
 
-    .command-queue::-webkit-scrollbar-thumb
-    {
+    .command-queue::-webkit-scrollbar-thumb {
         border-radius: 10px;
         background-color: $blue-darkest;
     }
-
+    .moves-left {
+        line-height: 160%;
+        font-size: 21px;
+        color: white;
+    }
     .command-container {
-        height: 30%;
+        height: 28%;
         width: 80%;
         display:flex;
         flex-direction: column;
@@ -62,13 +63,13 @@ $actionButtonElevation: 7px;
         overflow-y: scroll;
 
         @media screen and (max-width: 850px) {
-            height: 24%;
+            height: 21%;
             width: 93%;
         }
     }
 
-    .runButtons-container {        
-        height: 30%;
+    .runButtons-container {
+        height: 26%;
         width: 80%;
         display:flex;
         flex-direction: row;
@@ -79,13 +80,13 @@ $actionButtonElevation: 7px;
         border-top: 5px solid #006073;
 
         @media screen and (max-width: 850px) {
-            height: 31%;
+            height: 25%;
             width: 58%;
         }
     }
 
     .action-button-container {
-        height: 30%;
+        height: 28%;
         width: 80%;
         display:flex;
         flex-direction: row;
@@ -95,13 +96,13 @@ $actionButtonElevation: 7px;
         align-items: center;
 
         @media screen and (max-width: 1200px) {
-            height: 29%;
+            height: 30%;
             width: 79%;
         }
 
 
         @media screen and (max-width: 850px) {
-            height: 39%;
+            height: 32%;
             width: 70%;
         }
 
@@ -134,13 +135,7 @@ $actionButtonElevation: 7px;
         }
 
             @media screen and (max-width: 850px) {
-                margin: 9px 0 37px 9px;
-                height: 46px;
-                width: 70px;
-            }
-
-              @media screen and (max-width: 800px) {
-                margin: 9px 0 37px 9px;
+                margin: 9px 0 6px 9px;
                 height: 46px;
                 width: 70px;
             }
