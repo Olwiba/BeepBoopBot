@@ -10,8 +10,8 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
   return {
-    SELECT_LEVEL: (levelNum) => {
-      dispatch(actions.selectLevel(levelNum))
+    setLevel: (levelNum) => {
+      dispatch(actions.setLevel(levelNum))
     }
   }
 }

@@ -18,14 +18,14 @@ function mapDispatchToProps (dispatch) {
       dispatch(actions.queueAction(payload))
     },
     goButton: () => {
-      dispatch(actions.goButton())
+      dispatch(actions.createAction(actions.GO_BUTTON))
       dispatch(actions.runCommands())
     },
     stopButton: () => {
-      dispatch(actions.stopButton())
+      dispatch(actions.createAction(actions.STOP_BUTTON))
     },
     clearButton: () => {
-      dispatch(actions.clearButton())
+      dispatch(actions.createAction(actions.CLEAR_BUTTON))
     },
     removeAction: (commandIndex) => {
       dispatch(actions.removeAction(commandIndex))
