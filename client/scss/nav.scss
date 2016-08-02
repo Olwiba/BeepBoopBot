@@ -127,9 +127,13 @@
 
                 .about-backstory {
                     text-align: center; 
+                    font-family: 'Space Mono', monospace;
+
+                    .modal-heading {
+                        font-size: 30px;
+                    }
 
                     p {
-                        font-family: 'Space Mono', monospace;
                     }
 
                     
@@ -196,8 +200,7 @@
                         }
 
                     .intro-b3 {
-                        height: 8%;
-                        width: 25%;
+                        height: 25%;
                     } 
 
                     .how-to-small {
