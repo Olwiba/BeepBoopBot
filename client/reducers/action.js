@@ -19,14 +19,14 @@ export const runCommands = () => {
       if (!state.running) {
         clearInterval(interval)
       }
-      else if (state.robot.isAlive === false || state.moveLimit === state.executeCommandIndex) {
-        dispatch(nextCommand(HAS_FINISHED))
-        clearInterval(interval)
-      }
       else if (state.executeCommandIndex === state.commandQueue.length) {
         if (state.board[state.robot.positionY][state.robot.positionX] === 1) {
           dispatch(levelWon())
         }
+        dispatch(nextCommand(HAS_FINISHED))
+        clearInterval(interval)
+      }
+      else if (state.robot.isAlive === false || state.moveLimit === state.executeCommandIndex) {
         dispatch(nextCommand(HAS_FINISHED))
         clearInterval(interval)
       }
