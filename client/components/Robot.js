@@ -3,7 +3,6 @@ import {Motion, spring} from 'react-motion'
 import WinContainer from '../containers/WinContainer'
 
 class Robot extends Component {
-
   calcCenter() {
     var y = this.props.robot.positionY.toString()
     var x = this.props.robot.positionX.toString()
@@ -16,6 +15,7 @@ class Robot extends Component {
   render() {
     var centerPoints = this.calcCenter()
     return (
+      this.props.robot.isAlive ?
       <div>
         <Motion defaultStyle={{
           x: centerPoints[0],
@@ -30,18 +30,18 @@ class Robot extends Component {
             height: 60,
             width: 60,
             position: 'absolute',
-            top: value.y - 30,
-            left: value.x - 30,
+            top: value.y - 60,
+            left: value.x - 40,
             transform: `rotate(${value.rot}deg)`     
-                  
-            
           }}>
             <div className="b3-robot"></div>
             <div className="shadow"></div>
           </div>}
         </Motion>
-        <WinContainer {...this.props}/>
+        <WinContainer/>
       </div>
+      :
+      null
     )
   }
 }

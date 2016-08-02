@@ -16,20 +16,21 @@ export const runCommands = () => {
   return (dispatch, getState) => {
     var interval = setInterval(() => {
       var state = getState()
-      // If robot is not running or dead or moveLimit runs out, stop movment and change button to retry
-      if (!state.running || !state.robot.isAlive || state.moveLimit === state.executeCommandIndex) {
-        dispatch({type: HAS_FINISHED})
+      if (!state.running) {
         clearInterval(interval)
-        return
       }
-      if (state.executeCommandIndex === state.commandQueue.length) {
+      else if (state.robot.isAlive === false || state.moveLimit === state.executeCommandIndex) {
+        dispatch(nextCommand('HAS_FINISHED'))
+        clearInterval(interval)
+      }
+      else if (state.executeCommandIndex === state.commandQueue.length) {
         if (state.board[state.robot.positionY][state.robot.positionX] === 1) {
-          dispatch(nextCommand(LEVEL_WON))
+          dispatch(levelWon())
         }
         dispatch({type: HAS_FINISHED})
         clearInterval(interval)
-      } else {
-        // Sends movement command to robot
+      }
+      else {
         dispatch(nextCommand(state.commandQueue[state.executeCommandIndex]))
       }
     }, 800)
