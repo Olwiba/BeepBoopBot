@@ -27,11 +27,11 @@ class Robot extends Component {
           rot: spring(this.props.robot.direction)
         }}>
           {value => <div style={{
-            height: 60,
-            width: 60,
+            height: 100,
+            width: 100,
             position: 'absolute',
-            top: value.y - 30,
-            left: value.x - 30,
+            top: value.y - 50,
+            left: value.x - 50,
             transform: `rotate(${value.rot}deg)`     
           }}>
             <div className="b3-robot"></div>
