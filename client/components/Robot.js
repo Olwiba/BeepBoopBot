@@ -30,8 +30,8 @@ class Robot extends Component {
             height: 60,
             width: 60,
             position: 'absolute',
-            top: value.y - 30,
-            left: value.x - 30,
+            top: value.y - 60,
+            left: value.x - 40,
             transform: `rotate(${value.rot}deg)`     
                   
             
