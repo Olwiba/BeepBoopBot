@@ -7,13 +7,14 @@ function mapStateToProps (state) {
     commandQueue: state.commandQueue,
     running: state.running,
     executeCommandIndex: state.executeCommandIndex,
-    hasFinished: state.hasFinished
+    hasFinished: state.hasFinished,
+    moveLimit: state.moveLimit
   }
 }
 
 function mapDispatchToProps (dispatch) {
   return {
-    QUEUE_ACTION: (payload) => {
+    queueAction: (payload) => {
       dispatch(actions.queueAction(payload))
     },
     GO_BUTTON: () => {

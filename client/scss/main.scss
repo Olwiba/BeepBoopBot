@@ -28,13 +28,16 @@ $orange-dark: #c45d45;
 @import './commandQueue.scss';
 @import './runButton.scss';
 @import './robot.scss';
+@import './win.scss';
 
 /* Import Fonts */
 @import 'https://fonts.googleapis.com/css?family=Press+Start+2P';
+@import 'https://fonts.googleapis.com/css?family=Space+Mono';
 
 /* Fonts */
 
 $heading: 'Press Start 2P', cursive;
+$text: 'Space Mono', monospace;
 
 body {
 	overflow-y: hidden;
@@ -46,7 +49,7 @@ h1 {
 
 h3{
 	font-family: $heading;
-	font-size: 25px;
+	font-size: 22px;
 	color: $white;
 }
 

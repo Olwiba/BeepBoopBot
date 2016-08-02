@@ -28,11 +28,33 @@ class Win extends Component {
   }
 
   render () {
-    console.log('win props', this.props)
+
+    var winDialog = {
+      backgroundColor: '#00897B',
+      color: '#ffffff',
+      width: '70%',
+      height: '40%',
+      marginTop: '-10%',
+      marginLeft: '-35%',
+      borderRadius: '2%',
+      padding: '15px'
+
+    };
+
     return (
-      <SkyLight beforeClose={this._executeBeforeModalClose.bind(this)} hideOnOverlayClicked={true} ref='winBox' >
-        <p>You win!!</p>
-        <button onClick={() => { this.refs.winBox.hide() }}>OK</button>
+      <SkyLight beforeClose={this._executeBeforeModalClose.bind(this)} hideOnOverlayClicked={true} ref='winBox' dialogStyles={winDialog} >
+        <div className='win-notice'>
+        <img src='/resources/images/intro-b3.svg' className='intro-b3'/>
+        <p>Level Cleared!</p>
+        <p>Nice work, B3 made it to the elevator..</p>
+        <p>Your getting closer to the control room.</p>
+        <br/>
+        <div className='modal-button-container'>
+        <a className='modal-button modal-animate win-action' onClick={() => { this.refs.winBox.hide()}}>
+        Next Level
+        </a>
+        </div>
+        </div>
       </SkyLight>
     )
   }
