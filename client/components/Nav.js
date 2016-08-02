@@ -32,10 +32,6 @@ class Nav extends Component {
     var aboutDialog = {
       backgroundColor: '#00897B',
       color: '#ffffff',
-      // width: '70%',
-      // height: '60%',
-      // marginTop: '-20%',
-      // marginLeft: '-35%',
       borderRadius: '2%',
       padding: '0 30px 0 30px',
       overflowY: 'auto'
@@ -44,9 +40,6 @@ class Nav extends Component {
       backgroundColor: '#00897B',
       color: '#ffffff',
       width: '30%',
-      // height: '60%',
-      // marginTop: '-20%',
-      // marginLeft: '-35%',
       borderRadius: '2%',
       padding: '0 30px 0 30px',
       overflowY: 'auto'
