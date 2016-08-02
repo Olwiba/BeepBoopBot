@@ -41,4 +41,17 @@ test('MOVE_FORWARD action moves B3 forward (negative in y direction)', function 
   t.end()
 })
 
-// To test all other reducer actions
+test('SELECT_LEVEL updates the state', function (t) {
+  var initialState = reducer(undefined, {})
+  var beforeLevelChange = reducer(initialState, {type: actions.MOVE_FORWARD})
+  freeze(beforeLevelChange)
+
+  var newLevelNum = 4
+  var newState = reducer(beforeLevelChange, actions.setLevel(newLevelNum))
+
+  t.notDeepEqual(newState.board, beforeLevelChange.board, 'Board is changed')
+  t.notEqual(newState.robot.positionY, beforeLevelChange.robot.positionY, 'Robot positionY is reset')
+  t.notEqual(newState.robot.positionX, beforeLevelChange.robot.positonX, 'Robot positonX is reset')
+  t.equal(newState.currentLevel, newLevelNum, 'Current level is updated to the new level')
+  t.end()
+})

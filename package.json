@@ -14,7 +14,7 @@
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "build": "cd client && webpack --progress --profile --colors",
     "build:watch": "cd client && webpack --progress --profile --colors --watch",
-    "test": "cd client && babel-tape-runner test/*.js | tap-spec"
+    "test": "babel-tape-runner client/test/*.js | tap-spec"
   },
   "author": "olwiba",
   "license": "MIT",
