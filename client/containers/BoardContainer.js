@@ -8,7 +8,7 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
   return {
-    ADD_TILE_INFO: (tileInfo) => {
+    addTileInfo: (tileInfo) => {
       dispatch(actions.addTileInfo(tileInfo))
     }
   }

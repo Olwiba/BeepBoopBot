@@ -61,7 +61,7 @@ class Nav extends Component {
                   return (
                     <div
                       key={index}
-                      onClick={() => { this.props.SELECT_LEVEL(levelNum); this.refs.levelSelect.hide() }}
+                      onClick={() => { this.props.setLevel(levelNum); this.refs.levelSelect.hide() }}
                     >
                       <p>{'Level ' + levelNum}</p>
                     </div>
@@ -108,7 +108,7 @@ class Nav extends Component {
             </div>
           </SkyLight>
         </div>
-        <button onClick={this.props.TOGGLE_SOUND}> Sound </button>
+        <button onClick={this.props.toggleSound}> Sound </button>
       </div>
     )
   }
