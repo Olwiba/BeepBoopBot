@@ -47,7 +47,7 @@ export default {
     [0, 2, 0, 2, 0],
     [0, 2, 0, 0, 0]
     ],
-    moveLimit: 5
+    moveLimit: 10
   },
   6: {
     board: [
@@ -57,7 +57,7 @@ export default {
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0]
     ],
-    moveLimit: 5
+    moveLimit: 10
   },
   7: {
     board: [
@@ -67,7 +67,7 @@ export default {
     [2, 2, 2, 2, 2],
     [0, 0, 0, 0, 0]
     ],
-    moveLimit: 5
+    moveLimit: 10
   },
   8: {
     board: [
@@ -77,7 +77,7 @@ export default {
     [2, 2, 0, 2, 0],
     [0, 2, 0, 0, 0]
     ],
-    moveLimit: 5
+    moveLimit: 10
   },
   9: {
     board: [
@@ -87,7 +87,7 @@ export default {
     [2, 0, 2, 0, 2],
     [0, 2, 0, 2, 0]
     ],
-    moveLimit: 5
+    moveLimit: 10
   },
   10: {
     board: [
@@ -97,6 +97,6 @@ export default {
     [2, 2, 2, 2, 2],
     [0, 2, 3, 2, 3]
     ],
-    moveLimit: 5
+    moveLimit: 10
   }
 }

@@ -5,7 +5,6 @@ import classNames from 'classnames'
 class CommandQueue extends Component {
 
   render () {
-    console.log('queue props', this.props)
     let commandImgs = {}
     commandImgs[a.MOVE_FORWARD] = '/resources/images/move-forward.svg'
     commandImgs[a.JUMP_UP] = '/resources/images/jump.svg'
