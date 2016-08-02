@@ -89,12 +89,12 @@ class Nav extends Component {
           </SkyLight>
           <SkyLight hideOnOverlayClicked={true} ref='howToPlayBox' dialogStyles={aboutDialog} >
             <div className='about-backstory'>
-              <p>Aim:</p>
+              <h3 className='modal-heading'>Instructions</h3>
               <p>Get B3 <img src='/resources/images/b3-robot.svg' className='how-to-small' /> to the elevator <img src='/resources/images/elevator-top.svg' className='how-to-small' /> to make it to the next level. </p>
               <p>B3 only has a limited amount of battery for each level, so use moves wisely! </p>
               <p>You have to jump <img src='/resources/images/jump.svg' className='how-to-small' /> from box <img src='/resources/images/box-tile.svg' className='how-to-small' /> to box <img src='/resources/images/box-tile.svg' className='how-to-small' /> and avoid holes in the ground. </p>
               <div className='controls-container'>
-                <p>Controls:</p>
+                <h3>Controls</h3>
                 <p>Use <img src='/resources/images/go-button.svg' className='control-small' /> to move B3 forward.</p>
                 <p>Use <img src='/resources/images/rotate-left-button.svg' className='control-small' /> <img src='/resources/images/rotate-right-button.svg' className='control-small' /> to rotate B3 left & right.</p>
                 <p>Use <img src='/resources/images/jump-button.svg' className='how-to-small' /> to jump B3 on to a box.</p>

@@ -107,6 +107,25 @@
                     color: $blue-light;
                     border: 2px solid $blue-light;
 
+<<<<<<< HEAD
+=======
+                }
+
+
+                .skylight-dialog::-webkit-scrollbar-track {
+                    border-radius: 10px;
+                    background-color: rgba(0,0,0,0.0);
+                }
+
+                .skylight-dialog::-webkit-scrollbar {
+                    width: 12px;
+                    background-color: rgba(0,0,0,0.0);
+                }
+
+                .skylight-dialog::-webkit-scrollbar-thumb {
+                    border-radius: 10px;
+                    background-color: $blue-darkest;
+>>>>>>> ef8264cf582122410e871081c80f3e665272ebe8
                 }
 
 
@@ -117,6 +136,9 @@
                     p {
                         font-family: 'Space Mono', monospace;
                     }
+
+                    
+
 
                     .modal-button-container {
                         height: 5%;

@@ -92,6 +92,15 @@
     .navigation .levels-container .about:hover {
       color: #60afbc;
       border: 2px solid #60afbc; }
+    .navigation .levels-container .skylight-dialog::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: transparent; }
+    .navigation .levels-container .skylight-dialog::-webkit-scrollbar {
+      width: 12px;
+      background-color: transparent; }
+    .navigation .levels-container .skylight-dialog::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: #02333a; }
     .navigation .levels-container .about-backstory {
       text-align: center; }
       .navigation .levels-container .about-backstory p {
