@@ -101,6 +101,151 @@
                     border: 2px solid $blue-light;
                 }
 
+                .about-backstory {
+                    text-align: center; 
+
+                    p {
+                        font-family: 'Space Mono', monospace;
+                    }
+
+                    .modal-button-container {
+                        height: 10%;
+                        width: 100%;
+                        display:flex;
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+                        justify-content: center;
+                        align-content: center;
+                        align-items: center;
+
+                         @media screen and (max-width: 850px) {
+                            height: 30%;
+                            width: 76%;
+                        } 
+                            .modal-button {
+                                margin: 10px;
+                                height: 80%;
+                                width: 150px;
+                                min-width:45px;
+                                padding: 10px 30px;
+                                border-radius: 5%;
+                                display: flex;
+                                justify-content: center;
+                                align-content: center;
+                                align-items: center;
+                                text-shadow: 0px -2px rgba(0, 0, 0, 0.2);
+                                cursor: default;
+
+
+                                @media screen and (max-width: 850px) {
+                                    margin: 8px;
+                                    height: 42px;
+                                    min-width: 27px;
+                                }
+                            }
+
+                            .how-to-action {
+                                background: $green;
+                                border-bottom: 12px solid $green-dark;
+                            }
+
+                            .how-to-action:hover {
+                                background: #93cc67;
+                                border-bottom: 12px solid #70ab42;
+                            }
+
+                            .modal-animate {
+                                transition: all 0.2s;
+                                -webkit-transition: all 0.2s;
+                            }
+
+                            .modal-button:active {
+                                transform: translate(0px,6px);
+                                -webkit-transform: translate(0px,6px);
+                                border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+                            }
+
+                        }
+
+                    .intro-b3 {
+                        height: 25%;
+                        width: 25%;
+                    } 
+
+                    .how-to-small {
+                        height: 10%;
+                        width: 10%;
+                    } 
+
+                    .controls-container {
+                        border-top: 3px solid $blue-darker;
+                    }
+
+                    .about-button {
+                        margin: 5px;
+                        height: 50px;
+                        width: 50px;
+                        border-radius: 10px;
+
+                        background: $white-dark;
+                        border-bottom: 7px solid #a4a4a4; 
+
+                        @media screen and (max-width: 850px) {
+                            margin: 9px 0 37px 9px;
+                            height: 46px;
+                            width: 70px;
+                        }
+                    }
+
+                    .about-icon {
+                        height: 4%;
+                        width: 4%;
+                    }
+
+                    .about-forward {
+                        background: $green;
+                        border-bottom: 7px solid $green-dark;
+                    }
+
+                    .about-forward:hover {
+                        background: #93cc67;
+                        border-bottom: 7px solid #70ab42;
+                    }
+
+                    .about-rotate {
+                        background: $orange;
+                        border-bottom: 7px solid $orange-dark;
+                    }
+
+                    .about-rotate:hover {
+                        background: #ee9272;
+                        border-bottom: 7px solid #cf7d6a;
+                    }
+
+                    .about-jump {
+                        background: $yellow;
+                        border-bottom: 7px solid $yellow-dark;
+                    }
+
+                    .about-jump:hover {
+                        background: #ecdf32;
+                        border-bottom: 7px solid #cfc336;
+                    }
+
+                    .about-animate {
+                        transition: all 0.1s;
+                        -webkit-transition: all 0.1s;
+                    }
+
+                    .about-button:active {
+                        transform: translate(0px,7px);
+                          -webkit-transform: translate(0px,7px);
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+                    }               
+                }
+
+                
+
                 .levels {
                 height: 100%;
                 width: 250px;
