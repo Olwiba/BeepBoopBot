@@ -36,7 +36,9 @@ class Win extends Component {
       height: '40%',
       marginTop: '-10%',
       marginLeft: '-35%',
-      borderRadius: '2%'
+      borderRadius: '2%',
+      padding: '15px'
+
     };
 
     return (
