@@ -25,7 +25,7 @@ export const runCommands = () => {
       }
       else if (state.executeCommandIndex === state.commandQueue.length) {
         if (state.board[state.robot.positionY][state.robot.positionX] === 1) {
-          dispatch(nextCommand("LEVEL_WON"))
+          dispatch(levelWon())
         }
         dispatch({type: 'HAS_FINISHED'})
         clearInterval(interval)
