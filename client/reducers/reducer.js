@@ -26,6 +26,7 @@ export function cloneState (state) {
   return {
     robot: {...state.robot},
     board: state.board.map(row => row.slice()),
+    moveLimit: state.movesLeft,
     commandQueue: [...state.commandQueue],
     running: state.running,
     executeCommandIndex: state.executeCommandIndex,
@@ -60,11 +61,11 @@ const reducer = (state = INITIAL_STATE, action) => {
       newState.robot = INITIAL_STATE.robot
       newState.executeCommandIndex = 0
       newState.hasFinished = false
+      // newState.movesLeft = newState.board
       return newState
 
     case a.SELECT_LEVEL:
       newState.board = levels[action.payload].board
-      newState.tileInfo = state.tileInfo
       newState.currentLevel = action.payload
       newState.robot.isAlive = true
       return newState
@@ -109,6 +110,10 @@ const reducer = (state = INITIAL_STATE, action) => {
     case a.HAS_FINISHED:
       newState.hasFinished = true
       return newState
+
+    // case a.DECREASE_MOVES_LEFT:
+    //   newState.movesLeft--
+    //   return newState
 
     default:
       return state

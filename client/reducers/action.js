@@ -11,6 +11,7 @@ export const QUEUE_ACTION = 'QUEUE_ACTION'
 export const HAS_FINISHED = 'HAS_FINISHED'
 export const LEVEL_WON = 'LEVEL_WON'
 export const REMOVE_ACTION = 'REMOVE_ACTION'
+// export const DECREASE_MOVES_LEFT = 'DECREASE_MOVES_LEFT'
 
 export const runCommands = () => {
   return (dispatch, getState) => {
@@ -27,7 +28,9 @@ export const runCommands = () => {
         dispatch({type: 'HAS_FINISHED'})
         clearInterval(interval)
       } else {
+        // Sends movement command to robot
         dispatch(nextCommand(state.commandQueue[state.executeCommandIndex]))
+        // dispatch(nextCommand(DECREASE_MOVES_LEFT))
       }
     }, 800)
   }
@@ -88,3 +91,9 @@ export const removeAction = (commandIndex) => {
     payload: commandIndex
   }
 }
+
+// export const decreaseMovesLeft = () => {
+//   return {
+//     type: DECREASE_MOVES_LEFT
+//   }
+// }
