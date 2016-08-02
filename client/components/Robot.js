@@ -14,6 +14,14 @@ class Robot extends Component {
     return [centerX, centerY]
   }
 
+  isJumping() {
+    if (this.props.robot.jump == true) {
+
+    } else {
+
+    }
+  }
+
   render() {
     var centerPoints = this.calcCenter()
     return (
@@ -33,18 +41,16 @@ class Robot extends Component {
             position: 'absolute',
             top: value.y - 30,
             left: value.x - 30,
-            transform: `rotate(${value.rot}deg)`     
-                  
-            
+            transform: `rotate(${value.rot}deg)`
           }}>
           <ReactMotionLoop
-            styleFrom={{width: spring(63, {stiffness: 120, damping: 9}), height: spring(63)}}
-            styleTo={{width: spring(60, {stiffness: 120, damping: 9}), height: spring(60)}}>
+            styleFrom={{width: spring(62, {stiffness: 100, damping: 1, precision: 1})}}
+            styleTo={{width: spring(60, {stiffness: 100, damping: 1, precision: 1})}}>
             {style => <div className="b3-robot" style={style} />}
           </ReactMotionLoop>
           <ReactMotionLoop
-            styleFrom={{width: spring(57, {stiffness: 120, damping: 9}), height: spring(57)}}
-            styleTo={{width: spring(60, {stiffness: 120, damping: 9}), height: spring(60)}}>
+            styleFrom={{width: spring(58, {stiffness: 100, damping: 1, precision: 1})}}
+            styleTo={{width: spring(60, {stiffness: 100, damping: 1, precision: 1})}}>
             {style => <div className="shadow" style={style} />}
           </ReactMotionLoop>
           </div>}
