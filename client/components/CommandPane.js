@@ -11,6 +11,8 @@ class CommandPane extends Component {
         <div className='command-container'>
           <CommandQueue {...this.props} />
         </div>
+        <div className='moves-left'>Moves left: {this.props.moveLimit - this.props.commandQueue.length}</div>
+
         <div className='runButtons-container'>
           <RunButtons {...this.props} />
         </div>

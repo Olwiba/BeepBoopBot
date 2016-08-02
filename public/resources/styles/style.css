@@ -144,6 +144,11 @@
   .command-pane .command-queue::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: #02333a; }
+  .command-pane .moves-left {
+    height: 9%;
+    order: 2;
+    font-size: 23px;
+    color: white; }
   .command-pane .command-container {
     height: 30%;
     width: 80%;

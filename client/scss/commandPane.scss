@@ -45,7 +45,12 @@ $actionButtonElevation: 7px;
         border-radius: 10px;
         background-color: $blue-darkest;
     }
-
+    .moves-left {
+        height: 9%;
+        order: 2;
+        font-size: 23px;
+        color: white;
+    }
     .command-container {
         height: 30%;
         width: 80%;
