@@ -54,7 +54,7 @@
 	@media screen and (max-width: 850px) {
 	    height: 77%;
 	    width: 58%;
-	    
+
 	}
 
 	   @media screen and (max-width: 700px) {
@@ -111,24 +111,23 @@
 		}
 
 		.box-tile {
-			width: 70%;
-			margin-bottom: 10%; 
+			width: 90%;
+			margin-bottom: 20%;
 		}
 
 		.elevator-tile {
 			width: 70%;
-			margin-bottom: 10%; 
+			margin-bottom: 10%;
 		}
 
-		.elevator-bottom {	
+		.elevator-bottom {
 			background: url('/resources/images/elevator-below.svg') no-repeat ;
 			background-size: 75%;
 			background-position: center center;
-			margin-bottom: -4%; 
+			margin-bottom: -4%;
 			display:flex;
 			justify-content: center;
-			align-content: center; 		
+			align-content: center;
 		}
 
 }
-
