@@ -1,6 +1,5 @@
 import { connect } from 'react-redux'
 import Win from '../components/Win'
-import levels from '../levels'
 import * as actions from '../reducers/action'
 
 function mapStateToProps (state) {
