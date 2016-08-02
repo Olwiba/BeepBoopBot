@@ -17,6 +17,7 @@ export const runCommands = () => {
     var interval = setInterval(() => {
       var state = getState()
       if (state.running === false || state.robot.isAlive == false) {
+        dispatch({type: 'HAS_FINISHED'})
         clearInterval(interval)
         return
       }
