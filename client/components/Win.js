@@ -23,11 +23,9 @@ class Win extends Component {
 
   _executeBeforeModalClose () {
     this.props.LEVEL_WON()
-    console.log('ff', this.props.currentLevel)
     const newLevel = this.props.currentLevel + 1 === 11
     ? 1
     : this.props.currentLevel + 1
-    console.log('next level', newLevel)
     this.props.SELECT_LEVEL(newLevel)
   }
 
@@ -39,9 +37,9 @@ class Win extends Component {
       height: '40%',
       marginTop: '-10%',
       marginLeft: '-35%',
-      borderRadius: '2%'
+      borderRadius: '2%',
+      padding: '15px'
     }
-    console.log('win props', this.props)
 
     return (
       <div>

@@ -38,7 +38,8 @@ class Nav extends Component {
       height: '80%',
       marginTop: '-20%',
       marginLeft: '-35%',
-      borderRadius: '2%'
+      borderRadius: '2%',
+       padding: '0 30px 0 30px'
     };
 
     return (

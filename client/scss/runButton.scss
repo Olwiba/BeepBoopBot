@@ -17,7 +17,7 @@
         .run-button {
             margin: 10px;
             height: 60px;
-            width: 60px;
+            width: 70px;
             min-width:45px;
             padding: 10px 30px;
             border-radius: 25%;
@@ -52,11 +52,21 @@
         }
 
         .stop-action {
+            background: $red;
+            border-bottom: 12px solid $red-dark;
+        }
+
+        .stop-action:hover {
+            background: #dd5a51;
+            border-bottom: 12px solid #ba5a51;
+        }
+
+        .retry-action {
             background: $orange;
             border-bottom: 12px solid $orange-dark;
         }
 
-        .stop-action:hover {
+        .retry-action:hover {
             background: #ee9272;
             border-bottom: 12px solid #cf7d6a;
         }
