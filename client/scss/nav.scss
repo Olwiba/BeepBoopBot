@@ -106,7 +106,6 @@
                 .about:hover {
                     color: $blue-light;
                     border: 2px solid $blue-light;
-
                 }
 
                 .level-select-container {
@@ -125,7 +124,10 @@
                 .skylight-dialog::-webkit-scrollbar-thumb {
                     border-radius: 10px;
                     background-color: $blue-darkest;
+
                 }
+
+
 
                 .about-backstory {
                     text-align: center; 
