@@ -83,6 +83,12 @@
       font-size: 20px;
       color: #1c8da0;
       cursor: help; }
+      @media screen and (max-width: 850px) {
+        .navigation .levels-container .about {
+          width: 20%;
+          padding: 0 20%;
+          margin-right: 20%;
+          right: 20px; } }
     .navigation .levels-container .about:hover {
       color: #60afbc;
       border: 2px solid #60afbc; }
@@ -135,10 +141,10 @@
           -webkit-transform: translate(0px, 6px);
           border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
       .navigation .levels-container .about-backstory .intro-b3 {
-        height: 25%;
+        height: 8%;
         width: 25%; }
       .navigation .levels-container .about-backstory .how-to-small {
-        height: 10%;
+        height: 8%;
         width: 10%; }
       .navigation .levels-container .about-backstory .control-small {
         height: 7%;
@@ -249,7 +255,8 @@
     @media screen and (max-width: 750px) {
       .command-pane .runButtons-container {
         height: 30%;
-        width: 58%; } }
+        width: 58%;
+        border-top: none; } }
   .command-pane .action-button-container {
     height: 28%;
     width: 80%;
