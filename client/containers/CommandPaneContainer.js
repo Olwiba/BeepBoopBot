@@ -8,7 +8,7 @@ function mapStateToProps (state) {
     running: state.running,
     executeCommandIndex: state.executeCommandIndex,
     hasFinished: state.hasFinished,
-    movesLeft: state.movesLeft
+    moveLimit: state.moveLimit
   }
 }
 

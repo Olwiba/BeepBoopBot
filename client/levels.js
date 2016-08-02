@@ -7,7 +7,7 @@ export default {
       [0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0]
     ],
-    moveLimit: 5
+    moveLimit: 4
   },
   2: {
     board: [
@@ -27,7 +27,7 @@ export default {
     [2, 0, 0, 0, 0],
     [0, 0, 0, 0, 0]
     ],
-    moveLimit: 5
+    moveLimit: 6
   },
   4: {
     board: [
@@ -37,7 +37,7 @@ export default {
     [0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0]
     ],
-    moveLimit: 5
+    moveLimit: 7
   },
   5: {
     board: [
