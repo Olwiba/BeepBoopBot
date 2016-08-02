@@ -110,6 +110,20 @@
                 }
 
 
+                .skylight-dialog::-webkit-scrollbar-track {
+                    border-radius: 10px;
+                    background-color: rgba(0,0,0,0.0);
+                }
+
+                .skylight-dialog::-webkit-scrollbar {
+                    width: 12px;
+                    background-color: rgba(0,0,0,0.0);
+                }
+
+                .skylight-dialog::-webkit-scrollbar-thumb {
+                    border-radius: 10px;
+                    background-color: $blue-darkest;
+                }
 
                 .about-backstory {
                     text-align: center; 
@@ -117,6 +131,9 @@
                     p {
                         font-family: 'Space Mono', monospace;
                     }
+
+                    
+
 
                     .modal-button-container {
                         height: 5%;
