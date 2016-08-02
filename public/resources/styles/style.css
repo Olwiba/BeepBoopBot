@@ -104,6 +104,10 @@
       border-radius: 10px;
       background-color: #02333a; }
     .navigation .levels-container .about-backstory {
+      text-align: center;
+      font-family: 'Space Mono', monospace; }
+      .navigation .levels-container .about-backstory .modal-heading {
+        font-size: 30px; }
       text-align: center; }
       .navigation .levels-container .about-backstory p {
         font-family: 'Space Mono', monospace; }
@@ -173,8 +177,7 @@
           -webkit-transform: translate(0px, 6px);
           border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
       .navigation .levels-container .about-backstory .intro-b3 {
-        height: 8%;
-        width: 25%; }
+        height: 25%; }
       .navigation .levels-container .about-backstory .how-to-small {
         height: 8%;
         width: 10%; }
