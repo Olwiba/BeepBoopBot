@@ -44,7 +44,7 @@ class Robot extends Component {
         <AudioContainer />
       </div>
       :
-      null
+      <AudioContainer />
     )
   }
 }

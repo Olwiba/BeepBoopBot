@@ -11,6 +11,7 @@ export const QUEUE_ACTION = 'QUEUE_ACTION'
 export const HAS_FINISHED = 'HAS_FINISHED'
 export const LEVEL_WON = 'LEVEL_WON'
 export const REMOVE_ACTION = 'REMOVE_ACTION'
+export const TOGGLE_SOUND = 'TOGGLE_SOUND'
 
 export const runCommands = () => {
   return (dispatch, getState) => {
@@ -98,3 +99,9 @@ export const removeAction = (commandIndex) => {
 //     type: DECREASE_MOVES_LEFT
 //   }
 // }
+
+export const toggleSound = () => {
+  return {
+    type: TOGGLE_SOUND
+  }
+}

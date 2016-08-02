@@ -1,17 +1,17 @@
-import React, { Component} from 'react';
+import React, { Component }from 'react';
 import Sound from 'react-sound';
 import songs from '../sound';
 import TileInFront from '../reducers/lib/tileInFront'
 
-export default class Audio extends Component {
+export default class Backgroundtrack extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      currentSong: songs[0],
+      currentSong: songs[2],
       position: 0,
-      volume: 100,
-      playStatus: Sound.status.STOPPED
+      volume: 25,
+      playStatus: Sound.status.PLAYING
     };
   }
   getStatusText() {
@@ -26,26 +26,14 @@ export default class Audio extends Component {
         return '(unknown)';
     }
   }
-  componentDidUpdate() {
-    if(!this.props.hasFinished && this.props.running) {
-      if(this.props.commandQueue[this.props.executeCommandIndex] === 'JUMP_UP' && TileInFront(this.props.robot, this.props.board)===2){
-        this.setState({
-          playStatus : Sound.status.PLAYING
-        })
-      }
-    }
-    else if (!this.props.robot.isAlive){
-      this.setState({
-        currentSong: songs[1],
-        playStatus : Sound.status.PLAYING
-      })
-    }
-  }
 
-  renderCurrentSong() {
-    return <p>
-      Current song {this.state.currentSong.title}. Song is {this.getStatusText()}
-    </p>;
+  componentDidUpdate() {
+    if(this.props.sound){
+      this.setState({playStatus: Sound.status.PLAYING})
+    }
+    else {
+      this.setState({playStatus: Sound.status.STOPPED})
+    }
   }
 
   handleSongSelected(song) {
@@ -63,7 +51,7 @@ export default class Audio extends Component {
           volume={volume}
           onLoading={({bytesLoaded, bytesTotal}) => console.log(`${bytesLoaded / bytesTotal * 100}% loaded`)}
           onPlaying={({position}) => console.log(position)}
-          onFinishedPlaying={() => this.setState({playStatus: Sound.status.STOPPED})} />
+          onFinishedPlaying={() => this.setState({playStatus: Sound.status.PLAYING})} />
     </div>
     )
   }

@@ -12,6 +12,9 @@ function mapDispatchToProps (dispatch) {
   return {
     SELECT_LEVEL: (levelNum) => {
       dispatch(actions.selectLevel(levelNum))
+    },
+    TOGGLE_SOUND: () => {
+      dispatch(actions.toggleSound())
     }
   }
 }

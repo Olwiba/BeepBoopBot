@@ -5,6 +5,16 @@ export default [
     duration: 0
   },
   {
+    url: './resources/sound/dying.wav',
+    title: 'dying',
+    duration: 0
+  },
+  {
+    url: './resources/sound/background.wav',
+    title: 'dying',
+    duration: 0
+  },
+  {
      url: 'https://raw.githubusercontent.com/scottschiller/SoundManager2/master/demo/_mp3/440hz.mp3',
      title: '440hz',
      duration: 0
