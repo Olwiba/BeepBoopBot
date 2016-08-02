@@ -1,6 +1,7 @@
 import React from 'react';
 import Sound from 'react-sound';
 import songs from '../sound';
+import TileInFront from '../reducers/lib/tileInFront'
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -25,11 +26,13 @@ export default class Example extends React.Component {
         return '(unknown)';
     }
   }
-  componentDidMount() {
-    if(this.props.commandQueue[this.props.executeCommandIndex]){
-      this.setState({
-        playStatus : Sound.status.PLAYING
-      })
+  componentDidUpdate() {
+    if(!this.props.hasFinished && this.props.running) {
+      if(this.props.commandQueue[this.props.executeCommandIndex] === 'JUMP_UP' && TileInFront(this.props.robot, this.props.board)===2){
+        this.setState({
+          playStatus : Sound.status.PLAYING
+        })
+      }
     }
   }
 
