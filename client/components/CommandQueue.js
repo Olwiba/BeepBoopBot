@@ -17,7 +17,7 @@ class CommandQueue extends Component {
           return (
             <div
               key={i}
-              onClick={!this.props.running ? () => { this.props.REMOVE_ACTION(i) } : null}
+              onClick={!this.props.running ? () => { this.props.removeAction(i) } : null}
               className={
                 classNames('commandQueueIcon', {
                   'commandQueueIcon-active': this.props.executeCommandIndex - 1 === i && this.props.running && !this.props.hasFinished,
