@@ -68,7 +68,7 @@ class Nav extends Component {
                   return (
                     <div
                       key={index}
-                      onClick={() => { this.props.SELECT_LEVEL(levelNum); this.refs.levelSelect.hide() }}
+                      onClick={() => { this.props.setLevel(levelNum); this.refs.levelSelect.hide() }}
                     >
                       <p>{'Level ' + levelNum}</p>
                     </div>
