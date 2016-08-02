@@ -80,7 +80,7 @@ export const removeAction = (commandIndex) => {
     type: REMOVE_ACTION,
     payload: commandIndex
   }
-
+}
 export const toggleSound = () => {
   return {
     type: TOGGLE_SOUND

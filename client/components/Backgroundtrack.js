@@ -28,6 +28,8 @@ export default class Backgroundtrack extends Component {
   }
 
   componentDidUpdate(){
+    const isAlreadySet = this.state.playStatus === Sound.status.PLAYING
+    if (isAlreadySet) return
     if(this.props.sound){
       this.setState({playStatus: Sound.status.PLAYING})
     }
