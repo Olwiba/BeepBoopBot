@@ -91,7 +91,7 @@
       .navigation .levels-container .about-backstory p {
         font-family: 'Space Mono', monospace; }
       .navigation .levels-container .about-backstory .modal-button-container {
-        height: 10%;
+        height: 5%;
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -140,48 +140,11 @@
       .navigation .levels-container .about-backstory .how-to-small {
         height: 10%;
         width: 10%; }
+      .navigation .levels-container .about-backstory .control-small {
+        height: 7%;
+        width: 7%; }
       .navigation .levels-container .about-backstory .controls-container {
         border-top: 3px solid #006073; }
-      .navigation .levels-container .about-backstory .about-button {
-        margin: 5px;
-        height: 50px;
-        width: 50px;
-        border-radius: 10px;
-        background: #cbcbcb;
-        border-bottom: 7px solid #a4a4a4; }
-        @media screen and (max-width: 850px) {
-          .navigation .levels-container .about-backstory .about-button {
-            margin: 9px 0 37px 9px;
-            height: 46px;
-            width: 70px; } }
-      .navigation .levels-container .about-backstory .about-icon {
-        height: 4%;
-        width: 4%; }
-      .navigation .levels-container .about-backstory .about-forward {
-        background: #78c042;
-        border-bottom: 7px solid #4d9713; }
-      .navigation .levels-container .about-backstory .about-forward:hover {
-        background: #93cc67;
-        border-bottom: 7px solid #70ab42; }
-      .navigation .levels-container .about-backstory .about-rotate {
-        background: #ea7750;
-        border-bottom: 7px solid #c45d45; }
-      .navigation .levels-container .about-backstory .about-rotate:hover {
-        background: #ee9272;
-        border-bottom: 7px solid #cf7d6a; }
-      .navigation .levels-container .about-backstory .about-jump {
-        background: #e8d700;
-        border-bottom: 7px solid #c4b505; }
-      .navigation .levels-container .about-backstory .about-jump:hover {
-        background: #ecdf32;
-        border-bottom: 7px solid #cfc336; }
-      .navigation .levels-container .about-backstory .about-animate {
-        transition: all 0.1s;
-        -webkit-transition: all 0.1s; }
-      .navigation .levels-container .about-backstory .about-button:active {
-        transform: translate(0px, 7px);
-        -webkit-transform: translate(0px, 7px);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
     .navigation .levels-container .levels {
       height: 100%;
       width: 250px;
