@@ -106,9 +106,10 @@
                 .about:hover {
                     color: $blue-light;
                     border: 2px solid $blue-light;
-
                 }
 
+                .level-select-container {
+                    padding: 5% 10% 5% 10%;
 
                 .skylight-dialog::-webkit-scrollbar-track {
                     border-radius: 10px;
@@ -123,16 +124,44 @@
                 .skylight-dialog::-webkit-scrollbar-thumb {
                     border-radius: 10px;
                     background-color: $blue-darkest;
+
                 }
+
+
 
                 .about-backstory {
                     text-align: center; 
+                    font-family: 'Space Mono', monospace;
 
-                    p {
-                        font-family: 'Space Mono', monospace;
+                    .modal-heading {
+                        font-size: 30px;
                     }
 
-                    
+                    .level-select{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        align-content: center; 
+                        height: 10%;
+                        width:  100%;
+                        border-radius: 10px;
+                        border: 2px solid $blue;
+                        background: $blue-darkest;
+                        font-size: 20px;
+                        color: $blue;
+                        cursor: default;
+
+                            @media screen and (max-width: 850px) {
+                                width: 20%;
+                                padding: 0 20%;
+                                right: 20px;
+                            }
+                    }
+
+                    .level-select:hover {
+                    color: $blue-light;
+                    border: 2px solid $blue-light;
+                    }
 
 
                     .modal-button-container {
@@ -196,8 +225,7 @@
                         }
 
                     .intro-b3 {
-                        height: 8%;
-                        width: 25%;
+                        height: 25%;
                     } 
 
                     .how-to-small {
