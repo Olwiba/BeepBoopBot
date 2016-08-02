@@ -7,7 +7,7 @@ $actionButtonElevation: 7px;
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-content: center;
     align-items: center;
     padding-top: 2%;
@@ -28,20 +28,17 @@ $actionButtonElevation: 7px;
 
     }
 
-    .command-queue::-webkit-scrollbar-track
-    {
+    .command-queue::-webkit-scrollbar-track {
         border-radius: 10px;
         background-color: rgba(0,0,0,0.0);
     }
 
-    .command-queue::-webkit-scrollbar
-    {
+    .command-queue::-webkit-scrollbar {
         width: 12px;
         background-color: rgba(0,0,0,0.0);
     }
 
-    .command-queue::-webkit-scrollbar-thumb
-    {
+    .command-queue::-webkit-scrollbar-thumb {
         border-radius: 10px;
         background-color: $blue-darkest;
     }
