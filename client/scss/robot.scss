@@ -10,17 +10,18 @@
 
 .b3-robot {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 130%;
+  height: 134%;
   background: url('../images/b3-robot.svg') no-repeat;
   background-size: 100%;
-  z-index: 100; 
+  z-index: 100;
 
   @media screen and (max-width: 850px) {
       position: absolute;
-      width: 72%;
-      height: 79%;
-      left: 10;
+      width: 70%;
+      height: 87%;
+      left: 21px;
+      top: 20px;
       background: url("../images/b3-robot.svg") no-repeat;
       background-size: 100%;
       z-index: 100;
@@ -29,9 +30,10 @@
 
 .shadow {
   position: absolute;
-  top: 20%;
-  width: 50px;
-  height: 50px;
+  top: 62%;
+  left: 19%;
+  width: 90%;
+  height: 90%;
   border-radius: 50%;
   background-color: rgba(0,0,0,0.2);
   z-index: 5;
@@ -39,8 +41,8 @@
   @media screen and (max-width: 850px) {
 
     position: absolute;
-    top: 20%;
-    left: 18%;
+    top: 58%;
+    left: 35%;
     width: 69%;
     height: 69%;
     border-radius: 50%;
