@@ -14,9 +14,6 @@ class CommandPane extends Component {
           <CommandQueue {...this.props} />
         </div>
 
-        <div className='runButtons-container'>
-          <RunButtons {...this.props} />
-        </div>
         <div className='action-button-container'>
           <a className={classNames(
             'action-button',
@@ -50,6 +47,9 @@ class CommandPane extends Component {
             onClick={this.props.running || (this.props.moveLimit - this.props.commandQueue.length < 1) ? null : () => { this.props.queueAction('JUMP_UP') }}>
             <img src='/resources/images/jump.svg' className='action-icon' />
           </a>
+        </div>
+        <div className='runButtons-container'>
+          <RunButtons {...this.props} />
         </div>
       </section>
     )
