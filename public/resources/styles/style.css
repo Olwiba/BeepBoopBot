@@ -331,6 +331,31 @@
       width: 98%;
       height: 47%; } }
 
+.board-background {
+  background-color: black;
+  background-image: radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 5px), radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 6px), radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 8px), radial-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1) 2px, transparent 10px);
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px; }
+
+.board-container.basement {
+  background: url("/resources/images/rust.jpg"); }
+
+.board-container.engine {
+  background: url("/resources/images/metal-cross.png") #0d0f09; }
+
+.board-container.cargo {
+  background: url("/resources/images/rust.jpg"); }
+
+.board-container.garden {
+  background: url("/resources/images/dirt.svg") #5B3000;
+  background-size: 25%; }
+
+.board-container.control {
+  background: url("/resources/images/rust.jpg"); }
+
+/*.board-container.cargo {
+	background: $blue;
+}*/
 .board-container {
   height: 88%;
   width: 65%;
@@ -342,9 +367,8 @@
   align-content: center;
   align-items: center;
   border-radius: 15px;
-  background-color: #f2f2f2;
-  border-bottom: 2vh solid #02333a;
-  background: #1c8da0; }
+  border-bottom: 2vh solid rgba(0, 0, 0, 0.5);
+  /*background: $blue;*/ }
   @media screen and (max-width: 1600px) {
     .board-container {
       height: 82%;
@@ -399,10 +423,18 @@
     background: url("/resources/images/wall.png") #ea7750; }
   .board-container .basement.even {
     background: url("/resources/images/asfalt-light.png") #c45d45; }
+  .board-container .engine.odd {
+    background: url("/resources/images/brushed-light.png") #78c042; }
+  .board-container .engine.even {
+    background: url("/resources/images/brushed-dark.png") #4d9713; }
   .board-container .cargo.odd {
     background: url("/resources/images/brushed-light.png") #78c042; }
   .board-container .cargo.even {
     background: url("/resources/images/brushed-dark.png") #4d9713; }
+  .board-container .garden.odd {
+    background: url("/resources/images/grass-1.svg") #78c042; }
+  .board-container .garden.even {
+    background: url("/resources/images/grass-2.svg") #4d9713; }
   .board-container .box-tile {
     width: 90%;
     margin-bottom: 20%; }
