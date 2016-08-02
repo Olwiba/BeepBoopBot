@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import cookie from 'react-cookie'
 import SkyLight from 'react-skylight'
-import classNames from 'classnames'
-import LevelSelect from './LevelSelect'
 import levels from '../levels'
 
 class Nav extends Component {
@@ -45,16 +43,14 @@ class Nav extends Component {
     var levelsModalStyle = {
       backgroundColor: '#00897B',
       color: '#ffffff',
-      width: '70%',
-      height: '80%',
-      marginTop: '-20%',
-      marginLeft: '-35%',
+      width: '30%',
+      // height: '60%',
+      // marginTop: '-20%',
+      // marginLeft: '-35%',
       borderRadius: '2%',
-      padding: '0 30px 0 30px'
+      padding: '0 30px 0 30px',
+      overflowY: 'auto'
     }
-    var keys = Object.keys(levels)
-    console.log('keys', this.props)
-
     return (
       <div className='navigation'>
         <div className='invisible-container'>
@@ -64,7 +60,7 @@ class Nav extends Component {
         </div>
         <div className='levels-container'>
           <div className='levels' onClick={() => this.refs.levelSelect.show()} >{'Level ' + this.props.currentLevel}</div>
-          <SkyLight hideOnOverlayClicked={true} ref='levelSelect' dialogStyles={aboutDialog} >
+          <SkyLight hideOnOverlayClicked={true} ref='levelSelect' dialogStyles={levelsModalStyle} >
             <div className='about-backstory'>
               <p>Select a level to play</p>
               {

@@ -191,7 +191,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: 100%;
+                height: 92%;
                 width: 250px;
                 border-radius: 10px 0 0 10px;
                 border: 2px solid $blue;
@@ -200,18 +200,24 @@
                 font-size: 14px;
                 color: $blue;
                 padding-left: 40px;
+                cursor: pointer;
 
                     @media screen and (max-width: 450px) {
                         width: 25%;
                         background: url('/resources/images/burger-button.png') no-repeat;
                         background-position: center center;
                         background-size: 90%;
+                        color: transparent;
                     }
                 }
 
                 .levels:hover {
                     color: $blue-light;
                     border: 2px solid $blue-light;
+                    @media screen and (max-width: 450px) {
+                        color: transparent;
+                    }
+
                 }
 
                 .level-option{
