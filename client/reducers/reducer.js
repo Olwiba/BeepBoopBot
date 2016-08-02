@@ -68,7 +68,7 @@ const reducer = (state = INITIAL_STATE, action) => {
       newLevelState.board = levels[action.payload].board
       newLevelState.moveLimit = levels[action.payload].moveLimit
       newLevelState.tileInfo = state.tileInfo
-      newLevelState.currentLevel = action.payload
+      newLevelState.currentLevel = parseInt(action.payload)
       return newLevelState
 
     case a.MOVE_FORWARD:
