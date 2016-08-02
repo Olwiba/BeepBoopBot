@@ -67,7 +67,7 @@ class Robot extends Component {
               {style => <img src="/resources/images/b3-robot.svg" className="b3-robot" style={style}/>}
             </ReactMotionLoop>
             <ReactMotionLoop styleFrom={{
-              width: spring(size - 2, {
+              width: spring(size - 4, {
                 stiffness: stiffnessStrength,
                 damping: dampingStrength,
                 precision: precisionStrength

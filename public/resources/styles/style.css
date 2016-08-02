@@ -541,8 +541,7 @@
     .b3-robot {
       position: absolute;
       width: 40%;
-      top: 30%;
-      left: 30%;
+      top: 40%;
       height: 40%;
       background-size: 100%;
       z-index: 100; } }
@@ -559,12 +558,10 @@
   @media screen and (max-width: 850px) {
     .shadow {
       position: absolute;
-      top: 51%;
-      left: 34%;
+      top: 61%;
       width: 34%;
       height: 30%;
       border-radius: 50%;
-      background-color: rgba(0, 0, 0, 0.2);
       z-index: 5; } }
 
 .win-notice {
