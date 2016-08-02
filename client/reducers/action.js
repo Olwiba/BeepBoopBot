@@ -21,7 +21,7 @@ export const runCommands = () => {
       }
       else if (state.executeCommandIndex === state.commandQueue.length) {
         if (state.board[state.robot.positionY][state.robot.positionX] === 1) {
-          dispatch(levelWon())
+          dispatch(createAction(LEVEL_WON))
         }
         dispatch(createAction(HAS_FINISHED))
         clearInterval(interval)
@@ -31,15 +31,9 @@ export const runCommands = () => {
         clearInterval(interval)
       }
       else {
-        dispatch(nextCommand(state.commandQueue[state.executeCommandIndex]))
+        dispatch(createAction(state.commandQueue[state.executeCommandIndex]))
       }
     }, 800)
-  }
-}
-
-export const nextCommand = (command) => {
-  return {
-    type: command
   }
 }
 
@@ -65,12 +59,6 @@ export const addTileInfo = (tileInfo) => {
   return {
     type: ADD_TILE_INFO,
     payload: tileInfo
-  }
-}
-
-export const levelWon = () => {
-  return {
-    type: LEVEL_WON
   }
 }
 
