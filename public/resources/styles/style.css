@@ -163,7 +163,6 @@
         height: 24%;
         width: 93%; } }
   .command-pane .runButtons-container {
-    order: 1;
     height: 30%;
     width: 80%;
     display: flex;
