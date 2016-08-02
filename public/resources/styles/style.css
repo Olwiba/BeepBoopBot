@@ -94,6 +94,15 @@
       border: 2px solid #60afbc; }
     .navigation .levels-container .level-select-container {
       padding: 5% 10% 5% 10%; }
+    .navigation .levels-container .skylight-dialog::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: transparent; }
+    .navigation .levels-container .skylight-dialog::-webkit-scrollbar {
+      width: 12px;
+      background-color: transparent; }
+    .navigation .levels-container .skylight-dialog::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: #02333a; }
     .navigation .levels-container .about-backstory {
       text-align: center; }
       .navigation .levels-container .about-backstory p {
