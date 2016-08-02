@@ -13,6 +13,5 @@ export default [
     url: 'https://raw.githubusercontent.com/scottschiller/SoundManager2/master/demo/_mp3/1hz-10khz-sweep.mp3',
     title: '1hz-10khz sweep',
     duration: 0
-  }
-   
+  } 
 ]
