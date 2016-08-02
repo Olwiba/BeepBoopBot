@@ -25,6 +25,7 @@
     "react-cookie": "^0.4.7",
     "react-dom": "^15.2.1",
     "react-motion": "^0.4.4",
+    "react-motion-loop": "^1.0.0",
     "react-redux": "^4.4.5",
     "react-skylight": "^0.4.0",
     "react-sound": "^0.5.1",
