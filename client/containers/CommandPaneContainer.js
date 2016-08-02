@@ -7,7 +7,8 @@ function mapStateToProps (state) {
     commandQueue: state.commandQueue,
     running: state.running,
     executeCommandIndex: state.executeCommandIndex,
-    hasFinished: state.hasFinished
+    hasFinished: state.hasFinished,
+    moveLimit: state.moveLimit
   }
 }
 

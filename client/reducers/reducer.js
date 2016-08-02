@@ -11,7 +11,8 @@ const INITIAL_STATE = {
     positionY: 4,
     isAlive: true
   },
-  board: levels[1],
+  board: levels[1].board,
+  moveLimit: levels[1].moveLimit,
   commandQueue: [], // commands are the same as the action types. e.g. MOVE_FORWARD
   running: false,
   executeCommandIndex: 0,
@@ -25,6 +26,7 @@ export function cloneState (state) {
   return {
     robot: {...state.robot},
     board: state.board.map(row => row.slice()),
+    moveLimit: state.moveLimit,
     commandQueue: [...state.commandQueue],
     running: state.running,
     executeCommandIndex: state.executeCommandIndex,
@@ -63,10 +65,9 @@ const reducer = (state = INITIAL_STATE, action) => {
 
     case a.SELECT_LEVEL:
       const newLevelState = cloneState(INITIAL_STATE)
-      newLevelState.board = levels[action.payload]
+      newLevelState.board = levels[action.payload].board
       newLevelState.tileInfo = state.tileInfo
       newLevelState.currentLevel = action.payload
-      newLevelState.robot.isAlive = true
       return newLevelState
 
     case a.MOVE_FORWARD:
