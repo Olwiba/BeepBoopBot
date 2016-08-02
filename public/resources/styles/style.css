@@ -463,15 +463,16 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   align-content: center;
-  align-items: center; }
+  align-items: center;
+  overflow: visible; }
 
 .b3-robot {
   position: absolute;
-  width: 130%;
-  height: 134%;
-  background: url("../images/b3-robot.svg") no-repeat;
+  width: 100%;
+  height: 100%;
   background-size: 100%;
-  z-index: 100; }
+  z-index: 100;
+  overflow: visible; }
   @media screen and (max-width: 850px) {
     .b3-robot {
       position: absolute;
@@ -479,19 +480,19 @@
       height: 87%;
       left: 21px;
       top: 20px;
-      background: url("../images/b3-robot.svg") no-repeat;
       background-size: 100%;
       z-index: 100; } }
 
 .shadow {
   position: absolute;
-  top: 62%;
-  left: 19%;
-  width: 90%;
-  height: 90%;
+  top: 42%;
+  left: 3%;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.2);
-  z-index: 5; }
+  z-index: 5;
+  overflow: visible; }
   @media screen and (max-width: 850px) {
     .shadow {
       position: absolute;
