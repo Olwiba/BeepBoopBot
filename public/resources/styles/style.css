@@ -92,9 +92,10 @@
     .navigation .levels-container .about:hover {
       color: #60afbc;
       border: 2px solid #60afbc; }
-    .navigation .levels-container .about-backstory {
-      text-align: center;
+    .navigation .levels-container .level-select-container {
       padding: 5% 10% 5% 10%; }
+    .navigation .levels-container .about-backstory {
+      text-align: center; }
       .navigation .levels-container .about-backstory p {
         font-family: 'Space Mono', monospace; }
       .navigation .levels-container .about-backstory .level-select {
