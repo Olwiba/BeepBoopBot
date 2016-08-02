@@ -1,25 +1,19 @@
-import React, { Component, PropTypes } from 'react';
-import Nav from './Nav';
+import React, { Component } from 'react'
+import NavContainer from '../containers/NavContainer'
+import CommandPaneContainer from '../containers/CommandPaneContainer'
+import BoardContainer from '../containers/BoardContainer'
 
 class App extends Component {
-  static propTypes = {
-    //propTypes go here
-  };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      //state goes here
-    };
-  }
-
-  render() {
+  render () {
     return (
-      <div>
-        <Nav />
+      <div className='app'>
+        <NavContainer />
+        <BoardContainer />
+        <CommandPaneContainer />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
