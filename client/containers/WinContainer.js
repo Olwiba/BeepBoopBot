@@ -7,11 +7,11 @@ function mapStateToProps (state) {
 }
 function mapDispatchToProps (dispatch) {
   return {
-    LEVEL_WON: () => {
+    toggleLevelWon: () => {
       dispatch(actions.levelWon())
     },
-    SELECT_LEVEL: (levelNum) => {
-      dispatch(actions.selectLevel(levelNum))
+    setLevel: (levelNum) => {
+      dispatch(actions.setLevel(levelNum))
     }
   }
 }

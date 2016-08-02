@@ -9,7 +9,7 @@ export const JUMP_UP = 'JUMP_UP'
 export const ADD_TILE_INFO = 'ADD_TILE_INFO'
 export const QUEUE_ACTION = 'QUEUE_ACTION'
 export const HAS_FINISHED = 'HAS_FINISHED'
-export const LEVEL_WON = 'LEVEL_WON'
+export const LEVEL_WON = 'TOGGLE_LEVEL_WON'
 export const REMOVE_ACTION = 'REMOVE_ACTION'
 
 export const runCommands = () => {
@@ -52,18 +52,6 @@ export const queueAction = (payload) => {
 
 export const createAction = (type) => ({
   type
-})
-
-export const stopButton = () => ({
-  type: STOP_BUTTON
-})
-
-export const clearButton = () => ({
-  type: CLEAR_BUTTON
-})
-
-export const hasFinished = () => ({
-  type: HAS_FINISHED
 })
 
 export const setLevel = (levelNum) => {
