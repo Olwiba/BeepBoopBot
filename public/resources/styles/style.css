@@ -83,6 +83,12 @@
       font-size: 20px;
       color: #1c8da0;
       cursor: help; }
+      @media screen and (max-width: 850px) {
+        .navigation .levels-container .about {
+          width: 20%;
+          padding: 0 20%;
+          margin-right: 20%;
+          right: 20px; } }
     .navigation .levels-container .about:hover {
       color: #60afbc;
       border: 2px solid #60afbc; }
@@ -135,16 +141,19 @@
           -webkit-transform: translate(0px, 6px);
           border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
       .navigation .levels-container .about-backstory .intro-b3 {
-        height: 25%;
+        height: 8%;
         width: 25%; }
       .navigation .levels-container .about-backstory .how-to-small {
-        height: 10%;
+        height: 8%;
         width: 10%; }
       .navigation .levels-container .about-backstory .control-small {
         height: 7%;
         width: 7%; }
     .navigation .levels-container .levels {
-      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 92%;
       width: 250px;
       border-radius: 10px 0 0 10px;
       border: 2px solid #1c8da0;
@@ -152,16 +161,21 @@
       font-family: 'Press Start 2P', cursive;
       font-size: 14px;
       color: #1c8da0;
-      padding-left: 40px; }
+      padding-left: 40px;
+      cursor: pointer; }
       @media screen and (max-width: 450px) {
         .navigation .levels-container .levels {
           width: 25%;
           background: url("/resources/images/burger-button.png") no-repeat;
           background-position: center center;
-          background-size: 90%; } }
+          background-size: 90%;
+          color: transparent; } }
     .navigation .levels-container .levels:hover {
       color: #60afbc;
       border: 2px solid #60afbc; }
+      @media screen and (max-width: 450px) {
+        .navigation .levels-container .levels:hover {
+          color: transparent; } }
     .navigation .levels-container .level-option {
       background: #02333a;
       color: #1c8da0; }
@@ -241,7 +255,8 @@
     @media screen and (max-width: 750px) {
       .command-pane .runButtons-container {
         height: 30%;
-        width: 58%; } }
+        width: 58%;
+        border-top: none; } }
   .command-pane .action-button-container {
     height: 28%;
     width: 80%;
@@ -331,6 +346,31 @@
       width: 98%;
       height: 47%; } }
 
+.board-background {
+  background-color: black;
+  background-image: radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 5px), radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 6px), radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 8px), radial-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1) 2px, transparent 10px);
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px; }
+
+.board-container.basement {
+  background: url("/resources/images/rust.jpg"); }
+
+.board-container.engine {
+  background: url("/resources/images/metal-cross.png") #0d0f09; }
+
+.board-container.cargo {
+  background: url("/resources/images/rust.jpg"); }
+
+.board-container.garden {
+  background: url("/resources/images/dirt.svg") #5B3000;
+  background-size: 25%; }
+
+.board-container.control {
+  background: url("/resources/images/rust.jpg"); }
+
+/*.board-container.cargo {
+	background: $blue;
+}*/
 .board-container {
   height: 88%;
   width: 65%;
@@ -342,9 +382,8 @@
   align-content: center;
   align-items: center;
   border-radius: 15px;
-  background-color: #f2f2f2;
-  border-bottom: 2vh solid #02333a;
-  background: #1c8da0; }
+  border-bottom: 2vh solid rgba(0, 0, 0, 0.5);
+  /*background: $blue;*/ }
   @media screen and (max-width: 1600px) {
     .board-container {
       height: 82%;
@@ -399,10 +438,18 @@
     background: url("/resources/images/wall.png") #ea7750; }
   .board-container .basement.even {
     background: url("/resources/images/asfalt-light.png") #c45d45; }
+  .board-container .engine.odd {
+    background: url("/resources/images/brushed-light.png") #78c042; }
+  .board-container .engine.even {
+    background: url("/resources/images/brushed-dark.png") #4d9713; }
   .board-container .cargo.odd {
     background: url("/resources/images/brushed-light.png") #78c042; }
   .board-container .cargo.even {
     background: url("/resources/images/brushed-dark.png") #4d9713; }
+  .board-container .garden.odd {
+    background: url("/resources/images/grass-1.svg") #78c042; }
+  .board-container .garden.even {
+    background: url("/resources/images/grass-2.svg") #4d9713; }
   .board-container .box-tile {
     width: 90%;
     margin-bottom: 20%; }

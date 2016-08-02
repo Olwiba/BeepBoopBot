@@ -94,12 +94,22 @@
                   font-size: 20px;
                   color: $blue;
                   cursor: help;
+
+                      @media screen and (max-width: 850px) {
+                            width: 20%;
+                            padding: 0 20%;
+                            margin-right: 20%;
+                            right: 20px;
+                        }
                 }
 
                 .about:hover {
                     color: $blue-light;
                     border: 2px solid $blue-light;
+
                 }
+
+
 
                 .about-backstory {
                     text-align: center; 
@@ -169,12 +179,12 @@
                         }
 
                     .intro-b3 {
-                        height: 25%;
+                        height: 8%;
                         width: 25%;
                     } 
 
                     .how-to-small {
-                        height: 10%;
+                        height: 8%;
                         width: 10%;
                     } 
 
@@ -188,7 +198,10 @@
                 
 
                 .levels {
-                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 92%;
                 width: 250px;
                 border-radius: 10px 0 0 10px;
                 border: 2px solid $blue;
@@ -197,18 +210,24 @@
                 font-size: 14px;
                 color: $blue;
                 padding-left: 40px;
+                cursor: pointer;
 
                     @media screen and (max-width: 450px) {
                         width: 25%;
                         background: url('/resources/images/burger-button.png') no-repeat;
                         background-position: center center;
                         background-size: 90%;
+                        color: transparent;
                     }
                 }
 
                 .levels:hover {
                     color: $blue-light;
                     border: 2px solid $blue-light;
+                    @media screen and (max-width: 450px) {
+                        color: transparent;
+                    }
+
                 }
 
                 .level-option{
