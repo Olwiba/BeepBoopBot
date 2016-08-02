@@ -11,13 +11,13 @@ const INITIAL_STATE = {
     positionY: 4,
     isAlive: true
   },
-  board: levels[1].board,
-  moveLimit: levels[1].moveLimit,
+  board: levels[10].board,
+  moveLimit: levels[10].moveLimit,
   commandQueue: [], // commands are the same as the action types. e.g. MOVE_FORWARD
   running: false,
   executeCommandIndex: 0,
   tileInfo: {},
-  currentLevel: 1,
+  currentLevel: 10,
   levelWon: false,
   hasFinished: false // Has the command queue finished running? i.e. executed all commands
 }
