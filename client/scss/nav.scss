@@ -94,12 +94,22 @@
                   font-size: 20px;
                   color: $blue;
                   cursor: help;
+
+                      @media screen and (max-width: 850px) {
+                            width: 20%;
+                            padding: 0 20%;
+                            margin-right: 20%;
+                            right: 20px;
+                        }
                 }
 
                 .about:hover {
                     color: $blue-light;
                     border: 2px solid $blue-light;
+
                 }
+
+
 
                 .about-backstory {
                     text-align: center; 
@@ -169,12 +179,12 @@
                         }
 
                     .intro-b3 {
-                        height: 25%;
+                        height: 8%;
                         width: 25%;
                     } 
 
                     .how-to-small {
-                        height: 10%;
+                        height: 8%;
                         width: 10%;
                     } 
 
