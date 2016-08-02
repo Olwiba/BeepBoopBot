@@ -53,6 +53,12 @@ h3{
 	color: $white;
 }
 
+h4{
+	font-family: $heading;
+	font-size: 16px;
+	color: $white-dark;
+}
+
 .app {
 	display:flex;
 	flex-direction: row;

@@ -55,14 +55,15 @@ class Nav extends Component {
         <div className='levels-container'>
           <div className='levels' onClick={() => this.refs.levelSelect.show()} >{'Level ' + this.props.currentLevel}</div>
           <SkyLight hideOnOverlayClicked={true} ref='levelSelect' dialogStyles={levelsModalStyle} >
-            <div className='about-backstory'>
-              <p style={{fontSize: 20}} >Select a level to play</p>
+            <div className='about-backstory level-select-container'>
+              <h3>Select a level to play</h3>
               {
                 Object.keys(levels).map((levelNum, index) => {
                   return (
                     <div
                       key={index}
-                      onClick={() => { this.props.SELECT_LEVEL(levelNum); this.refs.levelSelect.hide() }}
+                      className='level-select'
+                      onClick={() => { this.props.setLevel(levelNum); this.refs.levelSelect.hide() }}
                     >
                       <p>{'Level ' + levelNum}</p>
                     </div>
