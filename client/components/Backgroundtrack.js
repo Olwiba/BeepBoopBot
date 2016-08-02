@@ -10,7 +10,7 @@ export default class Backgroundtrack extends Component {
     this.state = {
       currentSong: songs[2],
       position: 0,
-      volume: 10d,
+      volume: 10,
       playStatus: Sound.status.PLAYING
     };
   }
