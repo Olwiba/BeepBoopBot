@@ -51,17 +51,17 @@ export const queueAction = (payload) => {
   }
 }
 
-export const goButton = {
+export const goButton = () => ({
   type: GO_BUTTON
-}
+})
 
-export const stopButton = {
+export const stopButton = () => ({
   type: STOP_BUTTON
-}
+})
 
-export const clearButton = {
+export const clearButton = () => ({
   type: CLEAR_BUTTON
-}
+})
 
 export const hasFinished = {
   type: HAS_FINISHED
@@ -92,13 +92,6 @@ export const removeAction = (commandIndex) => {
     type: REMOVE_ACTION,
     payload: commandIndex
   }
-}
-
-// export const decreaseMovesLeft = () => {
-//   return {
-//     type: DECREASE_MOVES_LEFT
-//   }
-// }
 
 export const toggleSound = () => {
   return {

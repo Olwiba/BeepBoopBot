@@ -17,20 +17,17 @@ function mapDispatchToProps (dispatch) {
     queueAction: (payload) => {
       dispatch(actions.queueAction(payload))
     },
-    GO_BUTTON: () => {
-      dispatch(actions.goButton)
+    goButton: () => {
+      dispatch(actions.goButton())
       dispatch(actions.runCommands())
     },
-    STOP_BUTTON: () => {
-      dispatch(actions.stopButton)
+    stopButton: () => {
+      dispatch(actions.stopButton())
     },
-    CLEAR_BUTTON: () => {
-      dispatch(actions.clearButton)
+    clearButton: () => {
+      dispatch(actions.clearButton())
     },
-    HAS_FINISHED: () => {
-      dispatch(actions.hasFinished)
-    },
-    REMOVE_ACTION: (commandIndex) => {
+    removeAction: (commandIndex) => {
       dispatch(actions.removeAction(commandIndex))
     }
   }
