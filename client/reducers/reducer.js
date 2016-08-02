@@ -11,13 +11,13 @@ const INITIAL_STATE = {
     positionY: 4,
     isAlive: true
   },
-  board: levels[10].board,
-  moveLimit: levels[10].moveLimit,
+  board: levels[1].board,
+  moveLimit: levels[1].moveLimit,
   commandQueue: [], // commands are the same as the action types. e.g. MOVE_FORWARD
   running: false,
   executeCommandIndex: 0,
   tileInfo: {},
-  currentLevel: 10,
+  currentLevel: 1,
   levelWon: false,
   hasFinished: false // Has the command queue finished running? i.e. executed all commands
 }
@@ -68,7 +68,7 @@ const reducer = (state = INITIAL_STATE, action) => {
       newLevelState.board = levels[action.payload].board
       newLevelState.moveLimit = levels[action.payload].moveLimit
       newLevelState.tileInfo = state.tileInfo
-      newLevelState.currentLevel = action.payload
+      newLevelState.currentLevel = parseInt(action.payload)
       return newLevelState
 
     case a.MOVE_FORWARD:
