@@ -55,14 +55,13 @@ export default class Audio extends Component {
   }
 
   render() {
-    const { volume } = this.state;
     return( 
     <div>
         <Sound
           url={this.state.currentSong.url}
           playStatus={this.state.playStatus}
           playFromPosition={this.state.position}
-          volume={volume}
+          volume={his.statevolume}
           onLoading={({bytesLoaded, bytesTotal}) => console.log(`${bytesLoaded / bytesTotal * 100}% loaded`)}
           onPlaying={({position}) => console.log(position)}
           onFinishedPlaying={() => this.setState({playStatus: Sound.status.STOPPED})} />

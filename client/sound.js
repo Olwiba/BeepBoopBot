@@ -11,7 +11,7 @@ export default [
   },
   {
     url: './resources/sound/background.wav',
-    title: 'dying',
+    title: 'background',
     duration: 0
   },
   {
