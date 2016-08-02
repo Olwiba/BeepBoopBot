@@ -14,7 +14,7 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
   return {
-    QUEUE_ACTION: (payload) => {
+    queueAction: (payload) => {
       dispatch(actions.queueAction(payload))
     },
     GO_BUTTON: () => {

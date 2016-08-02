@@ -30,7 +30,7 @@ class CommandQueue extends Component {
         )
         })
         }
-        <div className='move-limit' style={{color: 'red'}}>{this.props.moveLimit - this.props.executeCommandIndex}</div>
+        <div className='move-limit' style={{fontSize: '30px', color: 'white'}}>Moves left: {this.props.moveLimit - this.props.commandQueue.length}</div>
       </div>
     )
   }
