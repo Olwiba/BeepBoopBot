@@ -46,13 +46,12 @@ $actionButtonElevation: 7px;
         background-color: $blue-darkest;
     }
     .moves-left {
-        height: 9%;
-        order: 2;
-        font-size: 23px;
+        line-height: 160%;
+        font-size: 21px;
         color: white;
     }
     .command-container {
-        height: 30%;
+        height: 28%;
         width: 80%;
         display:flex;
         flex-direction: column;
@@ -67,13 +66,13 @@ $actionButtonElevation: 7px;
         overflow-y: scroll;
 
         @media screen and (max-width: 850px) {
-            height: 24%;
+            height: 21%;
             width: 93%;
         }
     }
 
     .runButtons-container {
-        height: 30%;
+        height: 26%;
         width: 80%;
         display:flex;
         flex-direction: row;
@@ -81,15 +80,15 @@ $actionButtonElevation: 7px;
         justify-content: center;
         align-content: center;
         align-items: center;
-
+        margin-bottom: 1.5%;
         @media screen and (max-width: 850px) {
-            height: 31%;
+            height: 25%;
             width: 58%;
         }
     }
 
     .action-button-container {
-        height: 30%;
+        height: 28%;
         width: 80%;
         display:flex;
         flex-direction: row;
@@ -100,13 +99,13 @@ $actionButtonElevation: 7px;
         border-top: 5px solid $blue-darker;
 
         @media screen and (max-width: 1200px) {
-            height: 29%;
+            height: 30%;
             width: 79%;
         }
 
 
         @media screen and (max-width: 850px) {
-            height: 39%;
+            height: 32%;
             width: 70%;
         }
 

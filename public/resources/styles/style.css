@@ -145,12 +145,11 @@
     border-radius: 10px;
     background-color: #02333a; }
   .command-pane .moves-left {
-    height: 9%;
-    order: 2;
-    font-size: 23px;
+    line-height: 160%;
+    font-size: 21px;
     color: white; }
   .command-pane .command-container {
-    height: 30%;
+    height: 28%;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -165,23 +164,24 @@
     overflow-y: scroll; }
     @media screen and (max-width: 850px) {
       .command-pane .command-container {
-        height: 24%;
+        height: 21%;
         width: 93%; } }
   .command-pane .runButtons-container {
-    height: 30%;
+    height: 26%;
     width: 80%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
     align-content: center;
-    align-items: center; }
+    align-items: center;
+    margin-bottom: 1.5%; }
     @media screen and (max-width: 850px) {
       .command-pane .runButtons-container {
-        height: 31%;
+        height: 25%;
         width: 58%; } }
   .command-pane .action-button-container {
-    height: 30%;
+    height: 28%;
     width: 80%;
     display: flex;
     flex-direction: row;
@@ -192,11 +192,11 @@
     border-top: 5px solid #006073; }
     @media screen and (max-width: 1200px) {
       .command-pane .action-button-container {
-        height: 29%;
+        height: 30%;
         width: 79%; } }
     @media screen and (max-width: 850px) {
       .command-pane .action-button-container {
-        height: 39%;
+        height: 32%;
         width: 70%; } }
     .command-pane .action-button-container .action-button {
       margin: 10px;
