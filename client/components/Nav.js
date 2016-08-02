@@ -111,9 +111,3 @@ class Nav extends Component {
 }
 
 export default Nav
-
-// STYLE FROM VAI.
-// close on esc     YES FOR FIRST MODAL
-// how to play button
-
-// onClick={() => { this.refs.storyBox.hide() }}
