@@ -1,7 +1,7 @@
 export const CLEAR_BUTTON = 'CLEAR_BUTTON'
 export const GO_BUTTON = 'GO_BUTTON'
 export const STOP_BUTTON = 'STOP_BUTTON'
-export const SELECT_LEVEL = 'SELECT_LEVEL'
+export const SELECT_LEVEL = 'SET_LEVEL'
 export const MOVE_FORWARD = 'MOVE_FORWARD'
 export const TURN_LEFT = 'TURN_LEFT'
 export const TURN_RIGHT = 'TURN_RIGHT'
@@ -9,7 +9,7 @@ export const JUMP_UP = 'JUMP_UP'
 export const ADD_TILE_INFO = 'ADD_TILE_INFO'
 export const QUEUE_ACTION = 'QUEUE_ACTION'
 export const HAS_FINISHED = 'HAS_FINISHED'
-export const LEVEL_WON = 'LEVEL_WON'
+export const LEVEL_WON = 'TOGGLE_LEVEL_WON'
 export const REMOVE_ACTION = 'REMOVE_ACTION'
 
 export const runCommands = () => {
@@ -23,11 +23,11 @@ export const runCommands = () => {
         if (state.board[state.robot.positionY][state.robot.positionX] === 1) {
           dispatch(levelWon())
         }
-        dispatch(nextCommand(HAS_FINISHED))
+        dispatch(createAction(HAS_FINISHED))
         clearInterval(interval)
       }
       else if (state.robot.isAlive === false || state.moveLimit === state.executeCommandIndex) {
-        dispatch(nextCommand(HAS_FINISHED))
+        dispatch(createAction(HAS_FINISHED))
         clearInterval(interval)
       }
       else {
@@ -50,23 +50,11 @@ export const queueAction = (payload) => {
   }
 }
 
-export const goButton = () => ({
-  type: GO_BUTTON
+export const createAction = (type) => ({
+  type
 })
 
-export const stopButton = () => ({
-  type: STOP_BUTTON
-})
-
-export const clearButton = () => ({
-  type: CLEAR_BUTTON
-})
-
-export const hasFinished = {
-  type: HAS_FINISHED
-}
-
-export const selectLevel = (levelNum) => {
+export const setLevel = (levelNum) => {
   return {
     type: SELECT_LEVEL,
     payload: levelNum
