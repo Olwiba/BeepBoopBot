@@ -10,7 +10,7 @@ class Board extends Component {
   }
 
   componentDidMount () {
-    this.props.ADD_TILE_INFO(this.refs)
+    this.props.addTileInfo(this.refs)
     this.setState({ hasMounted: true })
   }
 
