@@ -11,6 +11,7 @@ export const QUEUE_ACTION = 'QUEUE_ACTION'
 export const HAS_FINISHED = 'HAS_FINISHED'
 export const LEVEL_WON = 'TOGGLE_LEVEL_WON'
 export const REMOVE_ACTION = 'REMOVE_ACTION'
+export const TOGGLE_SOUND = 'TOGGLE_SOUND'
 
 export const runCommands = () => {
   return (dispatch, getState) => {
@@ -66,5 +67,10 @@ export const removeAction = (commandIndex) => {
   return {
     type: REMOVE_ACTION,
     payload: commandIndex
+  }
+}
+export const toggleSound = () => {
+  return {
+    type: TOGGLE_SOUND
   }
 }

@@ -28,6 +28,7 @@
     "react-motion-loop": "^1.0.0",
     "react-redux": "^4.4.5",
     "react-skylight": "^0.4.0",
+    "react-sound": "^0.5.1",
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0"
   },
