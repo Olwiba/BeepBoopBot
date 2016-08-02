@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import {Motion, spring} from 'react-motion'
+import Sound from 'react-sound'
 import WinContainer from '../containers/WinContainer'
+import AudioContainer from '../containers/AudioContainer'
 
 class Robot extends Component {
   calcCenter() {
@@ -39,6 +41,7 @@ class Robot extends Component {
           </div>}
         </Motion>
         <WinContainer/>
+        <AudioContainer />
       </div>
       :
       null
