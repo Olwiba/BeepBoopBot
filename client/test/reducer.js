@@ -1,7 +1,7 @@
 var test = require('tape')
 var freeze = require('deep-freeze')
 var reducer = require('../reducers/reducer').default
-
+z
 test('GO_BUTTON action sets state running to true', function (t) {
   var initialState = reducer(undefined, {})
   freeze(initialState)

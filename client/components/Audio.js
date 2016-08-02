@@ -27,6 +27,8 @@ export default class Audio extends Component {
     }
   }
   componentDidUpdate() {
+    const isAlreadySet = this.state.playStatus === Sound.status.PLAYING
+    if (isAlreadySet) return
     if(!this.props.hasFinished && this.props.running) {
       if(this.props.commandQueue[this.props.executeCommandIndex] === 'JUMP_UP' && TileInFront(this.props.robot, this.props.board)===2){
         this.setState({

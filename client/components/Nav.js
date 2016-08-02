@@ -4,7 +4,6 @@ import SkyLight from 'react-skylight'
 import levels from '../levels'
 import classNames from 'classnames'
 
-
 class Nav extends Component {
 
   handleKeyPress (e) {

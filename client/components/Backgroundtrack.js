@@ -27,7 +27,7 @@ export default class Backgroundtrack extends Component {
     }
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(){
     if(this.props.sound){
       this.setState({playStatus: Sound.status.PLAYING})
     }
