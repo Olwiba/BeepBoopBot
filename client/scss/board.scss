@@ -140,11 +140,13 @@
 	.engine.odd {
 		background: url('/resources/images/metal-1.png') $white;
 		background-size: cover;
+		border-bottom: 2vh solid rgba(0,0,0,0.5);
 	}
 
 	.engine.even {
 		background: url('/resources/images/metal-2.png') $white-dark;
 		background-size: cover;
+		border-bottom: 2vh solid rgba(0,0,0,0.5);
 	}
 
 	.cargo.odd {

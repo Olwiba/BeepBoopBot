@@ -526,10 +526,12 @@
     background: url("/resources/images/asfalt-light.png") #c45d45; }
   .board-container .engine.odd {
     background: url("/resources/images/metal-1.png") #f2f2f2;
-    background-size: cover; }
+    background-size: cover;
+    border-bottom: 2vh solid rgba(0, 0, 0, 0.5); }
   .board-container .engine.even {
     background: url("/resources/images/metal-2.png") #cbcbcb;
-    background-size: cover; }
+    background-size: cover;
+    border-bottom: 2vh solid rgba(0, 0, 0, 0.5); }
   .board-container .cargo.odd {
     background: url("/resources/images/mesh.png") #000000;
     background-size: 25%; }
@@ -766,6 +768,8 @@
   .win-notice .intro-b3 {
     height: 25%;
     width: 25%; }
+  .win-notice .win-game-b3 {
+    height: 45%; }
 
 /* Import Fonts */
 /* Fonts */
