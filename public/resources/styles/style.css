@@ -106,117 +106,20 @@
       .navigation .levels-container .level-select-container .about-backstory {
         text-align: center;
         font-family: 'Space Mono', monospace; }
-<<<<<<< HEAD
-        .navigation .levels-container .level-select-container .about-backstory .modal-heading {
-          font-size: 30px; }
-        .navigation .levels-container .level-select-container .about-backstory .level-select {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          align-content: center;
-          height: 10%;
-          width: 100%;
-          border-radius: 10px;
-          border: 2px solid #1c8da0;
-          background: #02333a;
-          font-size: 20px;
-          color: #1c8da0;
-          cursor: default; }
-          @media screen and (max-width: 850px) {
-            .navigation .levels-container .level-select-container .about-backstory .level-select {
-              width: 20%;
-              padding: 0 20%;
-              right: 20px; } }
-        .navigation .levels-container .level-select-container .about-backstory .level-select:hover {
-          color: #60afbc;
-          border: 2px solid #60afbc; }
-        .navigation .levels-container .level-select-container .about-backstory .modal-button-container {
-          height: 5%;
-          width: 100%;
-          display: flex;
-          flex-direction: row;
-          flex-wrap: nowrap;
-          justify-content: center;
-          align-content: center;
-          align-items: center; }
-          @media screen and (max-width: 850px) {
-            .navigation .levels-container .level-select-container .about-backstory .modal-button-container {
-              height: 30%;
-              width: 76%; } }
-          .navigation .levels-container .level-select-container .about-backstory .modal-button-container .modal-button {
-            margin: 10px;
-            height: 80%;
-            width: 150px;
-            min-width: 45px;
-            padding: 10px 30px;
-            border-radius: 5%;
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            align-items: center;
-            text-shadow: 0px -2px rgba(0, 0, 0, 0.2);
-            cursor: default; }
-            @media screen and (max-width: 850px) {
-              .navigation .levels-container .level-select-container .about-backstory .modal-button-container .modal-button {
-                margin: 8px;
-                height: 42px;
-                min-width: 27px; } }
-          .navigation .levels-container .level-select-container .about-backstory .modal-button-container .how-to-action {
-            background: #78c042;
-            border-bottom: 12px solid #4d9713; }
-          .navigation .levels-container .level-select-container .about-backstory .modal-button-container .how-to-action:hover {
-            background: #93cc67;
-            border-bottom: 12px solid #70ab42; }
-          .navigation .levels-container .level-select-container .about-backstory .modal-button-container .modal-animate {
-            transition: all 0.2s;
-            -webkit-transition: all 0.2s; }
-          .navigation .levels-container .level-select-container .about-backstory .modal-button-container .modal-button:active {
-            transform: translate(0px, 6px);
-            -webkit-transform: translate(0px, 6px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
-        .navigation .levels-container .level-select-container .about-backstory .intro-b3 {
-          height: 25%; }
-        .navigation .levels-container .level-select-container .about-backstory .how-to-small {
-          height: 8%;
-          width: 10%; }
-        .navigation .levels-container .level-select-container .about-backstory .control-small {
-          height: 7%;
-          width: 7%; }
-      .navigation .levels-container .level-select-container .levels {
+      .navigation .levels-container .level-select-container .modal-heading {
         font-size: 30px; }
       .navigation .levels-container .level-select-container .level-select {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 92%;
-        width: 250px;
-        border-radius: 10px 0 0 10px;
+        align-content: center;
+        height: 10%;
+        width: 100%;
+        border-radius: 10px;
         border: 2px solid #1c8da0;
         background: #02333a;
-        font-family: 'Press Start 2P', cursive;
-        font-size: 14px;
+        font-size: 20px;
         color: #1c8da0;
-        padding-left: 40px;
-        cursor: pointer; }
-        @media screen and (max-width: 450px) {
-          .navigation .levels-container .level-select-container .levels {
-            width: 25%;
-            background: url("/resources/images/burger-button.png") no-repeat;
-            background-position: center center;
-            background-size: 90%;
-            color: transparent; } }
-      .navigation .levels-container .level-select-container .levels:hover {
-        color: #60afbc;
-        border: 2px solid #60afbc; }
-        @media screen and (max-width: 450px) {
-          .navigation .levels-container .level-select-container .levels:hover {
-            color: transparent; } }
-      .navigation .levels-container .level-select-container .level-option {
-        background: #02333a;
-        color: #1c8da0; }
-      .navigation .levels-container .level-select-container select {
-        -webkit-appearance: none;
-        -moz-appearance: none;
         cursor: default; }
         @media screen and (max-width: 850px) {
           .navigation .levels-container .level-select-container .level-select {
@@ -312,7 +215,6 @@
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none; }
->>>>>>> 603a94ea33e0503232f879d6ae2fe7a25ba1444a
 
 .command-pane {
   background: #1c8da0;
