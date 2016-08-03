@@ -2,7 +2,7 @@ import tileInFront from './tileInFront'
 
 function jump (robot, board) {
   const tile = tileInFront(robot, board)
-  if (robot.isAlive == true && tile === 2) {
+  if (robot.isAlive === true && tile === 2) {
     switch (Math.abs(robot.direction % 360)) {
       case 0:
         // 0 is backwards along Y axis Y-- and X is same
@@ -25,9 +25,7 @@ function jump (robot, board) {
         break
     }
     robot.isOnBox = true
-  }
-  else if (tile == 3)
-  {
+  } else if (tile === 3) {
     switch (Math.abs(robot.direction % 360)) {
       case 0:
         // 0 is backwards along Y axis Y-- and X is same
@@ -54,4 +52,4 @@ function jump (robot, board) {
   return true
 }
 
-module.exports = jump
+export default jump
