@@ -114,6 +114,10 @@ const reducer = (state = INITIAL_STATE, action) => {
       newState.hasFinished = true
       return newState
 
+    case a.TOGGLE_SOUND:
+      newState.sound = !(newState.sound)
+      return newState
+
     default:
       return state
 
