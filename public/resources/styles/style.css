@@ -674,10 +674,11 @@
       z-index: 5; } }
 
 .win-notice {
-  text-align: center;
   text-align: center; }
   .win-notice p, .win-notice h3 {
     font-family: 'Space Mono', monospace; }
+  .win-notice h3 {
+    font-size: 30px; }
   .win-notice .modal-button-container {
     height: 5%;
     width: 100%;
