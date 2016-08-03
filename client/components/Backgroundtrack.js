@@ -31,20 +31,21 @@ export default class Backgroundtrack extends Component {
 
   componentDidMount () {
     var cookies = cookie.load('sound')
-    // Check if cookie exists. If not, show modal and set cookie.
-    if (!cookies) {
-      cookie.save('sound', 'ON')
+    console.log(cookies)
+    
+    if (cookies === undefined) {
+      cookie.save('sound', true)
       this.setState({playStatus: Sound.status.PLAYING})
     }
   }
   componentDidUpdate(){
-    const soundState = cookie.select('sound')
-    const isAlreadySet = soundState === Sound.status.PLAYING
-    if(soundState === 'ON'){
+    var cookies = cookie.load('sound')
+    const isAlreadySet = cookies === true
+    if(cookies){
       if (isAlreadySet) return
       this.setState({playStatus: Sound.status.PLAYING})
     }
-    else if (soundState === 'OFF') {
+    else {
       if (!isAlreadySet) return
       this.setState({playStatus: Sound.status.STOPPED})
     }

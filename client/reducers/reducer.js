@@ -117,10 +117,9 @@ const reducer = (state = INITIAL_STATE, action) => {
 
     case a.TOGGLE_SOUND:
       newState.sound = !(newState.sound)
-      console.log(newState.sound, 'soundState')
       var cookies = cookie.load('sound')
-      const soundState = cookie.select('sound')
-      cookie.save('sound', !soundState)
+      console.log(!cookies)
+      cookie.save('sound', cookies)
       return newState
 
     default:
