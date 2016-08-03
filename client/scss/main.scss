@@ -49,8 +49,12 @@ h1 {
 
 h3{
 	font-family: $heading;
-	font-size: 2vh;
+	font-size: 2.5vh;
 	color: $white;
+
+	@media screen and (max-width: 850px) {
+		font-size: 2vh;
+	}
 }
 
 h4{
