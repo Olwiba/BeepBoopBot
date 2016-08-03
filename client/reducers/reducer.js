@@ -4,6 +4,8 @@ import moveForward from './lib/moveForward.js'
 import levels from '../levels'
 import * as a from './action'
 
+const speaker = cookie.load('sound')
+
 const INITIAL_STATE = {
   robot: {
     direction: 0,
@@ -21,7 +23,7 @@ const INITIAL_STATE = {
   currentLevel: 1,
   levelWon: false,
   hasFinished: false, // Has the command queue finished running? i.e. executed all commands
-  sound: true
+  sound: speaker === 'ON'
 }
 
 export function cloneState (state) {
