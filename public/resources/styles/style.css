@@ -388,17 +388,18 @@
   background: url("/resources/images/rust.jpg"); }
 
 .board-container.engine {
-  background: url("/resources/images/metal-cross.png") #0d0f09; }
+  background: url("/resources/images/metal-cross.png") #000000; }
 
 .board-container.cargo {
-  background: url("/resources/images/rust.jpg"); }
+  background: url("/resources/images/concrete.png") #000000; }
 
 .board-container.garden {
   background: url("/resources/images/dirt.svg") #5B3000;
   background-size: 25%; }
 
 .board-container.control {
-  background: url("/resources/images/rust.jpg"); }
+  background: url("/resources/images/marble.jpg");
+  background-size: 50%; }
 
 /*.board-container.cargo {
 	background: $blue;
@@ -471,17 +472,27 @@
   .board-container .basement.even {
     background: url("/resources/images/asfalt-light.png") #c45d45; }
   .board-container .engine.odd {
-    background: url("/resources/images/brushed-light.png") #78c042; }
+    background: url("/resources/images/metal.jpg") #f2f2f2;
+    background-size: 175%; }
   .board-container .engine.even {
-    background: url("/resources/images/brushed-dark.png") #4d9713; }
+    background: url("/resources/images/metal.jpg") #cbcbcb;
+    background-size: 175%; }
   .board-container .cargo.odd {
-    background: url("/resources/images/brushed-light.png") #78c042; }
+    background: url("/resources/images/mesh.png") #000000;
+    background-size: 25%; }
   .board-container .cargo.even {
-    background: url("/resources/images/brushed-dark.png") #4d9713; }
+    background: url("/resources/images/mesh.png") #1c1717;
+    background-size: 25%; }
   .board-container .garden.odd {
     background: url("/resources/images/grass-1.svg") #78c042; }
   .board-container .garden.even {
     background: url("/resources/images/grass-2.svg") #4d9713; }
+  .board-container .control.odd {
+    background: url("/resources/images/tile-squares.png") #1c1c1c;
+    background-size: 75%; }
+  .board-container .control.even {
+    background: url("/resources/images/tile-squares.png") #4d4d4d;
+    background-size: 75%; }
   .board-container .box-tile {
     width: 90%;
     margin-bottom: 20%; }
