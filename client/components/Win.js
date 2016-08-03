@@ -22,11 +22,11 @@ class Win extends Component {
   }
 
   _executeBeforeModalClose () {
-    this.props.LEVEL_WON()
+    this.props.toggleLevelWon()
     const newLevel = this.props.currentLevel + 1 === 11
     ? 1
     : this.props.currentLevel + 1
-    this.props.SELECT_LEVEL(newLevel)
+    this.props.setLevel(newLevel)
   }
 
   render () {

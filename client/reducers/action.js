@@ -1,7 +1,7 @@
 export const CLEAR_BUTTON = 'CLEAR_BUTTON'
 export const GO_BUTTON = 'GO_BUTTON'
 export const STOP_BUTTON = 'STOP_BUTTON'
-export const SELECT_LEVEL = 'SELECT_LEVEL'
+export const SELECT_LEVEL = 'SET_LEVEL'
 export const MOVE_FORWARD = 'MOVE_FORWARD'
 export const TURN_LEFT = 'TURN_LEFT'
 export const TURN_RIGHT = 'TURN_RIGHT'
@@ -9,8 +9,9 @@ export const JUMP_UP = 'JUMP_UP'
 export const ADD_TILE_INFO = 'ADD_TILE_INFO'
 export const QUEUE_ACTION = 'QUEUE_ACTION'
 export const HAS_FINISHED = 'HAS_FINISHED'
-export const LEVEL_WON = 'LEVEL_WON'
+export const LEVEL_WON = 'TOGGLE_LEVEL_WON'
 export const REMOVE_ACTION = 'REMOVE_ACTION'
+export const TOGGLE_SOUND = 'TOGGLE_SOUND'
 
 export const runCommands = () => {
   return (dispatch, getState) => {
@@ -21,25 +22,19 @@ export const runCommands = () => {
       }
       else if (state.executeCommandIndex === state.commandQueue.length) {
         if (state.board[state.robot.positionY][state.robot.positionX] === 1) {
-          dispatch(levelWon())
+          dispatch(createAction(LEVEL_WON))
         }
-        dispatch(nextCommand(HAS_FINISHED))
+        dispatch(createAction(HAS_FINISHED))
         clearInterval(interval)
       }
       else if (state.robot.isAlive === false || state.moveLimit === state.executeCommandIndex) {
-        dispatch(nextCommand(HAS_FINISHED))
+        dispatch(createAction(HAS_FINISHED))
         clearInterval(interval)
       }
       else {
-        dispatch(nextCommand(state.commandQueue[state.executeCommandIndex]))
+        dispatch(createAction(state.commandQueue[state.executeCommandIndex]))
       }
     }, 800)
-  }
-}
-
-export const nextCommand = (command) => {
-  return {
-    type: command
   }
 }
 
@@ -50,23 +45,11 @@ export const queueAction = (payload) => {
   }
 }
 
-export const goButton = {
-  type: GO_BUTTON
-}
+export const createAction = (type) => ({
+  type
+})
 
-export const stopButton = {
-  type: STOP_BUTTON
-}
-
-export const clearButton = {
-  type: CLEAR_BUTTON
-}
-
-export const hasFinished = {
-  type: HAS_FINISHED
-}
-
-export const selectLevel = (levelNum) => {
+export const setLevel = (levelNum) => {
   return {
     type: SELECT_LEVEL,
     payload: levelNum
@@ -80,21 +63,14 @@ export const addTileInfo = (tileInfo) => {
   }
 }
 
-export const levelWon = () => {
-  return {
-    type: LEVEL_WON
-  }
-}
-
 export const removeAction = (commandIndex) => {
   return {
     type: REMOVE_ACTION,
     payload: commandIndex
   }
 }
-
-// export const decreaseMovesLeft = () => {
-//   return {
-//     type: DECREASE_MOVES_LEFT
-//   }
-// }
+export const toggleSound = () => {
+  return {
+    type: TOGGLE_SOUND
+  }
+}

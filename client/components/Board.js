@@ -10,15 +10,19 @@ class Board extends Component {
   }
 
   componentDidMount () {
-    this.props.ADD_TILE_INFO(this.refs)
+    this.props.addTileInfo(this.refs)
     this.setState({ hasMounted: true })
   }
 
   render () {
-    var levelTheme = this.props.currentLevel < 5 ? 'basement' : 'cargo'
+    var levelTheme = this.props.currentLevel < 5 ? 'basement' : 
+    this.props.currentLevel < 10 ? 'engine' : 
+    this.props.currentLevel < 15 ? 'cargo' : 
+    this.props.currentLevel < 20 ? 'garden' : 'control' 
+
     return (
-      <div id='board'>
-        <div className='board-container'>
+      <div id='board' className='board-background'>
+        <div className={classNames('board-container', levelTheme)}>
           {
             this.props.board.map((row, rowIndex) => {
               return row.map((col, colIndex) => {
