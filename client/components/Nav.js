@@ -114,6 +114,7 @@ class Nav extends Component {
             </div>
           </SkyLight>
         </div>
+        <button onClick={this.props.toggleSound}> Sound </button>
       </div>
     )
   }
