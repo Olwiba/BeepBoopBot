@@ -701,33 +701,33 @@
   align-items: center;
   overflow: visible; }
 
-.b3-animation {
-  /*position: absolute;*/
+.b3-container-animation {
+  position: absolute;
   width: 100%;
   height: 100%;
   background-size: 100%;
   z-index: 100;
   overflow: visible;
-  position: relative;
+  /*position: relative;*/
   -webkit-animation-name: fadeOut;
   /* Chrome, Safari, Opera */
-  -webkit-animation-duration: 2.5s;
+  -webkit-animation-duration: 6s;
   /* Chrome, Safari, Opera */
   animation-name: fadeOut;
-  animation-duration: 2.5s; }
+  animation-duration: 6s; }
 
 @keyframes fadeOut {
   from {
-    opacity: 1;
-    top: 0; }
+    opacity: 1; }
   to {
     opacity: 0;
-    top: -120%; } }
+    top: -80%; } }
 
 .b3-robot {
   position: absolute;
   width: 100%;
   height: 100%;
+  left: 10%;
   background-size: 100%;
   z-index: 100;
   overflow: visible; }
@@ -739,11 +739,11 @@
       height: 40%;
       background-size: 100%;
       z-index: 100;
-      left: 11px; } }
+      left: 13px; } }
 
 .shadow-animation {
   top: 22%;
-  left: 5%;
+  left: 10%;
   width: 90%;
   height: 90%;
   border-radius: 50%;
@@ -766,7 +766,7 @@
 .shadow {
   position: absolute;
   top: 22%;
-  left: 5%;
+  left: 10%;
   width: 90%;
   height: 90%;
   border-radius: 50%;

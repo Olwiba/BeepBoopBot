@@ -62,13 +62,12 @@ class Robot extends Component {
           y: centerPoints[1],
           rot: 0
         }} style={{
-          opacity: spring(0.5),
           scale: spring(scale, {precision: precisionStrength}),
           x: spring(centerPoints[0]),
           y: spring(centerPoints[1]),
           rot: spring(this.props.robot.direction)
         }}>
-          {value => <div style={{
+          {value => <div className={this.props.levelWon ? classNames('b3-container-animation') : classNames('')} style={{
             height: value.scale,
             width: value.scale,
             position: 'absolute',
@@ -91,7 +90,7 @@ class Robot extends Component {
                 precision: precisionStrength
               })
             }}>
-              {style => <img src="/resources/images/b3-robot.svg" className={this.props.levelWon ? classNames('b3-animation') : classNames('b3-robot')} style={style}/>}
+              {style => <img src="/resources/images/b3-robot.svg" className={classNames('b3-robot')} style={style}/>}
             </ReactMotionLoop>
             <ReactMotionLoop styleFrom={{
               opacity: spring(opacity),
