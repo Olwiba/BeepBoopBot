@@ -56,6 +56,7 @@ const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case a.CLEAR_BUTTON:
       const newClearedState = resetGameState(state)
+      newClearedState.commandQueue = []
       return newClearedState
 
     case a.GO_BUTTON:
