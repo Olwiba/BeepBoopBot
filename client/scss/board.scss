@@ -48,7 +48,7 @@
 
 .board-container.control {
 	background: url('/resources/images/marble.jpg');
-	background-size: 50%; 
+	background-size: 50%;
 }
 
 /*.board-container.cargo {
@@ -127,10 +127,14 @@
 			}
 		}
 
-		.hole {
-			background: url('/resources/images/blackhole.svg');
-			background-size: cover;
+		.clear {
+			background: rgba(0,0,0,0.0);
+			padding-bottom: 2%;
 			border-bottom: 2vh solid rgba(0,0,0,0.0);
+		}
+
+		.hole {
+			width: 105%;
 			-webkit-animation: spin 0.5s infinite linear;
 		}
 
@@ -149,12 +153,12 @@
 
 		.engine.odd {
 			background: url('/resources/images/metal.jpg') $white;
-			background-size: 175%; 
+			background-size: 175%;
 		}
 
 		.engine.even {
 			background: url('/resources/images/metal.jpg') $white-dark;
-			background-size: 175%; 
+			background-size: 175%;
 		}
 
 		.cargo.odd {
@@ -177,12 +181,12 @@
 
 		.control.odd {
 			background: url('/resources/images/tile-squares.png') #1c1c1c;
-			background-size: 75%; 
+			background-size: 75%;
 		}
 
-		.control.even {			
+		.control.even {
 			background: url('/resources/images/tile-squares.png') #4d4d4d;
-			background-size: 75%; 
+			background-size: 75%;
 		}
 
 		.box-tile {
