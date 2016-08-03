@@ -108,6 +108,9 @@
       font-family: 'Space Mono', monospace; }
     .navigation .levels-container .modal-heading {
       font-size: 30px; }
+      @media screen and (max-width: 850px) {
+        .navigation .levels-container .modal-heading {
+          font-size: 22px; } }
     .navigation .levels-container .level-select {
       display: flex;
       justify-content: center;
