@@ -56,7 +56,7 @@ class Win extends Component {
       {this.props.currentLevel === this.state.highestLevel
         ? <SkyLight beforeClose={this._executeBeforeModalClose.bind(this)} hideOnOverlayClicked={true} ref='winBox' dialogStyles={winDialog} >
           <div className='win-notice'>
-            <img src='/resources/images/intro-b3.svg' className='intro-b3' />
+            <img src='/resources/images/control-room.svg' className='win-game-b3' />
             <h3 className={classNames('modal-heading', 'about-backstory')}>Game Over!</h3>
             <p>Excellent! B3 made it to the control room and stopped the space ship from colliding with Earth!</p>
             <p>You are the saviour of humanity!</p>
@@ -70,7 +70,7 @@ class Win extends Component {
         </SkyLight>
         : <SkyLight beforeClose={this._executeBeforeModalClose.bind(this)} hideOnOverlayClicked={true} ref='winBox' dialogStyles={winDialog} >
           <div className='win-notice'>
-            <img src='/resources/images/intro-b3.svg' className='intro-b3' />
+            <img src='/resources/images/happy-b3.svg' className='intro-b3' />
             <h3 className={classNames('win-notice')}>Level Cleared!</h3>
             <p>Nice work, B3 made it to the elevator!</p>
             <p>You're getting closer to the control room.</p>
