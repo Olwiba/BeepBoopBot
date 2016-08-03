@@ -416,7 +416,7 @@
   background-size: 25%; }
 
 .board-container.control {
-  background: url("/resources/images/marble.jpg");
+  background: url("/resources/images/marble.png");
   background-size: 50%; }
 
 .board-container {
@@ -487,10 +487,10 @@
     background: url("/resources/images/asfalt-light.png") #c45d45; }
   .board-container .engine.odd {
     background: url("/resources/images/metal-1.png") #f2f2f2;
-    background-size: 175%; }
+    background-size: cover; }
   .board-container .engine.even {
     background: url("/resources/images/metal-2.png") #cbcbcb;
-    background-size: 175%; }
+    background-size: cover; }
   .board-container .cargo.odd {
     background: url("/resources/images/mesh.png") #000000;
     background-size: 25%; }
@@ -498,9 +498,11 @@
     background: url("/resources/images/mesh.png") #1c1717;
     background-size: 25%; }
   .board-container .garden.odd {
-    background: url("/resources/images/grass-1.svg") #78c042; }
+    background: url("/resources/images/grass-1.png") #78c042 no-repeat;
+    background-size: 102%; }
   .board-container .garden.even {
-    background: url("/resources/images/grass-2.svg") #4d9713; }
+    background: url("/resources/images/grass-2.png") #4d9713;
+    background-size: 102%; }
   .board-container .control.odd {
     background: url("/resources/images/tile-squares.png") #1c1c1c;
     background-size: 75%; }
