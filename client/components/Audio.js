@@ -44,16 +44,6 @@ export default class Audio extends Component {
     }
   }
 
-  renderCurrentSong() {
-    return <p>
-      Current song {this.state.currentSong.title}. Song is {this.getStatusText()}
-    </p>;
-  }
-
-  handleSongSelected(song) {
-    this.setState({currentSong: song, position: 0});
-  }
-
   render() {
     return( 
     <div>

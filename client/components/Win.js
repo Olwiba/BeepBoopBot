@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import SkyLight from 'react-skylight'
+import classNames from 'classnames'
 import levels from '../levels'
 
 class Win extends Component {
@@ -43,7 +44,7 @@ class Win extends Component {
       backgroundColor: '#00897B',
       color: '#ffffff',
       width: '70%',
-      height: '40%',
+      height: '50%',
       marginTop: '-10%',
       marginLeft: '-35%',
       borderRadius: '2%',
@@ -56,7 +57,7 @@ class Win extends Component {
         ? <SkyLight beforeClose={this._executeBeforeModalClose.bind(this)} hideOnOverlayClicked={true} ref='winBox' dialogStyles={winDialog} >
           <div className='win-notice'>
             <img src='/resources/images/intro-b3.svg' className='intro-b3' />
-            <p>Game Over!</p>
+            <h3 className={classNames('modal-heading', 'about-backstory')}>Game Over!</h3>
             <p>Excellent! B3 made it to the control room and stopped the space ship from colliding with Earth!</p>
             <p>You are the saviour of humanity!</p>
             <br />
@@ -70,9 +71,9 @@ class Win extends Component {
         : <SkyLight beforeClose={this._executeBeforeModalClose.bind(this)} hideOnOverlayClicked={true} ref='winBox' dialogStyles={winDialog} >
           <div className='win-notice'>
             <img src='/resources/images/intro-b3.svg' className='intro-b3' />
-            <p>Level Cleared!</p>
-            <p>Nice work, B3 made it to the elevator..</p>
-            <p>Your getting closer to the control room.</p>
+            <h3 className={classNames('win-notice')}>Level Cleared!</h3>
+            <p>Nice work, B3 made it to the elevator!</p>
+            <p>You're getting closer to the control room.</p>
             <br />
             <div className='modal-button-container'>
               <a className='modal-button modal-animate win-action' onClick={() => { this.refs.winBox.hide() }}>
