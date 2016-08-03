@@ -1,111 +1,105 @@
 .run-button-container {
-        height: 40%;
-        width: 80%;
-        display:flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-content: center;
-        align-items: center; 
-          
+  height: 40%;
+  width: 80%;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center; 
 
-         @media screen and (max-width: 850px) {
-            height: 17%;
-            width: 76%;
-            
-        } 
+  @media screen and (max-width: 850px) {
+      height: 17%;
+      width: 76%;
+      
+  } 
 
+  .run-button {
+    margin: 10px;
+    height: 60px;
+    width: 70px;
+    min-width:45px;
+    padding: 10px 30px;
+    border-radius: 25%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    cursor: default;
+    text-shadow: 0px -2px rgba(0, 0, 0, 0.2);
+
+
+    @media screen and (max-width: 1000px) {
+        height: 54px;
+        width: 10px
         
-    
-
-        .run-button {
-            margin: 10px;
-            height: 60px;
-            width: 70px;
-            min-width:45px;
-            padding: 10px 30px;
-            border-radius: 25%;
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            align-items: center;
-            cursor: default;
-            text-shadow: 0px -2px rgba(0, 0, 0, 0.2);
-
-
-            @media screen and (max-width: 1000px) {
-                height: 54px;
-                width: 10px
-                
-            }
-
-            @media screen and (max-width: 850px) {
-                margin: 8px;
-                height: 22px;
-                min-width: 11px;
-            }
-
-            
-        }
-
-        .go-action {
-            background: $green;
-            border-bottom: 9px solid $green-dark;
-        }
-
-        .go-action:hover {
-            background: #93cc67;
-            border-bottom: 12px solid #70ab42;
-        }
-
-        .stop-action {
-            background: $red;
-            border-bottom: 12px solid $red-dark;
-        }
-
-        .stop-action:hover {
-            background: #dd5a51;
-            border-bottom: 12px solid #ba5a51;
-        }
-
-        .retry-action {
-            background: $orange;
-            border-bottom: 12px solid $orange-dark;
-        }
-
-        .retry-action:hover {
-            background: #ee9272;
-            border-bottom: 12px solid #cf7d6a;
-        }
-
-        .bin-action {
-            background: $yellow;
-            border-bottom: 12px solid $yellow-dark;
-        }
-
-        .bin-action:hover {
-            background: #ecdf32;
-            border-bottom: 12px solid #cfc336;
-        }
-
-        .bin-icon {
-            height: 100%;
-            width: 100%;
-
-            @media screen and (max-width: 850px) {
-                width: 150%;
-            }
-        }
-
-        .run-animate {
-            transition: all 0.2s;
-            -webkit-transition: all 0.2s;
-        }
-
-        .run-button:active {
-            transform: translate(0px,6px);
-            -webkit-transform: translate(0px,6px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-        }
-
     }
+
+    @media screen and (max-width: 850px) {
+        margin: 8px;
+        height: 22px;
+        min-width: 11px;
+    }      
+  }
+
+  .go-action {
+    background: $green;
+    border-bottom: 9px solid $green-dark;
+  }
+
+  .go-action:hover {
+    background: #93cc67;
+    border-bottom: 12px solid #70ab42;
+  }
+
+  .stop-action {
+    background: $red;
+    border-bottom: 12px solid $red-dark;
+  }
+
+  .stop-action:hover {
+    background: #dd5a51;
+    border-bottom: 12px solid #ba5a51;
+  }
+
+  .retry-action {
+    background: $orange;
+    border-bottom: 12px solid $orange-dark;
+  }
+
+  .retry-action:hover {
+    background: #ee9272;
+    border-bottom: 12px solid #cf7d6a;
+  }
+
+  .bin-action {
+    background: $yellow;
+    border-bottom: 12px solid $yellow-dark;
+  }
+
+  .bin-action:hover {
+    background: #ecdf32;
+    border-bottom: 12px solid #cfc336;
+  }
+
+  .bin-icon {
+    height: 100%;
+    width: 100%;
+
+    @media screen and (max-width: 850px) {
+        width: 150%;
+    }
+  }
+
+  .run-animate {
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+  }
+
+  .run-button:active {
+    transform: translate(0px,6px);
+    -webkit-transform: translate(0px,6px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  }
+
+}
