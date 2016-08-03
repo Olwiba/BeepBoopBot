@@ -1,4 +1,3 @@
-
 #board {
 	width: 70%;
 	height: 92%;
@@ -10,12 +9,12 @@
 	order: 2;
 
 	@media screen and (max-width: 850px) {
-			width: 100%;
-			height: 50%;
+		width: 100%;
+		height: 50%;
 	}
 	@media screen and (max-width: 320px) {
-			width: 100%;
-			height: 44%;
+		width: 100%;
+		height: 44%;
 	}
 }
 
@@ -29,6 +28,7 @@
 	background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
 	background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
 }
+
 .board-container.basement {
 	background: url('/resources/images/rust.jpg');
 }
@@ -51,10 +51,6 @@
 	background-size: 50%;
 }
 
-/*.board-container.cargo {
-	background: $blue;
-}*/
-
 .board-container {
 	height: 88%;
 	width: 65%;
@@ -67,7 +63,6 @@
 	align-items: center;
 	border-radius: 15px;
 	border-bottom: 2vh solid rgba(0, 0, 0, 0.5);
-	/*background: $blue;*/
 
 	@media screen and (max-width: 1600px) {
 		height: 82%;
@@ -90,17 +85,16 @@
 	}
 
 	@media screen and (max-width: 850px) {
-	    height: 77%;
-	    width: 58%;
-
+    height: 77%;
+    width: 58%;
 	}
 
-	   @media screen and (max-width: 700px) {
-            height: 77%;
-	    	width: 77%;
-            }
+  @media screen and (max-width: 700px) {
+    height: 77%;
+  	width: 77%;
+  }
 
-		.tile {
+	.tile {
 		display:flex;
 		justify-content: center;
 		align-content: center;
@@ -111,21 +105,20 @@
 		width: 19%;
 		height: 19%;
 
-
-			@media screen and (max-width: 850px) {
-				display: flex;
-			    justify-content: center;
-			    align-content: center;
-			    align-items: center;
-			    padding: 0px 0 0px 1px;
-			    margin: -4px 0px 1px 2px;
-			    border-radius: 10px;
-			    background-color: #f2f2f2;
-			    border-bottom: 2vh solid rgba(0, 0, 0, 0.3);
-			    width: 18%;
-			    height: 17%;
-			}
+		@media screen and (max-width: 850px) {
+			display: flex;
+	    justify-content: center;
+	    align-content: center;
+	    align-items: center;
+	    padding: 0px 0 0px 1px;
+	    margin: -4px 0px 1px 2px;
+	    border-radius: 10px;
+	    background-color: #f2f2f2;
+	    border-bottom: 2vh solid rgba(0, 0, 0, 0.3);
+	    width: 18%;
+	    height: 17%;
 		}
+	}
 
 		.clear {
 			background: rgba(0,0,0,0.0);
@@ -147,34 +140,35 @@
 			background: url('/resources/images/wall.png') $orange;
 		}
 
-		.basement.even {
-			background: url('/resources/images/asfalt-light.png') $orange-dark;
-		}
+	.basement.even {
+		background: url('/resources/images/asfalt-light.png') $orange-dark;
+	}
 
-		.engine.odd {
-			background: url('/resources/images/metal.jpg') $white;
-			background-size: 175%;
-		}
+	.engine.odd {
+		background: url('/resources/images/metal-1.png') $white;
+		background-size: 175%;
+	}
 
-		.engine.even {
-			background: url('/resources/images/metal.jpg') $white-dark;
-			background-size: 175%;
-		}
+	.engine.even {
+		background: url('/resources/images/metal-2.png') $white-dark;
+		background-size: 175%;
+	}
 
-		.cargo.odd {
-			background: url('/resources/images/mesh.png') #000000;
-			background-size: 25%;
-		}
+	.cargo.odd {
+		background: url('/resources/images/mesh.png') #000000;
+		background-size: 25%;
+	}
 
-		.cargo.even {
-			background: url('/resources/images/mesh.png') #1c1717;
-			background-size: 25%;
-		}
+	.cargo.even {
+		background: url('/resources/images/mesh.png') #1c1717;
+		background-size: 25%;
+	}
 
-		.garden.odd {
-			background: url('/resources/images/grass-1.svg') $green;
-		}
+	.garden.odd {
+		background: url('/resources/images/grass-1.svg') $green;
+	}
 
+<<<<<<< HEAD
 		.garden.even {
 			background: url('/resources/images/grass-2.svg') $green-dark;
 		}
@@ -189,24 +183,24 @@
 			background-size: 75%;
 		}
 
-		.box-tile {
-			width: 90%;
-			margin-bottom: 20%;
-		}
+	.box-tile {
+		width: 90%;
+		margin-bottom: 20%;
+	}
 
-		.elevator-tile {
-			width: 70%;
-			margin-bottom: 10%;
-		}
+	.elevator-tile {
+		width: 70%;
+		margin-bottom: 10%;
+	}
 
-		.elevator-bottom {
-			background: url('/resources/images/elevator-below.svg') no-repeat ;
-			background-size: 75%;
-			background-position: center center;
-			margin-bottom: -4%;
-			display:flex;
-			justify-content: center;
-			align-content: center;
-		}
+	.elevator-bottom {
+		background: url('/resources/images/elevator-below.svg') no-repeat ;
+		background-size: 75%;
+		background-position: center center;
+		margin-bottom: -4%;
+		display:flex;
+		justify-content: center;
+		align-content: center;
+	}
 
 }
