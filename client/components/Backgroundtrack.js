@@ -1,5 +1,6 @@
 import React, { Component }from 'react';
 import Sound from 'react-sound';
+import cookie from 'react-cookie'
 import songs from '../sound';
 import TileInFront from '../reducers/lib/tileInFront'
 
@@ -11,9 +12,10 @@ export default class Backgroundtrack extends Component {
       currentSong: songs[2],
       position: 0,
       volume: 10,
-      playStatus: Sound.status.PLAYING
+      playStatus: Sound.status.STOPPED
     };
   }
+
   getStatusText() {
     switch(this.state.playStatus) {
       case Sound.status.PLAYING:
@@ -27,9 +29,24 @@ export default class Backgroundtrack extends Component {
     }
   }
 
+  componentDidMount () {
+    const cookies = cookie.load('sound')
+    if (cookies === undefined) {
+      cookie.save('sound', 'ON')
+      this.setState({playStatus: Sound.status.PLAYING})
+    }
+    else if(cookies === 'ON'){
+      this.setState({playStatus: Sound.status.PLAYING})
+    }
+    else {
+      this.setState({playStatus: Sound.status.STOPPED})
+    }
+  }
+
   componentDidUpdate(){
+    const cookies = cookie.load('sound')
     const isAlreadySet = this.state.playStatus === Sound.status.PLAYING
-    if(this.props.sound){
+    if(cookies === 'ON'){
       if (isAlreadySet) return
       this.setState({playStatus: Sound.status.PLAYING})
     }
@@ -37,10 +54,6 @@ export default class Backgroundtrack extends Component {
       if (!isAlreadySet) return
       this.setState({playStatus: Sound.status.STOPPED})
     }
-  }
-
-  handleSongSelected(song) {
-    this.setState({currentSong: song, position: 0});
   }
 
   render() {
