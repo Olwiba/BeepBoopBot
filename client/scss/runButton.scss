@@ -6,11 +6,12 @@
   flex-wrap: nowrap;
   justify-content: center;
   align-content: center;
-  align-items: center;
+  align-items: center; 
 
   @media screen and (max-width: 850px) {
-    height: 30%;
-    width: 76%;
+      height: 17%;
+      width: 76%;
+      
   } 
 
   .run-button {
@@ -27,16 +28,18 @@
     cursor: default;
     text-shadow: 0px -2px rgba(0, 0, 0, 0.2);
 
+
     @media screen and (max-width: 1000px) {
-      height: 54px;
-      width: 10px
+        height: 54px;
+        width: 10px
+        
     }
 
     @media screen and (max-width: 850px) {
-      margin: 8px;
-      height: 22px;
-      min-width: 11px;
-    }
+        margin: 8px;
+        height: 22px;
+        min-width: 11px;
+    }      
   }
 
   .go-action {
