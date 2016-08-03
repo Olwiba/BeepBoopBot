@@ -149,7 +149,8 @@
             background: $blue-darkest;
             font-size: 20px;
             color: $blue;
-            cursor: default;
+            cursor: pointer;
+            margin-top: 10px;
 
             @media screen and (max-width: 850px) {
                 width: 20%;
