@@ -39,19 +39,25 @@ export function cloneState (state) {
   }
 }
 
+function resetGameState (state) {
+  const newState = cloneState(state)
+
+  newState.robot = INITIAL_STATE.robot
+  newState.running = false
+  newState.hasFinished = false
+  newState.levelWon = false
+  newState.executeCommandIndex = 0
+
+  return newState
+}
+
 const reducer = (state = INITIAL_STATE, action) => {
   const newState = cloneState(state)
   switch (action.type) {
     case a.CLEAR_BUTTON:
-      if (state.running) {
-        // stop the robot before clearing
-        newState.running = INITIAL_STATE.running
-        newState.robot = INITIAL_STATE.robot
-      }
-
-      newState.commandQueue = INITIAL_STATE.commandQueue
-      newState.executeCommandIndex = INITIAL_STATE.executeCommandIndex
-      return newState
+      const newClearedState = resetGameState(state)
+      newClearedState.commandQueue = []
+      return newClearedState
 
     case a.GO_BUTTON:
       newState.running = true
@@ -59,14 +65,11 @@ const reducer = (state = INITIAL_STATE, action) => {
       return newState
 
     case a.STOP_BUTTON:
-      newState.running = false
-      newState.robot = INITIAL_STATE.robot
-      newState.executeCommandIndex = 0
-      newState.hasFinished = false
-      return newState
+      const newStopState = resetGameState(state)
+      return newStopState
 
     case a.SELECT_LEVEL:
-      const newLevelState = cloneState(INITIAL_STATE)
+      const newLevelState = resetGameState(state)
       newLevelState.board = levels[action.payload].board
       newLevelState.moveLimit = levels[action.payload].moveLimit
       newLevelState.tileInfo = state.tileInfo
