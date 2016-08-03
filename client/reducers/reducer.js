@@ -25,7 +25,7 @@ const INITIAL_STATE = {
 export function cloneState (state) {
   return {
     robot: {...state.robot},
-    board: state.board.map(row => row.slice()),
+    board: JSON.parse(JSON.stringify(state.board)),
     moveLimit: state.moveLimit,
     commandQueue: [...state.commandQueue],
     running: state.running,
