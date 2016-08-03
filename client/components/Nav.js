@@ -30,6 +30,11 @@ class Nav extends Component {
   }
 
   render () {
+    var modalLeft = '50%'
+    if (window.innerWidth < 600) {
+      modalLeft = '41%'
+    }
+    console.log('modalLeft', modalLeft)
     var storyAndInstructionsStyle = {
       backgroundColor: '#00897B',
       color: '#ffffff',
@@ -40,10 +45,11 @@ class Nav extends Component {
     var levelsModalStyle = {
       backgroundColor: '#00897B',
       color: '#ffffff',
-      width: '30%',
+      width: '50%',
       borderRadius: '2%',
       padding: '0 30px 0 30px',
-      overflowY: 'auto'
+      overflowY: 'auto',
+      left: modalLeft
     }
     return (
       <div className='navigation'>

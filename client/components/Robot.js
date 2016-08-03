@@ -24,7 +24,7 @@ class Robot extends Component {
   }
   render () {
     var centerPoints = this.calcCenter()
-    var size = 100
+    var size = 80
     var positioning = size / 2
     var dampingStrength = 1
     var stiffnessStrength = 100
