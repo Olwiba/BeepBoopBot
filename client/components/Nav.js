@@ -96,11 +96,11 @@ class Nav extends Component {
               <h3 className={classNames('modal-heading', 'about-backstory')}>Your Mission</h3>
               <p>Get B3 <img src='/resources/images/b3-robot.svg' className='how-to-small' /> to the elevator <img src='/resources/images/elevator-top.svg' className='how-to-small' /> on each level. </p>
               <p>B3 has a limited number of moves for each level. Use your moves wisely! </p>
-              <p>Use the control buttons to line up some commands. Press 'GO' and B3 will follow your commands!</p>
+              <p>Use the control buttons to queue up some commands. Press 'GO' and B3 will follow your commands!</p>
               <div className='controls-container'>
                 <h3 className={classNames('modal-heading', 'about-backstory')}>Controls</h3>
                 <p>Use <img src='/resources/images/go-button.svg' className='control-small' /> to move B3 forward.</p>
-                <p>Use <img src='/resources/images/rotate-left-button.svg' className='control-small' /> <img src='/resources/images/rotate-right-button.svg' className='control-small' /> to rotate B3 left and right.</p>
+                <p>Use <img src='/resources/images/rotate-left-button.svg' className='control-small' /> and <img src='/resources/images/rotate-right-button.svg' className='control-small' /> to rotate B3 left and right.</p>
                 <p>Use <img src='/resources/images/jump-button.svg' className='how-to-small' /> to jump B3 on to a box.</p>
                 <p>Remove a queued command by clicking on it.</p>
                 <p>You must jump from box to box. Avoid holes in the ground.</p>
