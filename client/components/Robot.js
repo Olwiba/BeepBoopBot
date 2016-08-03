@@ -4,6 +4,7 @@ import Sound from 'react-sound'
 import {ReactMotionLoop} from 'react-motion-loop'
 import WinContainer from '../containers/WinContainer'
 import AudioContainer from '../containers/AudioContainer'
+import classNames from 'classnames'
 
 class Robot extends Component {
   calcCenter() {
@@ -46,9 +47,7 @@ class Robot extends Component {
     } else if (commandExecuted === 'TURN_RIGHT' || commandExecuted === 'TURN_LEFT') {
       size = size + 5
     } else if (this.props.levelWon === true) {
-      stiffnessStrength = 4
-      dampingStrength = 100
-      precisionStrength = 10
+      opacity = 0
     } else if (!this.props.robot.isAlive) {
       precisionStrength = 0.1
       stiffnessStrength = 300
@@ -92,7 +91,7 @@ class Robot extends Component {
                 precision: precisionStrength
               })
             }}>
-              {style => <img src="/resources/images/b3-robot.svg" className="b3-robot" style={style}/>}
+              {style => <img src="/resources/images/b3-robot.svg" className={this.props.levelWon ? classNames('b3-animation') : classNames('b3-robot')} style={style}/>}
             </ReactMotionLoop>
             <ReactMotionLoop styleFrom={{
               opacity: spring(opacity),
@@ -109,7 +108,7 @@ class Robot extends Component {
                 precision: precisionStrength
               })
             }}>
-              {style => <img src="/resources/images/shadow.svg" className="shadow" style={style}/>}
+              {style => <img src="/resources/images/shadow.svg" className={this.props.levelWon ? classNames('shadow-animation') : classNames('shadow')} style={style}/>}
             </ReactMotionLoop>
           </div>}
         </Motion>
