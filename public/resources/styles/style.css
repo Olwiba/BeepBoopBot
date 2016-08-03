@@ -471,8 +471,8 @@
         justify-content: center;
         align-content: center;
         align-items: center;
-        padding: 0px 0 0px 1px;
-        margin: -4px 0px 1px 2px;
+        padding: 0 0 0 1px;
+        margin: -4px 0 1px 2px;
         border-radius: 10px;
         background-color: #f2f2f2;
         border-bottom: 2vh solid rgba(0, 0, 0, 0.3);
@@ -744,7 +744,7 @@ h1 {
 
 h3 {
   font-family: "Press Start 2P", cursive;
-  font-size: 22px;
+  font-size: 2vh;
   color: #f2f2f2; }
 
 h4 {

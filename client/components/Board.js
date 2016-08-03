@@ -36,7 +36,9 @@ class Board extends Component {
                 ? 'odd'
                 : 'even'
               return (col === 3
-                ? <div key={rowIndex + colIndex} className={classNames('tile', 'clear')} ref={rowIndex.toString() + colIndex.toString()}><img src='/resources/images/blackhole.svg' className='hole'></img></div>
+                ? <div key={rowIndex + colIndex} className={classNames('tile', 'clear')} ref={rowIndex.toString() + colIndex.toString()}>
+                    <img src='/resources/images/blackhole.svg' className='hole'></img>
+                  </div>
                 : col === 2
                   ? <div key={rowIndex + colIndex} className={classNames('tile', levelTheme, oddEven)} ref={rowIndex.toString() + colIndex.toString()}>
                       <img src='/resources/images/box-tile.svg' className='box-tile'/>
@@ -61,5 +63,3 @@ class Board extends Component {
 }
 
 export default Board
-
-//<div key={rowIndex + colIndex} className={classNames('tile', 'hole')} ref={rowIndex.toString() + colIndex.toString()} style={style}/>
