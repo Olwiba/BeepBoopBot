@@ -46,7 +46,7 @@ export default class Backgroundtrack extends Component {
   componentDidUpdate(){
     const cookies = cookie.load('sound')
     const isAlreadySet = this.state.playStatus === Sound.status.PLAYING
-    if(cookies == 'ON'){
+    if(cookies === 'ON'){
       if (isAlreadySet) return
       this.setState({playStatus: Sound.status.PLAYING})
     }
