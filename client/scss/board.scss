@@ -42,7 +42,7 @@
 }
 
 .board-container.control {
-	background: url('/resources/images/marble.jpg');
+	background: url('/resources/images/marble.png');
 	background-size: 50%;
 }
 
@@ -130,6 +130,7 @@
 
 	.basement.odd {
 		background: url('/resources/images/wall.png') $orange;
+		background-size: 200%;
 	}
 
 	.basement.even {
@@ -138,12 +139,12 @@
 
 	.engine.odd {
 		background: url('/resources/images/metal-1.png') $white;
-		background-size: 175%;
+		background-size: cover;
 	}
 
 	.engine.even {
 		background: url('/resources/images/metal-2.png') $white-dark;
-		background-size: 175%;
+		background-size: cover;
 	}
 
 	.cargo.odd {
@@ -157,11 +158,13 @@
 	}
 
 	.garden.odd {
-		background: url('/resources/images/grass-1.svg') $green;
+		background: url('/resources/images/grass-1.png') $green no-repeat;
+		background-size: 102%;
 	}
 
 	.garden.even {
-		background: url('/resources/images/grass-2.svg') $green-dark;
+		background: url('/resources/images/grass-2.png') $green-dark;
+		background-size: 102%;
 	}
 
 	.control.odd {

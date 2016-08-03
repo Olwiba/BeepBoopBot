@@ -15,7 +15,14 @@ class Robot extends Component {
     return [centerX, centerY]
   }
 
-  render() {
+  componentDidMount () {
+    window.onresize = () => { this.forceUpdate(() => {}) }
+  }
+
+  componentWillUnmount () {
+    window.onresize = null
+  }
+  render () {
     var centerPoints = this.calcCenter()
     var size = 80
     var positioning = size / 2
