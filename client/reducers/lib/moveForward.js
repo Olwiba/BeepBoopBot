@@ -3,7 +3,7 @@ import tileInFront from './tileInFront'
 // moves the robot forward if it can
 export default function (robot, board) {
   const nextTileCode = tileInFront(robot, board)
-  if (robot.isAlive == true && (nextTileCode === 0 || nextTileCode === 1)) {
+  if (robot.isAlive === true && (nextTileCode === 0 || nextTileCode === 1)) {
     switch (Math.abs(robot.direction % 360)) {
       case 0:
         // 0 is backwards along Y axis
@@ -23,9 +23,7 @@ export default function (robot, board) {
         break
     }
     robot.isOnBox = false
-  }
-   else if (nextTileCode == 3)
-  {
+  } else if (nextTileCode === 3) {
     switch (Math.abs(robot.direction % 360)) {
       case 0:
         // 0 is backwards along Y axis Y-- and X is same
