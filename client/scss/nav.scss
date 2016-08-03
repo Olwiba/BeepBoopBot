@@ -159,6 +159,10 @@
     }
     .modal-heading {
       font-size: 30px;
+      @media screen and (max-width: 850px) {
+        font-size: 22px;
+      }
+
     }
 
     .level-select{
@@ -177,7 +181,8 @@
       margin-top: 10px;
 
       @media screen and (max-width: 850px) {
-        width: 20%;
+        width: 80%;
+        height: 15%;
         padding: 0 20%;
         right: 20px;
       }

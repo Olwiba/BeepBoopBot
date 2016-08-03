@@ -126,6 +126,9 @@
       font-family: 'Space Mono', monospace; }
     .navigation .levels-container .modal-heading {
       font-size: 30px; }
+      @media screen and (max-width: 850px) {
+        .navigation .levels-container .modal-heading {
+          font-size: 22px; } }
     .navigation .levels-container .level-select {
       display: flex;
       justify-content: center;
@@ -142,7 +145,8 @@
       margin-top: 10px; }
       @media screen and (max-width: 850px) {
         .navigation .levels-container .level-select {
-          width: 20%;
+          width: 80%;
+          height: 15%;
           padding: 0 20%;
           right: 20px; } }
     .navigation .levels-container .level-select:hover {
@@ -374,12 +378,17 @@
     .command-pane .action-button-container .action-forward {
       background: #78c042;
       border-bottom: 7px solid #4d9713; }
-    .command-pane .action-button-container .action-forward:hover {
-      background: #93cc67;
-      border-bottom: 7px solid #70ab42; }
     .command-pane .action-button-container .action-rotate {
       background: #ea7750;
       border-bottom: 7px solid #c45d45; }
+    .command-pane .action-button-container .moves-left {
+      line-height: 100%;
+      font-size: 21px;
+      color: white;
+      text-shadow: 0px -2px rgba(0, 0, 0, 0.2); }
+      @media screen and (max-width: 850px) {
+        .command-pane .action-button-container .moves-left {
+          line-height: 0%; } }
     .command-pane .action-button-container .action-rotate:hover {
       background: #ee9272;
       border-bottom: 7px solid #cf7d6a; }
@@ -490,8 +499,8 @@
         justify-content: center;
         align-content: center;
         align-items: center;
-        padding: 0px 0 0px 1px;
-        margin: -4px 0px 1px 2px;
+        padding: 0 0 0 1px;
+        margin: -4px 0 1px 2px;
         border-radius: 10px;
         background-color: #f2f2f2;
         border-bottom: 2vh solid rgba(0, 0, 0, 0.3);
@@ -499,7 +508,17 @@
         height: 17%; } }
   .board-container .clear {
     background: transparent;
+    padding-bottom: 1%;
     border-bottom: 2vh solid transparent; }
+  .board-container .hole {
+    width: 105%;
+    -webkit-animation: spin 0.5s infinite linear; }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
   .board-container .basement.odd {
     background: url("/resources/images/wall.png") #ea7750;
     background-size: 200%; }
@@ -530,8 +549,8 @@
     background: url("/resources/images/tile-squares.png") #4d4d4d;
     background-size: 75%; }
   .board-container .box-tile {
-    width: 90%;
-    margin-bottom: 20%; }
+    width: 93%;
+    margin-bottom: 7%; }
   .board-container .elevator-tile {
     width: 70%;
     margin-bottom: 10%; }
@@ -671,7 +690,7 @@
     .b3-robot {
       position: absolute;
       width: 40%;
-      top: 40%;
+      top: 30%;
       height: 40%;
       background-size: 100%;
       z-index: 100; } }
@@ -758,8 +777,11 @@ h1 {
 
 h3 {
   font-family: "Press Start 2P", cursive;
-  font-size: 2vh;
+  font-size: 2.5vh;
   color: #f2f2f2; }
+  @media screen and (max-width: 850px) {
+    h3 {
+      font-size: 2vh; } }
 
 h4 {
   font-family: "Press Start 2P", cursive;
