@@ -17,8 +17,9 @@ test('cloneState clones the state without mutations', (t) => {
 
 test('CLEAR_BUTTON action clears the queue', (t) => {
   const initialState = reducer(undefined, {type: actions.QUEUE_ACTION, payload: 'an action'})
-
+  freeze(initialState)
   t.equal(initialState.commandQueue.length, 1, 'Command queue contains one action')
+
   const newState = reducer(initialState, {type: actions.CLEAR_BUTTON})
 
   t.equal(newState.commandQueue.length, 0, 'Command queue contains 0 actions after clearing')
