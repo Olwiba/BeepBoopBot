@@ -47,6 +47,10 @@ $actionButtonElevation: 7px;
         font-size: 21px;
         color: white;
         text-shadow: 0px -2px rgba(0, 0, 0, 0.2);
+
+        @media screen and (max-width: 850px){
+            line-height: 0%;
+        }
     }
     .command-container {
         height: 28%;
@@ -64,7 +68,7 @@ $actionButtonElevation: 7px;
         overflow-y: scroll;
 
         @media screen and (max-width: 850px) {
-            height: 21%;
+            height: 20%;
             width: 93%;
         }
     }
@@ -86,9 +90,13 @@ $actionButtonElevation: 7px;
         }
 
         @media screen and (max-width: 750px) {
-            height: 30%;
+            height: 21%;
             width: 58%;
             border-top: none;
+        }
+
+        @media screen and (max-width: 320px) {
+            height: 29%;
         }
     }
 
@@ -103,7 +111,7 @@ $actionButtonElevation: 7px;
         align-items: center;
 
         @media screen and (max-width: 1200px) {
-            height: 30%;
+            height: 21%;
             width: 79%;
         }
 
