@@ -105,7 +105,7 @@ class Robot extends Component {
           </div>}
         </Motion>
         <WinContainer/>
-        <AudioContainer />
+        <AudioContainer/>
       </div>
     )
   }
