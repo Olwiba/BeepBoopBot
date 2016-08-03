@@ -27,6 +27,14 @@ class Board extends Component {
             ? 'garden'
             : 'control'
 
+    var animate = 'tet' // do check here
+    if (this.props.levelWon === true) {
+      animate = 'elevatorAnimation'
+      console.log('aaaaaaaaaaaaaaaaaaaaaaaaa')
+    }
+
+    console.log('board props', this.props)
+
     return (
       <div id='board' className='board-background'>
         <div className={classNames('board-container', levelTheme)}>
@@ -46,7 +54,7 @@ class Board extends Component {
                   : col === 1
                     ? <div key={rowIndex + colIndex} className={classNames('tile', levelTheme, oddEven)} ref={rowIndex.toString() + colIndex.toString()}>
                         <div className='elevator-bottom'>
-                          <img src='/resources/images/elevator-top.svg' className='elevator-tile'/>
+                          <img src='/resources/images/elevator-top.svg' className={ this.props.levelWon ? classNames('elevator-animation') : classNames('elevator-no-animation') }/>
                         </div>
                       </div>
                     : <div key={rowIndex + colIndex} className={classNames('tile', levelTheme, oddEven)} ref={rowIndex.toString() + colIndex.toString()}></div>)
@@ -63,3 +71,6 @@ class Board extends Component {
 }
 
 export default Board
+
+
+// classNames('elevator-animation')

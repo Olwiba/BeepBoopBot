@@ -15,6 +15,8 @@ class Robot extends Component {
     return [centerX, centerY]
   }
 
+
+
   componentDidMount () {
     window.onresize = () => { this.forceUpdate(() => {}) }
   }

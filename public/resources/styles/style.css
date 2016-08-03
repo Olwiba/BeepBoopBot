@@ -533,9 +533,29 @@
   .board-container .box-tile {
     width: 93%;
     margin-bottom: 7%; }
-  .board-container .elevator-tile {
+  .board-container .elevator-no-animation {
     width: 70%;
-    margin-bottom: 10%; }
+    margin-bottom: 10%;
+    top: 0;
+    position: relative; }
+  .board-container .elevator-animation {
+    width: 70%;
+    margin-bottom: 10%;
+    top: 0;
+    position: relative;
+    -webkit-animation-name: fadeOutUp;
+    /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 4s;
+    /* Chrome, Safari, Opera */
+    animation-name: fadeOutUp;
+    animation-duration: 4s; }
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0); } }
   .board-container .elevator-bottom {
     background: url("/resources/images/elevator-below.svg") no-repeat;
     background-size: 75%;
