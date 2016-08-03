@@ -1,3 +1,4 @@
+import cookie from 'react-cookie'
 import jump from './lib/jump'
 import moveForward from './lib/moveForward.js'
 import levels from '../levels'
@@ -74,6 +75,8 @@ const reducer = (state = INITIAL_STATE, action) => {
       newLevelState.moveLimit = levels[action.payload].moveLimit
       newLevelState.tileInfo = state.tileInfo
       newLevelState.currentLevel = parseInt(action.payload)
+      newLevelState.commandQueue = []
+      newLevelState.executeCommandIndex = 0
       return newLevelState
 
     case a.MOVE_FORWARD:
@@ -119,6 +122,13 @@ const reducer = (state = INITIAL_STATE, action) => {
 
     case a.TOGGLE_SOUND:
       newState.sound = !(newState.sound)
+      var cookies = cookie.load('sound')
+      if (cookies === 'ON'){
+        cookie.save('sound', 'OFF')       
+      }
+      else{
+        cookie.save('sound', 'ON') 
+      }
       return newState
 
     default:
