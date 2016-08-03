@@ -73,6 +73,7 @@ test('MOVE_FORWARD action moves B3 forward (negative in y direction)', function 
 
 test('SELECT_LEVEL updates the state', function (t) {
   const initialState = reducer(undefined, {})
+  freeze(initialState)
   const beforeLevelChange = reducer(initialState, {type: actions.MOVE_FORWARD})
   freeze(beforeLevelChange)
 
