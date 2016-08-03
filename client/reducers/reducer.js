@@ -75,6 +75,8 @@ const reducer = (state = INITIAL_STATE, action) => {
       newLevelState.moveLimit = levels[action.payload].moveLimit
       newLevelState.tileInfo = state.tileInfo
       newLevelState.currentLevel = parseInt(action.payload)
+      newLevelState.commandQueue = []
+      newLevelState.executeCommandIndex = 0
       return newLevelState
 
     case a.MOVE_FORWARD:
