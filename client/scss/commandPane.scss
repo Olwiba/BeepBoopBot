@@ -1,210 +1,214 @@
 $actionButtonElevation: 7px;
 
 .command-pane {
-    background: $blue;
-    width: 30%;
-    height: 90%;
+  background: $blue;
+  width: 30%;
+  height: 90%;
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  padding-top: 3%;
+
+  @media screen and (max-width: 850px) {
+    width: 100%;
+    height: 39%;
+    order: 2;
+  }
+
+  .command-queue {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      overflow-y: scroll;
+
+  }
+
+  .command-queue::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: rgba(0,0,0,0.0);
+  }
+
+  .command-queue::-webkit-scrollbar {
+      width: 12px;
+      background-color: rgba(0,0,0,0.0);
+  }
+
+  .command-queue::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: $blue-darkest;
+  }
+  .moves-left {
+      line-height: 100%;
+      font-size: 21px;
+      color: white;
+
+      @media screen and (max-width: 850px){
+          line-height: 0%;
+      }
+  }
+  .command-container {
+      height: 28%;
+      width: 80%;
+      display:flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-content: flex-start;
+      align-items: flex-start;
+      border-left: 7px solid $blue-darkest;
+      border-top: 7px solid $blue-darkest;
+      background: $blue-darker;
+      border-radius: 10px;
+      overflow-y: scroll;
+
+      @media screen and (max-width: 850px) {
+          height: 20%;
+          width: 93%;
+      }
+  }
+
+  .runButtons-container {
+    height: 30%;
+    width: 80%;
     display:flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
     align-content: center;
     align-items: center;
-    padding-top: 3%;
+    border-top: 5px solid #006073;
 
     @media screen and (max-width: 850px) {
-        width: 100%;
-        height: 39%;
-        order: 2;
+      height: 30%;
+      width: 80%;
     }
 
-    .command-queue {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        overflow-y: scroll;
-
+    @media screen and (max-width: 750px) {
+      height: 21%;
+      width: 58%;
+      border-top: none;
     }
 
-    .command-queue::-webkit-scrollbar-track {
-        border-radius: 10px;
-        background-color: rgba(0,0,0,0.0);
+    @media screen and (max-width: 320px) {
+      height: 29%;
+    }
+  }
+
+  .action-button-container {
+    height: 20%;
+    width: 80%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    @media screen and (max-width: 1200px) {
+      height: 21%;
+      width: 79%;
     }
 
-    .command-queue::-webkit-scrollbar {
-        width: 12px;
-        background-color: rgba(0,0,0,0.0);
+
+    @media screen and (max-width: 850px) {
+      height: 27%;
+      width: 70%;
     }
 
-    .command-queue::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        background-color: $blue-darkest;
+    .action-button {
+      margin: 10px;
+      height: 50%;
+      width: 50%;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      background: $white-dark;
+      border-bottom: $actionButtonElevation solid #a4a4a4; 
+
+      @media screen and (max-width: 1400px) {
+        height: 50%;
+        width: 50%;
+      }
+
+      @media screen and (max-width: 1200px) {
+        height: 21%;
+        width: 79%;
+      }
+
+      @media screen and (max-width: 1000px) {
+        height: 15%;
+        width: 79%;
+        margin: -78px -8px 6px 9px;
+      }
+
+      @media screen and (max-width: 850px) {
+        margin: 9px 0 6px 9px;
+        height: 37px;
+        width: 70px;
+      }
     }
     .moves-left {
         line-height: 100%;
         font-size: 21px;
         color: white;
+        text-shadow: 0px -2px rgba(0, 0, 0, 0.2);
 
         @media screen and (max-width: 850px){
             line-height: 0%;
         }
     }
-    .command-container {
-        height: 28%;
-        width: 80%;
-        display:flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        align-content: flex-start;
-        align-items: flex-start;
-        border-left: 7px solid $blue-darkest;
-        border-top: 7px solid $blue-darkest;
-        background: $blue-darker;
-        border-radius: 10px;
-        overflow-y: scroll;
 
-        @media screen and (max-width: 850px) {
-            height: 20%;
-            width: 93%;
-        }
+    .action-icon {
+      height: 50%;
+      width: 50%;
     }
 
-    .runButtons-container {
-        height: 30%;
-        width: 80%;
-        display:flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-content: center;
-        align-items: center;
-        border-top: 5px solid #006073;
-
-        @media screen and (max-width: 850px) {
-            height: 30%;
-            width: 80%;
-        }
-
-        @media screen and (max-width: 750px) {
-            height: 21%;
-            width: 58%;
-            border-top: none;
-        }
-
-        @media screen and (max-width: 320px) {
-            height: 29%;
-        }
+    .action-forward {
+      background: $green;
+      border-bottom: $actionButtonElevation solid $green-dark;
     }
 
-    .action-button-container {
-        height: 20%;
-        width: 80%;
-        display:flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-content: center;
-        align-items: center;
-
-        @media screen and (max-width: 1200px) {
-            height: 21%;
-            width: 79%;
-        }
-
-
-        @media screen and (max-width: 850px) {
-            height: 27%;
-            width: 70%;
-        }
-
-        .action-button {
-            margin: 10px;
-            height: 50%;
-            width: 50%;
-            border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            align-items: center;
-            background: $white-dark;
-            border-bottom: $actionButtonElevation solid #a4a4a4; 
-
-            @media screen and (max-width: 1400px) {
-            height: 50%;
-            width: 50%;
-        }
-
-            @media screen and (max-width: 1200px) {
-            height: 21%;
-            width: 79%;
-        }
-
-         @media screen and (max-width: 1000px) {
-            height: 15%;
-            width: 79%;
-            margin: -78px -8px 6px 9px;
-        }
-
-            @media screen and (max-width: 850px) {
-                margin: 9px 0 6px 9px;
-                height: 37px;
-                width: 70px;
-            }
-        }
-
-
-
-        .action-icon {
-            height: 50%;
-            width: 50%;
-        }
-
-        .action-forward {
-            background: $green;
-            border-bottom: $actionButtonElevation solid $green-dark;
-        }
-
-        .action-forward:hover {
-            background: #93cc67;
-            border-bottom: $actionButtonElevation solid #70ab42;
-        }
-
-        .action-rotate {
-            background: $orange;
-            border-bottom: $actionButtonElevation solid $orange-dark;
-        }
-
-        .action-rotate:hover {
-            background: #ee9272;
-            border-bottom: $actionButtonElevation solid #cf7d6a;
-        }
-
-        .action-jump {
-            background: $yellow;
-            border-bottom: $actionButtonElevation solid $yellow-dark;
-        }
-
-        .action-jump:hover {
-            background: #ecdf32;
-            border-bottom: $actionButtonElevation solid #cfc336;
-        }
-
-        .action-animate {
-            transition: all 0.1s;
-            -webkit-transition: all 0.1s;
-        }
-
-        .action-button:active {
-            transform: translate(0px,$actionButtonElevation);
-              -webkit-transform: translate(0px,$actionButtonElevation);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-        }
-
-
+    .action-forward:hover {
+      background: #93cc67;
+      border-bottom: $actionButtonElevation solid #70ab42;
     }
 
+    .action-rotate {
+      background: $orange;
+      border-bottom: $actionButtonElevation solid $orange-dark;
+    }
 
+    .action-rotate:hover {
+      background: #ee9272;
+      border-bottom: $actionButtonElevation solid #cf7d6a;
+    }
+
+    .action-jump {
+      background: $yellow;
+      border-bottom: $actionButtonElevation solid $yellow-dark;
+    }
+
+    .action-jump:hover {
+      background: #ecdf32;
+      border-bottom: $actionButtonElevation solid #cfc336;
+    }
+
+    .action-animate {
+      transition: all 0.1s;
+      -webkit-transition: all 0.1s;
+    }
+
+    .action-button:active {
+      transform: translate(0px,$actionButtonElevation);
+      -webkit-transform: translate(0px,$actionButtonElevation);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    }
+  }
 }
