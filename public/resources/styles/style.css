@@ -635,14 +635,14 @@
     .b3-robot {
       position: absolute;
       width: 40%;
-      top: 30%;
+      top: 40%;
       height: 40%;
       background-size: 100%;
       z-index: 100; } }
 
 .shadow {
   position: absolute;
-  top: 32%;
+  top: 22%;
   left: 5%;
   width: 90%;
   height: 90%;
@@ -652,7 +652,7 @@
   @media screen and (max-width: 850px) {
     .shadow {
       position: absolute;
-      top: 50%;
+      top: 41%;
       width: 34%;
       height: 30%;
       border-radius: 50%;
