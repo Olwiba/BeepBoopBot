@@ -1,263 +1,290 @@
 .navigation {
-    width: 100%;
-    height: 8%;
-    background: $blue-darkest;
+  width: 100%;
+  height: 8%;
+  background: $blue-darkest;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  border-bottom: 7px solid $blue-shadow;
+  min-height: 80px;
+
+  @media screen and (max-width: 600px) {
     display:flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
     align-content: center;
     align-items: center;
-    border-bottom: 7px solid $blue-shadow;
-    min-height: 80px;
+  }
+
+  .invisible-container {
+    width: 30%;
+    height: 100%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    overflow: visible;
 
     @media screen and (max-width: 600px) {
-        display:flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        align-content: center;
-        align-items: center;
+      width: 30%;
+      top: 0;
+      left: 0;
     }
 
-        .invisible-container {
-            width: 30%;
-            height: 100%;
-            display:flex;
-            flex-direction: row;
-            flex-wrap: wrap;
+    .logo-container {
+      z-index: 1;
+      height: 120%;
+      padding: 2%;
+      background: $blue-darkest;
+      overflow: visible;
+      border-radius: 40px;
+      border-bottom: 7px solid $blue-shadow;
+
+      @media screen and (max-width: 600px) {
+        height: 100%;
+        border-radius: 0px;
+        border-bottom: 0;
+        overflow: none;
+        margin-left: 10px;
+        margin-top: 10px;
+        background: none;
+      }
+
+      @media screen and (max-width: 380px) {
+        margin-left: 50%;
+      }
+
+      .logo {
+        height: 95%;
+
+        @media screen and (max-width: 600px) {
+          height: 80%;
+        }
+
+      }
+    }
+  }
+
+  .levels-container {
+    height: 60%;
+    margin-right: 4%;
+    display: flex;
+    flex-wrap: nowrap;
+
+    @media screen and (max-width: 450px) {
+      width: 10%;
+      margin-right: 14%;
+    }
+
+    .about {
+      height: 92%;
+      width:  50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0 10px 10px 0;
+      border: 2px solid $blue;
+      background: $blue-darkest;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 20px;
+      color: $blue;
+      cursor: help;
+
+      @media screen and (max-width: 850px) {
+        width: 20%;
+        padding: 0 20%;
+        margin-right: 20%;
+        right: 20px;
+      }
+    }
+
+    .about:hover {
+      color: $blue-light;
+      border: 2px solid $blue-light;
+    }
+
+    .level-select-container {
+      padding: 5% 10% 5% 10%;
+
+      .skylight-dialog::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: rgba(0,0,0,0.0);
+      }
+
+      .skylight-dialog::-webkit-scrollbar {
+        width: 12px;
+        background-color: rgba(0,0,0,0.0);
+      }
+
+      .skylight-dialog::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: $blue-darkest;
+
+      }
+
+
+
+      .about-backstory {
+        text-align: center; 
+        font-family: 'Space Mono', monospace;
+
+        .modal-heading {
+          font-size: 30px;
+        }
+
+        .level-select{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          align-content: center; 
+          height: 10%;
+          width:  100%;
+          border-radius: 10px;
+          border: 2px solid $blue;
+          background: $blue-darkest;
+          font-size: 20px;
+          color: $blue;
+          cursor: default;
+
+          @media screen and (max-width: 850px) {
+            width: 20%;
+            padding: 0 20%;
+            right: 20px;
+          }
+        }
+
+        .level-select:hover {
+          color: $blue-light;
+          border: 2px solid $blue-light;
+        }
+
+
+        .modal-button-container {
+          height: 5%;
+          width: 100%;
+          display:flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: center;
+          align-content: center;
+          align-items: center;
+
+          @media screen and (max-width: 850px) {
+            height: 30%;
+            width: 76%;
+          }
+
+          .modal-button {
+            margin: 10px;
+            height: 80%;
+            width: 150px;
+            min-width:45px;
+            padding: 10px 30px;
+            border-radius: 5%;
+            display: flex;
             justify-content: center;
             align-content: center;
-            overflow: visible;
+            align-items: center;
+            text-shadow: 0px -2px rgba(0, 0, 0, 0.2);
+            cursor: default;
 
-            @media screen and (max-width: 600px) {
-                width: 30%;
-                top: 0;
-                left: 0;
+
+            @media screen and (max-width: 850px) {
+              margin: 8px;
+              height: 42px;
+              min-width: 27px;
             }
+          }
 
-            .logo-container {
-                z-index: 1;
-                height: 120%;
-                padding: 2%;
-                background: $blue-darkest;
-                overflow: visible;
-                border-radius: 40px;
-                border-bottom: 7px solid $blue-shadow;
+          .how-to-action {
+            background: $green;
+            border-bottom: 12px solid $green-dark;
+          }
 
-                @media screen and (max-width: 600px) {
-                    height: 100%;
-                    border-radius: 0px;
-                    border-bottom: 0;
-                    overflow: none;
-                    margin-left: 10px;
-                    margin-top: 10px;
-                    background: none;
-                }
+          .how-to-action:hover {
+            background: #93cc67;
+            border-bottom: 12px solid #70ab42;
+          }
 
-                @media screen and (max-width: 380px) {
-                    margin-left: 50%;
-                }
+          .modal-animate {
+            transition: all 0.2s;
+            -webkit-transition: all 0.2s;
+          }
 
-                .logo {
-                    height: 95%;
+          .modal-button:active {
+            transform: translate(0px,6px);
+            -webkit-transform: translate(0px,6px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+          }
 
-                @media screen and (max-width: 600px) {
-                    height: 80%;
-                }
-
-                }
-            }
         }
 
-        .levels-container {
-            height: 60%;
-            margin-right: 4%;
-            display: flex;
-            flex-wrap: nowrap;
+        .intro-b3 {
+          height: 25%;
+        } 
 
-            @media screen and (max-width: 450px) {
-                width: 10%;
-                margin-right: 14%;
-            }
+        .how-to-small {
+          height: 8%;
+          width: 10%;
+        } 
 
-                .about {
-                  height: 92%;
-                  width:  50px;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  border-radius: 0 10px 10px 0;
-                  border: 2px solid $blue;
-                  background: $blue-darkest;
-                  font-family: 'Press Start 2P', cursive;
-                  font-size: 20px;
-                  color: $blue;
-                  cursor: help;
+        .control-small {
+          height: 7%;
+          width: 7%;
+        } 
 
-                      @media screen and (max-width: 850px) {
-                            width: 20%;
-                            padding: 0 20%;
-                            margin-right: 20%;
-                            right: 20px;
-                        }
-                }
-
-                .about:hover {
-                    color: $blue-light;
-                    border: 2px solid $blue-light;
-
-                }
+      }
 
 
-                .skylight-dialog::-webkit-scrollbar-track {
-                    border-radius: 10px;
-                    background-color: rgba(0,0,0,0.0);
-                }
 
-                .skylight-dialog::-webkit-scrollbar {
-                    width: 12px;
-                    background-color: rgba(0,0,0,0.0);
-                }
+      .levels {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 92%;
+        width: 250px;
+        border-radius: 10px 0 0 10px;
+        border: 2px solid $blue;
+        background: $blue-darkest;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 14px;
+        color: $blue;
+        padding-left: 40px;
+        cursor: pointer;
 
-                .skylight-dialog::-webkit-scrollbar-thumb {
-                    border-radius: 10px;
-                    background-color: $blue-darkest;
-                }
+        @media screen and (max-width: 450px) {
+          width: 25%;
+          background: url('/resources/images/burger-button.png') no-repeat;
+          background-position: center center;
+          background-size: 90%;
+          color: transparent;
+        }
+      }
 
-                .about-backstory {
-                    text-align: center; 
-
-                    p {
-                        font-family: 'Space Mono', monospace;
-                    }
-
-                    
-
-
-                    .modal-button-container {
-                        height: 5%;
-                        width: 100%;
-                        display:flex;
-                        flex-direction: row;
-                        flex-wrap: nowrap;
-                        justify-content: center;
-                        align-content: center;
-                        align-items: center;
-
-                         @media screen and (max-width: 850px) {
-                            height: 30%;
-                            width: 76%;
-                        }
-
-                            .modal-button {
-                                margin: 10px;
-                                height: 80%;
-                                width: 150px;
-                                min-width:45px;
-                                padding: 10px 30px;
-                                border-radius: 5%;
-                                display: flex;
-                                justify-content: center;
-                                align-content: center;
-                                align-items: center;
-                                text-shadow: 0px -2px rgba(0, 0, 0, 0.2);
-                                cursor: default;
-
-
-                                @media screen and (max-width: 850px) {
-                                    margin: 8px;
-                                    height: 42px;
-                                    min-width: 27px;
-                                }
-                            }
-
-                            .how-to-action {
-                                background: $green;
-                                border-bottom: 12px solid $green-dark;
-                            }
-
-                            .how-to-action:hover {
-                                background: #93cc67;
-                                border-bottom: 12px solid #70ab42;
-                            }
-
-                            .modal-animate {
-                                transition: all 0.2s;
-                                -webkit-transition: all 0.2s;
-                            }
-
-                            .modal-button:active {
-                                transform: translate(0px,6px);
-                                -webkit-transform: translate(0px,6px);
-                                border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-                            }
-
-                        }
-
-                    .intro-b3 {
-                        height: 8%;
-                        width: 25%;
-                    } 
-
-                    .how-to-small {
-                        height: 8%;
-                        width: 10%;
-                    } 
-
-                    .control-small {
-                        height: 7%;
-                        width: 7%;
-                    } 
-
-                }
-
-                
-
-                .levels {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 92%;
-                width: 250px;
-                border-radius: 10px 0 0 10px;
-                border: 2px solid $blue;
-                background: $blue-darkest;
-                font-family: 'Press Start 2P', cursive;
-                font-size: 14px;
-                color: $blue;
-                padding-left: 40px;
-                cursor: pointer;
-
-                    @media screen and (max-width: 450px) {
-                        width: 25%;
-                        background: url('/resources/images/burger-button.png') no-repeat;
-                        background-position: center center;
-                        background-size: 90%;
-                        color: transparent;
-                    }
-                }
-
-                .levels:hover {
-                    color: $blue-light;
-                    border: 2px solid $blue-light;
-                    @media screen and (max-width: 450px) {
-                        color: transparent;
-                    }
-
-                }
-
-                .level-option{
-                    background: $blue-darkest;
-                    color: $blue;
-                }
-
-                select {
-                   -webkit-appearance: none;
-                   -moz-appearance: none;
-                   appearance: none;
-                }
+      .levels:hover {
+        color: $blue-light;
+        border: 2px solid $blue-light;
+        @media screen and (max-width: 450px) {
+          color: transparent;
         }
 
+      }
 
+      .level-option{
+        background: $blue-darkest;
+        color: $blue;
+      }
+
+      select {
+       -webkit-appearance: none;
+       -moz-appearance: none;
+       appearance: none;
+      }
+    }
+  }
 }

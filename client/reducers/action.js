@@ -11,6 +11,7 @@ export const QUEUE_ACTION = 'QUEUE_ACTION'
 export const HAS_FINISHED = 'HAS_FINISHED'
 export const LEVEL_WON = 'TOGGLE_LEVEL_WON'
 export const REMOVE_ACTION = 'REMOVE_ACTION'
+export const TOGGLE_SOUND = 'TOGGLE_SOUND'
 
 export const runCommands = () => {
   return (dispatch, getState) => {
@@ -21,7 +22,7 @@ export const runCommands = () => {
       }
       else if (state.executeCommandIndex === state.commandQueue.length) {
         if (state.board[state.robot.positionY][state.robot.positionX] === 1) {
-          dispatch(levelWon())
+          dispatch(createAction(LEVEL_WON))
         }
         dispatch(createAction(HAS_FINISHED))
         clearInterval(interval)
@@ -31,15 +32,9 @@ export const runCommands = () => {
         clearInterval(interval)
       }
       else {
-        dispatch(nextCommand(state.commandQueue[state.executeCommandIndex]))
+        dispatch(createAction(state.commandQueue[state.executeCommandIndex]))
       }
     }, 800)
-  }
-}
-
-export const nextCommand = (command) => {
-  return {
-    type: command
   }
 }
 
@@ -68,15 +63,14 @@ export const addTileInfo = (tileInfo) => {
   }
 }
 
-export const levelWon = () => {
-  return {
-    type: LEVEL_WON
-  }
-}
-
 export const removeAction = (commandIndex) => {
   return {
     type: REMOVE_ACTION,
     payload: commandIndex
+  }
+}
+export const toggleSound = () => {
+  return {
+    type: TOGGLE_SOUND
   }
 }

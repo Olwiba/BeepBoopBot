@@ -92,106 +92,129 @@
     .navigation .levels-container .about:hover {
       color: #60afbc;
       border: 2px solid #60afbc; }
-    .navigation .levels-container .skylight-dialog::-webkit-scrollbar-track {
-      border-radius: 10px;
-      background-color: transparent; }
-    .navigation .levels-container .skylight-dialog::-webkit-scrollbar {
-      width: 12px;
-      background-color: transparent; }
-    .navigation .levels-container .skylight-dialog::-webkit-scrollbar-thumb {
-      border-radius: 10px;
-      background-color: #02333a; }
-    .navigation .levels-container .about-backstory {
-      text-align: center; }
-      .navigation .levels-container .about-backstory p {
+    .navigation .levels-container .level-select-container {
+      padding: 5% 10% 5% 10%; }
+      .navigation .levels-container .level-select-container .skylight-dialog::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: transparent; }
+      .navigation .levels-container .level-select-container .skylight-dialog::-webkit-scrollbar {
+        width: 12px;
+        background-color: transparent; }
+      .navigation .levels-container .level-select-container .skylight-dialog::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #02333a; }
+      .navigation .levels-container .level-select-container .about-backstory {
+        text-align: center;
         font-family: 'Space Mono', monospace; }
-      .navigation .levels-container .about-backstory .modal-button-container {
-        height: 5%;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-content: center;
-        align-items: center; }
-        @media screen and (max-width: 850px) {
-          .navigation .levels-container .about-backstory .modal-button-container {
-            height: 30%;
-            width: 76%; } }
-        .navigation .levels-container .about-backstory .modal-button-container .modal-button {
-          margin: 10px;
-          height: 80%;
-          width: 150px;
-          min-width: 45px;
-          padding: 10px 30px;
-          border-radius: 5%;
+        .navigation .levels-container .level-select-container .about-backstory .modal-heading {
+          font-size: 30px; }
+        .navigation .levels-container .level-select-container .about-backstory .level-select {
           display: flex;
           justify-content: center;
-          align-content: center;
           align-items: center;
-          text-shadow: 0px -2px rgba(0, 0, 0, 0.2);
+          align-content: center;
+          height: 10%;
+          width: 100%;
+          border-radius: 10px;
+          border: 2px solid #1c8da0;
+          background: #02333a;
+          font-size: 20px;
+          color: #1c8da0;
           cursor: default; }
           @media screen and (max-width: 850px) {
-            .navigation .levels-container .about-backstory .modal-button-container .modal-button {
-              margin: 8px;
-              height: 42px;
-              min-width: 27px; } }
-        .navigation .levels-container .about-backstory .modal-button-container .how-to-action {
-          background: #78c042;
-          border-bottom: 12px solid #4d9713; }
-        .navigation .levels-container .about-backstory .modal-button-container .how-to-action:hover {
-          background: #93cc67;
-          border-bottom: 12px solid #70ab42; }
-        .navigation .levels-container .about-backstory .modal-button-container .modal-animate {
-          transition: all 0.2s;
-          -webkit-transition: all 0.2s; }
-        .navigation .levels-container .about-backstory .modal-button-container .modal-button:active {
-          transform: translate(0px, 6px);
-          -webkit-transform: translate(0px, 6px);
-          border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
-      .navigation .levels-container .about-backstory .intro-b3 {
-        height: 8%;
-        width: 25%; }
-      .navigation .levels-container .about-backstory .how-to-small {
-        height: 8%;
-        width: 10%; }
-      .navigation .levels-container .about-backstory .control-small {
-        height: 7%;
-        width: 7%; }
-    .navigation .levels-container .levels {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 92%;
-      width: 250px;
-      border-radius: 10px 0 0 10px;
-      border: 2px solid #1c8da0;
-      background: #02333a;
-      font-family: 'Press Start 2P', cursive;
-      font-size: 14px;
-      color: #1c8da0;
-      padding-left: 40px;
-      cursor: pointer; }
-      @media screen and (max-width: 450px) {
-        .navigation .levels-container .levels {
-          width: 25%;
-          background: url("/resources/images/burger-button.png") no-repeat;
-          background-position: center center;
-          background-size: 90%;
-          color: transparent; } }
-    .navigation .levels-container .levels:hover {
-      color: #60afbc;
-      border: 2px solid #60afbc; }
-      @media screen and (max-width: 450px) {
-        .navigation .levels-container .levels:hover {
-          color: transparent; } }
-    .navigation .levels-container .level-option {
-      background: #02333a;
-      color: #1c8da0; }
-    .navigation .levels-container select {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none; }
+            .navigation .levels-container .level-select-container .about-backstory .level-select {
+              width: 20%;
+              padding: 0 20%;
+              right: 20px; } }
+        .navigation .levels-container .level-select-container .about-backstory .level-select:hover {
+          color: #60afbc;
+          border: 2px solid #60afbc; }
+        .navigation .levels-container .level-select-container .about-backstory .modal-button-container {
+          height: 5%;
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: center;
+          align-content: center;
+          align-items: center; }
+          @media screen and (max-width: 850px) {
+            .navigation .levels-container .level-select-container .about-backstory .modal-button-container {
+              height: 30%;
+              width: 76%; } }
+          .navigation .levels-container .level-select-container .about-backstory .modal-button-container .modal-button {
+            margin: 10px;
+            height: 80%;
+            width: 150px;
+            min-width: 45px;
+            padding: 10px 30px;
+            border-radius: 5%;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            text-shadow: 0px -2px rgba(0, 0, 0, 0.2);
+            cursor: default; }
+            @media screen and (max-width: 850px) {
+              .navigation .levels-container .level-select-container .about-backstory .modal-button-container .modal-button {
+                margin: 8px;
+                height: 42px;
+                min-width: 27px; } }
+          .navigation .levels-container .level-select-container .about-backstory .modal-button-container .how-to-action {
+            background: #78c042;
+            border-bottom: 12px solid #4d9713; }
+          .navigation .levels-container .level-select-container .about-backstory .modal-button-container .how-to-action:hover {
+            background: #93cc67;
+            border-bottom: 12px solid #70ab42; }
+          .navigation .levels-container .level-select-container .about-backstory .modal-button-container .modal-animate {
+            transition: all 0.2s;
+            -webkit-transition: all 0.2s; }
+          .navigation .levels-container .level-select-container .about-backstory .modal-button-container .modal-button:active {
+            transform: translate(0px, 6px);
+            -webkit-transform: translate(0px, 6px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
+        .navigation .levels-container .level-select-container .about-backstory .intro-b3 {
+          height: 25%; }
+        .navigation .levels-container .level-select-container .about-backstory .how-to-small {
+          height: 8%;
+          width: 10%; }
+        .navigation .levels-container .level-select-container .about-backstory .control-small {
+          height: 7%;
+          width: 7%; }
+      .navigation .levels-container .level-select-container .levels {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 92%;
+        width: 250px;
+        border-radius: 10px 0 0 10px;
+        border: 2px solid #1c8da0;
+        background: #02333a;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 14px;
+        color: #1c8da0;
+        padding-left: 40px;
+        cursor: pointer; }
+        @media screen and (max-width: 450px) {
+          .navigation .levels-container .level-select-container .levels {
+            width: 25%;
+            background: url("/resources/images/burger-button.png") no-repeat;
+            background-position: center center;
+            background-size: 90%;
+            color: transparent; } }
+      .navigation .levels-container .level-select-container .levels:hover {
+        color: #60afbc;
+        border: 2px solid #60afbc; }
+        @media screen and (max-width: 450px) {
+          .navigation .levels-container .level-select-container .levels:hover {
+            color: transparent; } }
+      .navigation .levels-container .level-select-container .level-option {
+        background: #02333a;
+        color: #1c8da0; }
+      .navigation .levels-container .level-select-container select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none; }
 
 .command-pane {
   background: #1c8da0;
@@ -203,7 +226,7 @@
   justify-content: flex-start;
   align-content: center;
   align-items: center;
-  padding-top: 2%; }
+  padding-top: 3%; }
   @media screen and (max-width: 850px) {
     .command-pane {
       width: 100%;
@@ -267,7 +290,7 @@
         width: 58%;
         border-top: none; } }
   .command-pane .action-button-container {
-    height: 28%;
+    height: 20%;
     width: 80%;
     display: flex;
     flex-direction: row;
@@ -285,8 +308,8 @@
         width: 70%; } }
     .command-pane .action-button-container .action-button {
       margin: 10px;
-      height: 70px;
-      width: 70px;
+      height: 50%;
+      width: 50%;
       border-radius: 10px;
       display: flex;
       justify-content: center;
@@ -296,8 +319,8 @@
       border-bottom: 7px solid #a4a4a4; }
       @media screen and (max-width: 1400px) {
         .command-pane .action-button-container .action-button {
-          height: 24%;
-          width: 79%; } }
+          height: 50%;
+          width: 50%; } }
       @media screen and (max-width: 1200px) {
         .command-pane .action-button-container .action-button {
           height: 21%;
@@ -499,7 +522,7 @@
   cursor: pointer; }
   @media screen and (max-width: 850px) {
     .commandQueueIcon {
-      width: 18px; } }
+      width: 25px; } }
 
 .commandQueueIcon-removable:hover {
   background-color: #c45d45; }
@@ -601,7 +624,7 @@
     .b3-robot {
       position: absolute;
       width: 40%;
-      top: 40%;
+      top: 30%;
       height: 40%;
       background-size: 100%;
       z-index: 100; } }
@@ -618,7 +641,7 @@
   @media screen and (max-width: 850px) {
     .shadow {
       position: absolute;
-      top: 61%;
+      top: 50%;
       width: 34%;
       height: 30%;
       border-radius: 50%;
@@ -688,6 +711,11 @@ h3 {
   font-family: "Press Start 2P", cursive;
   font-size: 22px;
   color: #f2f2f2; }
+
+h4 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 16px;
+  color: #cbcbcb; }
 
 .app {
   display: flex;
