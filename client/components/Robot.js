@@ -16,8 +16,7 @@ class Robot extends Component {
   }
 
   componentDidMount () {
-    window.onresize = () => {this.forceUpdate(() => {}) }
-    // document.addEventListener('resize', () => { console.log('resized'); this.forceUpdate(() => {}) })
+    window.onresize = () => { this.forceUpdate(() => {}) }
   }
 
   componentWillUnmount () {
