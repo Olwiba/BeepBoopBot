@@ -19,14 +19,13 @@ const INITIAL_STATE = {
   tileInfo: {},
   currentLevel: 1,
   levelWon: false,
-  hasFinished: false, // Has the command queue finished running? i.e. executed all commands
-  sound: true
+  hasFinished: false // Has the command queue finished running? i.e. executed all commands
 }
 
 export function cloneState (state) {
   return {
     robot: {...state.robot},
-    board: JSON.parse(JSON.stringify(state.board)),
+    board: state.board.map(row => row.slice()),
     moveLimit: state.moveLimit,
     commandQueue: [...state.commandQueue],
     running: state.running,
@@ -34,8 +33,7 @@ export function cloneState (state) {
     tileInfo: {...state.tileInfo},
     currentLevel: state.currentLevel,
     levelWon: state.levelWon,
-    hasFinished: state.hasFinished,
-    sound: state.sound
+    hasFinished: state.hasFinished
   }
 }
 
@@ -112,10 +110,6 @@ const reducer = (state = INITIAL_STATE, action) => {
     // Has the command queue finished running? i.e. executed all commands
     case a.HAS_FINISHED:
       newState.hasFinished = true
-      return newState
-
-    case a.TOGGLE_SOUND:
-      newState.sound = !(newState.sound)
       return newState
 
     default:
