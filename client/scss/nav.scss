@@ -131,9 +131,10 @@
 
                 .about-backstory {
                     text-align: center; 
-                    
-                    p {
-                        font-family: 'Space Mono', monospace;
+                    font-family: 'Space Mono', monospace;
+                }
+                    .modal-heading {
+                        font-size: 30px;
                     }
 
                     .level-select{
@@ -161,6 +162,8 @@
                     color: $blue-light;
                     border: 2px solid $blue-light;
                     }
+
+
 
 
                     .modal-button-container {
@@ -224,8 +227,7 @@
                         }
 
                     .intro-b3 {
-                        height: 8%;
-                        width: 25%;
+                        height: 25%;
                     } 
 
                     .how-to-small {
@@ -286,5 +288,5 @@
                    appearance: none;
                 }
         }
-    }
+    
 }
