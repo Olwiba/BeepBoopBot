@@ -17,13 +17,13 @@ class Board extends Component {
   }
 
   render() {
-    var levelTheme = this.props.currentLevel < 5
+    var levelTheme = this.props.currentLevel < 6
       ? 'basement'
-      : this.props.currentLevel < 10
+      : this.props.currentLevel < 11
         ? 'engine'
-        : this.props.currentLevel < 15
+        : this.props.currentLevel < 16
           ? 'cargo'
-          : this.props.currentLevel < 20
+          : this.props.currentLevel < 21
             ? 'garden'
             : 'control'
 
