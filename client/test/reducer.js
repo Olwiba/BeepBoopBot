@@ -12,6 +12,7 @@ test('cloneState clones the state without mutations', (t) => {
   const clonedState = cloneState(initialState)
 
   t.deepEqual(clonedState, initialState, 'Cloned state is deeply equal to the initial state')
+  t.notEqual(clonedState, initialState, 'Cloned state is not the same object as the inital state')
   t.end()
 })
 
@@ -34,6 +35,13 @@ test('GO_BUTTON action sets state running to true', function (t) {
   const newState = reducer(initialState, {type: actions.GO_BUTTON})
 
   t.true(newState.running)
+  t.end()
+})
+
+test('STOP_BUTTON stops the robot moving and resets it', (t) => {
+  const initialState = reducer(undefined, {})
+  freeze(initialState)
+  // add commands and move the robot
   t.end()
 })
 
