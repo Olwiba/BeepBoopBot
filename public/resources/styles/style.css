@@ -106,29 +106,29 @@
       .navigation .levels-container .level-select-container .about-backstory {
         text-align: center;
         font-family: 'Space Mono', monospace; }
-        .navigation .levels-container .level-select-container .about-backstory .modal-heading {
-          font-size: 30px; }
-        .navigation .levels-container .level-select-container .about-backstory .level-select {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          align-content: center;
-          height: 10%;
-          width: 100%;
-          border-radius: 10px;
-          border: 2px solid #1c8da0;
-          background: #02333a;
-          font-size: 20px;
-          color: #1c8da0;
-          cursor: default; }
-          @media screen and (max-width: 850px) {
-            .navigation .levels-container .level-select-container .about-backstory .level-select {
-              width: 20%;
-              padding: 0 20%;
-              right: 20px; } }
-        .navigation .levels-container .level-select-container .about-backstory .level-select:hover {
-          color: #60afbc;
-          border: 2px solid #60afbc; }
+      .navigation .levels-container .level-select-container .modal-heading {
+        font-size: 30px; }
+      .navigation .levels-container .level-select-container .level-select {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        height: 10%;
+        width: 100%;
+        border-radius: 10px;
+        border: 2px solid #1c8da0;
+        background: #02333a;
+        font-size: 20px;
+        color: #1c8da0;
+        cursor: default; }
+        @media screen and (max-width: 850px) {
+          .navigation .levels-container .level-select-container .level-select {
+            width: 20%;
+            padding: 0 20%;
+            right: 20px; } }
+      .navigation .levels-container .level-select-container .level-select:hover {
+        color: #60afbc;
+        border: 2px solid #60afbc; }
       .navigation .levels-container .level-select-container .modal-button-container {
         height: 5%;
         width: 100%;
