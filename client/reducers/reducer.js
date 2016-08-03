@@ -1,3 +1,4 @@
+import cookie from 'react-cookie'
 import jump from './lib/jump'
 import moveForward from './lib/moveForward.js'
 import levels from '../levels'
@@ -116,6 +117,10 @@ const reducer = (state = INITIAL_STATE, action) => {
 
     case a.TOGGLE_SOUND:
       newState.sound = !(newState.sound)
+      console.log(newState.sound, 'soundState')
+      var cookies = cookie.load('sound')
+      const soundState = cookie.select('sound')
+      cookie.save('sound', !soundState)
       return newState
 
     default:
