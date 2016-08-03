@@ -76,11 +76,30 @@
     flex-wrap: nowrap;
 
     @media screen and (max-width: 450px) {
-      width: 10%;
+      width: 20%;
       margin-right: 14%;
     }
 
     .about {
+      height: 92%;
+      width:  50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid $blue;
+      background: $blue-darkest;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 20px;
+      color: $blue;
+      cursor: help;
+    }
+
+    .about:hover {
+      color: $blue-light;
+      border: 2px solid $blue-light;
+    }
+
+    .sound {
       height: 92%;
       width:  50px;
       display: flex;
@@ -92,7 +111,12 @@
       font-family: 'Press Start 2P', cursive;
       font-size: 20px;
       color: $blue;
-      cursor: help;
+      cursor: pointer;
+
+      .sound-img {
+        height: 50%;
+        width: 50%;
+      }
 
       @media screen and (max-width: 850px) {
         width: 20%;
@@ -102,7 +126,7 @@
       }
     }
 
-    .about:hover {
+    .sound:hover {
       color: $blue-light;
       border: 2px solid $blue-light;
     }

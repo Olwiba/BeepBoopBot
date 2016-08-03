@@ -68,9 +68,24 @@
     flex-wrap: nowrap; }
     @media screen and (max-width: 450px) {
       .navigation .levels-container {
-        width: 10%;
+        width: 20%;
         margin-right: 14%; } }
     .navigation .levels-container .about {
+      height: 92%;
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #1c8da0;
+      background: #02333a;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 20px;
+      color: #1c8da0;
+      cursor: help; }
+    .navigation .levels-container .about:hover {
+      color: #60afbc;
+      border: 2px solid #60afbc; }
+    .navigation .levels-container .sound {
       height: 92%;
       width: 50px;
       display: flex;
@@ -82,14 +97,17 @@
       font-family: 'Press Start 2P', cursive;
       font-size: 20px;
       color: #1c8da0;
-      cursor: help; }
+      cursor: pointer; }
+      .navigation .levels-container .sound .sound-img {
+        height: 50%;
+        width: 50%; }
       @media screen and (max-width: 850px) {
-        .navigation .levels-container .about {
+        .navigation .levels-container .sound {
           width: 20%;
           padding: 0 20%;
           margin-right: 20%;
           right: 20px; } }
-    .navigation .levels-container .about:hover {
+    .navigation .levels-container .sound:hover {
       color: #60afbc;
       border: 2px solid #60afbc; }
     .navigation .levels-container .level-select-container {

@@ -45,6 +45,8 @@ class Nav extends Component {
       padding: '0 30px 0 30px',
       overflowY: 'auto'
     }
+    var soundOn = this.props.sound ? 'soundOff' : 'soundOn'
+
     return (
       <div className='navigation'>
         <div className='invisible-container'>
@@ -74,6 +76,7 @@ class Nav extends Component {
             </div>
           </SkyLight>
           <div className='about' onClick={() => this.refs.storyBox.show()}>i</div>
+          <div className='sound' onClick={this.props.toggleSound}><img src={'/resources/images/' + soundOn + '.png'} className='sound-img' /></div>
           <SkyLight hideOnOverlayClicked={true} ref='storyBox' dialogStyles={storyAndInstructionsStyle} >
             <div className='about-backstory'>
               <img src='/resources/images/intro-b3.svg' className='intro-b3' />
@@ -114,7 +117,6 @@ class Nav extends Component {
             </div>
           </SkyLight>
         </div>
-        <button onClick={this.props.toggleSound}> Sound </button>
       </div>
     )
   }
