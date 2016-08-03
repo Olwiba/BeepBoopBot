@@ -4,7 +4,8 @@ import * as actions from '../reducers/action'
 
 function mapStateToProps (state) {
   return {
-    currentLevel: state.currentLevel
+    currentLevel: state.currentLevel,
+    sound: state.sound
   }
 }
 

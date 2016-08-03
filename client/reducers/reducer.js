@@ -5,6 +5,7 @@ import levels from '../levels'
 import * as a from './action'
 
 const speaker = cookie.load('sound')
+console.log('speaker', speaker)
 
 const INITIAL_STATE = {
   robot: {
@@ -23,7 +24,7 @@ const INITIAL_STATE = {
   currentLevel: 1,
   levelWon: false,
   hasFinished: false, // Has the command queue finished running? i.e. executed all commands
-  sound: speaker === 'ON'
+  sound: speaker === 'ON' || speaker === undefined
 }
 
 export function cloneState (state) {

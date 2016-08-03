@@ -17,23 +17,19 @@ class Board extends Component {
   }
 
   render() {
-    var levelTheme = this.props.currentLevel < 6
-      ? 'basement'
-      : this.props.currentLevel < 11
-        ? 'engine'
-        : this.props.currentLevel < 16
-          ? 'cargo'
-          : this.props.currentLevel < 21
-            ? 'garden'
-            : 'control'
-
-    var animate = 'tet' // do check here
-    if (this.props.levelWon === true) {
-      animate = 'elevatorAnimation'
-      console.log('aaaaaaaaaaaaaaaaaaaaaaaaa')
+    var levelTheme = ''
+    var currentLevel = this.props.currentLevel
+    if (currentLevel < 6) {
+      levelTheme = 'basement'
+    } else if (currentLevel < 11) {
+      levelTheme = 'engine'
+    } else if (currentLevel < 16) {
+      levelTheme = 'cargo'
+    } else if (currentLevel < 21) {
+      levelTheme = 'garden'
+    } else {
+      levelTheme = 'control'
     }
-
-    console.log('board props', this.props)
 
     return (
       <div id='board' className='board-background'>
@@ -60,7 +56,7 @@ class Board extends Component {
                     : <div key={rowIndex + colIndex} className={classNames('tile', levelTheme, oddEven)} ref={rowIndex.toString() + colIndex.toString()}></div>)
             })
           })
-}
+        }
         </div>
         {this.state.hasMounted
           ? <RobotContainer/>
@@ -71,6 +67,3 @@ class Board extends Component {
 }
 
 export default Board
-
-
-// classNames('elevator-animation')

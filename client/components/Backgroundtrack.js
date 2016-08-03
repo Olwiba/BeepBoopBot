@@ -64,8 +64,6 @@ export default class Backgroundtrack extends Component {
           playStatus={this.state.playStatus}
           playFromPosition={this.state.position}
           volume={this.state.volume}
-          onLoading={({bytesLoaded, bytesTotal}) => console.log(`${bytesLoaded / bytesTotal * 100}% loaded`)}
-          onPlaying={({position}) => console.log(position)}
           onFinishedPlaying={() => this.setState({playStatus: Sound.status.PLAYING})} />
     </div>
     )

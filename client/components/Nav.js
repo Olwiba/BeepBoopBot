@@ -34,7 +34,6 @@ class Nav extends Component {
     if (window.innerWidth < 600) {
       modalLeft = '41%'
     }
-    console.log('modalLeft', modalLeft)
     var storyAndInstructionsStyle = {
       backgroundColor: '#00897B',
       color: '#ffffff',
@@ -51,8 +50,6 @@ class Nav extends Component {
       overflowY: 'auto',
       left: modalLeft
     }
-    var soundOn = this.props.sound ? 'soundOff' : 'soundOn'
-
     return (
       <div className='navigation'>
         <div className='invisible-container'>
@@ -82,7 +79,9 @@ class Nav extends Component {
             </div>
           </SkyLight>
           <div className='about' onClick={() => this.refs.storyBox.show()}>i</div>
-          <div className='sound' onClick={this.props.toggleSound}><img src={'/resources/images/' + soundOn + '.png'} className='sound-img' /></div>
+          <div className='sound' onClick={this.props.toggleSound}>
+            {this.props.sound ? <i className='fa fa-volume-up fa-lg'></i> : <i className='fa fa-volume-off fa-lg'></i>}
+          </div>
           <SkyLight hideOnOverlayClicked={true} ref='storyBox' dialogStyles={storyAndInstructionsStyle} >
             <div className='about-backstory'>
               <img src='/resources/images/intro-b3.svg' className='intro-b3' />
@@ -129,4 +128,3 @@ class Nav extends Component {
 }
 
 export default Nav
-
