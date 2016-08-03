@@ -1,7 +1,16 @@
 import React, {Component} from 'react'
 import SkyLight from 'react-skylight'
+import levels from '../levels'
 
 class Win extends Component {
+  constructor (props) {
+    super(props)
+    var keys = Object.keys(levels).map((key) => {
+      return parseInt(key)
+    })
+    var highestLevel = Math.max(...keys)
+    this.state = {highestLevel}
+  }
 
   handleKeyPress (e) {
     if (e.which === 27) {
@@ -23,7 +32,7 @@ class Win extends Component {
 
   _executeBeforeModalClose () {
     this.props.toggleLevelWon()
-    const newLevel = this.props.currentLevel + 1 === 11
+    const newLevel = this.props.currentLevel === this.state.highestLevel
     ? 1
     : this.props.currentLevel + 1
     this.props.setLevel(newLevel)
@@ -43,7 +52,7 @@ class Win extends Component {
 
     return (
       <div>
-      {this.props.currentLevel === 10
+      {this.props.currentLevel === this.state.highestLevel
         ? <SkyLight beforeClose={this._executeBeforeModalClose.bind(this)} hideOnOverlayClicked={true} ref='winBox' dialogStyles={winDialog} >
           <div className='win-notice'>
             <img src='/resources/images/intro-b3.svg' className='intro-b3' />

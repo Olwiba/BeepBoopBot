@@ -17,13 +17,21 @@ class Robot extends Component {
 
   render() {
     var centerPoints = this.calcCenter()
-    var dampingStrength = 1
     var size = 80
     var positioning = size / 2
-    var precisionStrength = 1
+    var dampingStrength = 1
     var stiffnessStrength = 100
+    var precisionStrength = 1
+    var scale = 100
+    var opacity = 1.0
     var commandExecuted = this.props.commandQueue[this.props.executeCommandIndex - 1]
     if (commandExecuted === 'JUMP_UP') {
+      if (!this.props.robot.isAlive) {
+        precisionStrength = 0.1
+        stiffnessStrength = 300
+        scale = 0
+        opacity = 0.1
+      }
       dampingStrength = 2
       size = size + 20
     } else if (commandExecuted === 'TURN_RIGHT' || commandExecuted === 'TURN_LEFT') {
@@ -32,34 +40,43 @@ class Robot extends Component {
       stiffnessStrength = 4
       dampingStrength = 100
       precisionStrength = 10
+    } else if (!this.props.robot.isAlive) {
+      precisionStrength = 0.1
+      stiffnessStrength = 300
+      scale = 0
+      opacity = 0.1
     }
     return (
-      this.props.robot.isAlive ?
       <div>
         <Motion defaultStyle={{
+          scale: scale,
           x: centerPoints[0],
           y: centerPoints[1],
           rot: 0
         }} style={{
+          opacity: spring(0.5),
+          scale: spring(scale, {precision: precisionStrength}),
           x: spring(centerPoints[0]),
           y: spring(centerPoints[1]),
           rot: spring(this.props.robot.direction)
         }}>
           {value => <div style={{
-            height: size,
-            width: size,
+            height: value.scale,
+            width: value.scale,
             position: 'absolute',
             top: value.y - 50,
             left: value.x - positioning,
             transform: `rotate(${value.rot}deg)`
           }}>
             <ReactMotionLoop styleFrom={{
+              opacity: spring(opacity),
               width: spring(size, {
                 stiffness: stiffnessStrength,
                 damping: dampingStrength,
                 precision: precisionStrength
               })
             }} styleTo={{
+              opacity: spring(opacity),
               width: spring(size + 2, {
                 stiffness: stiffnessStrength,
                 damping: dampingStrength,
@@ -69,13 +86,15 @@ class Robot extends Component {
               {style => <img src="/resources/images/b3-robot.svg" className="b3-robot" style={style}/>}
             </ReactMotionLoop>
             <ReactMotionLoop styleFrom={{
-              width: spring(size - 4, {
+              opacity: spring(opacity),
+              width: spring(size, {
                 stiffness: stiffnessStrength,
                 damping: dampingStrength,
                 precision: precisionStrength
               })
             }} styleTo={{
-              width: spring(size, {
+              opacity: spring(opacity),
+              width: spring(size - 2, {
                 stiffness: stiffnessStrength,
                 damping: dampingStrength,
                 precision: precisionStrength
@@ -86,10 +105,8 @@ class Robot extends Component {
           </div>}
         </Motion>
         <WinContainer/>
-        <AudioContainer />
+        <AudioContainer/>
       </div>
-      :
-      <AudioContainer />
     )
   }
 }

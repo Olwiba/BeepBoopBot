@@ -10,10 +10,13 @@
 	order: 2;
 
 	@media screen and (max-width: 850px) {
-			width: 98%;
-			height: 47%;
+			width: 100%;
+			height: 50%;
 	}
-
+	@media screen and (max-width: 320px) {
+			width: 100%;
+			height: 44%;
+	}
 }
 
 .board-background {
@@ -31,11 +34,11 @@
 }
 
 .board-container.engine {
-	background: url('/resources/images/metal-cross.png') #0d0f09;
+	background: url('/resources/images/metal-cross.png') #000000;
 }
 
 .board-container.cargo {
-	background: url('/resources/images/rust.jpg');
+	background: url('/resources/images/concrete.png') #000000;
 }
 
 .board-container.garden {
@@ -44,7 +47,8 @@
 }
 
 .board-container.control {
-	background: url('/resources/images/rust.jpg');
+	background: url('/resources/images/marble.jpg');
+	background-size: 50%; 
 }
 
 /*.board-container.cargo {
@@ -92,8 +96,8 @@
 	}
 
 	   @media screen and (max-width: 700px) {
-               height: 77%;
-	    width: 77%;
+            height: 77%;
+	    	width: 77%;
             }
 
 		.tile {
@@ -137,19 +141,23 @@
 		}
 
 		.engine.odd {
-			background: url('/resources/images/brushed-light.png') $green;
+			background: url('/resources/images/metal.jpg') $white;
+			background-size: 175%; 
 		}
 
 		.engine.even {
-			background: url('/resources/images/brushed-dark.png') $green-dark;
+			background: url('/resources/images/metal.jpg') $white-dark;
+			background-size: 175%; 
 		}
 
 		.cargo.odd {
-			background: url('/resources/images/brushed-light.png') $green;
+			background: url('/resources/images/mesh.png') #000000;
+			background-size: 25%;
 		}
 
 		.cargo.even {
-			background: url('/resources/images/brushed-dark.png') $green-dark;
+			background: url('/resources/images/mesh.png') #1c1717;
+			background-size: 25%;
 		}
 
 		.garden.odd {
@@ -158,6 +166,16 @@
 
 		.garden.even {			
 			background: url('/resources/images/grass-2.svg') $green-dark;
+		}
+
+		.control.odd {
+			background: url('/resources/images/tile-squares.png') #1c1c1c;
+			background-size: 75%; 
+		}
+
+		.control.even {			
+			background: url('/resources/images/tile-squares.png') #4d4d4d;
+			background-size: 75%; 
 		}
 
 		.box-tile {
