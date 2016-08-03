@@ -30,7 +30,6 @@ class Nav extends Component {
   }
 
   render () {
-    console.log('aaaa', window.innerWidth)
     var modalLeft = '50%'
     if (window.innerWidth < 600) {
       modalLeft = '41%'
