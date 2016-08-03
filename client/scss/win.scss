@@ -1,8 +1,12 @@
 .win-notice {
-  text-align: center; 
+  text-align: center;
 
-  p {
+  p, h3 {
     font-family: 'Space Mono', monospace;
+  }
+  
+  h3 {
+    font-size: 30px;
   }
 
   .modal-button-container {

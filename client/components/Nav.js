@@ -56,7 +56,7 @@ class Nav extends Component {
           <div className='levels' onClick={() => this.refs.levelSelect.show()} >{'Level ' + this.props.currentLevel}</div>
           <SkyLight hideOnOverlayClicked={true} ref='levelSelect' dialogStyles={levelsModalStyle} >
             <div className='about-backstory level-select-container'>
-              <h3>Select a level to play</h3>
+              <h3 className={classNames('modal-heading', 'about-backstory')}>Select a level</h3>
               {
                 Object.keys(levels).map((levelNum, index) => {
                   return (

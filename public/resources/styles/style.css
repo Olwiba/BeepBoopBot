@@ -120,7 +120,8 @@
       background: #02333a;
       font-size: 20px;
       color: #1c8da0;
-      cursor: default; }
+      cursor: pointer;
+      margin-top: 10px; }
       @media screen and (max-width: 850px) {
         .navigation .levels-container .level-select {
           width: 20%;
@@ -684,8 +685,10 @@
 
 .win-notice {
   text-align: center; }
-  .win-notice p {
+  .win-notice p, .win-notice h3 {
     font-family: 'Space Mono', monospace; }
+  .win-notice h3 {
+    font-size: 30px; }
   .win-notice .modal-button-container {
     height: 5%;
     width: 100%;
@@ -750,7 +753,8 @@ h3 {
 h4 {
   font-family: "Press Start 2P", cursive;
   font-size: 16px;
-  color: #cbcbcb; }
+  color: #cbcbcb;
+  cursor: default; }
 
 .app {
   display: flex;
