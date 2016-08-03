@@ -341,6 +341,18 @@
           margin: 9px 0 6px 9px;
           height: 37px;
           width: 70px; } }
+    .command-pane .action-button-container .action-icon {
+      height: 50%;
+      width: 50%; }
+    .command-pane .action-button-container .action-forward {
+      background: #78c042;
+      border-bottom: 7px solid #4d9713; }
+    .command-pane .action-button-container .action-forward:hover {
+      background: #93cc67;
+      border-bottom: 7px solid #70ab42; }
+    .command-pane .action-button-container .action-rotate {
+      background: #ea7750;
+      border-bottom: 7px solid #c45d45; }
     .command-pane .action-button-container .moves-left {
       line-height: 100%;
       font-size: 21px;

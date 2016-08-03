@@ -98,7 +98,7 @@ $actionButtonElevation: 7px;
       height: 29%;
     }
   }
-<<<<<<< HEAD
+
 
   .action-button-container {
     height: 20%;
@@ -110,24 +110,10 @@ $actionButtonElevation: 7px;
     align-content: center;
     align-items: center;
 
-=======
-
-  .action-button-container {
-    height: 20%;
-    width: 80%;
-    display:flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-
->>>>>>> b91a5afbef50038f6dbcc069f23756741be4f091
     @media screen and (max-width: 1200px) {
       height: 21%;
       width: 79%;
     }
-
 
     @media screen and (max-width: 850px) {
       height: 27%;
