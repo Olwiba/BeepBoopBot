@@ -31,13 +31,11 @@ export default class Backgroundtrack extends Component {
 
   componentDidMount () {
     const cookies = cookie.load('sound')
-    console.log(cookies)
-    
     if (cookies === undefined) {
       cookie.save('sound', 'ON')
       this.setState({playStatus: Sound.status.PLAYING})
     }
-    else if(cookies == 'ON'){
+    else if(cookies === 'ON'){
       this.setState({playStatus: Sound.status.PLAYING})
     }
     else {
