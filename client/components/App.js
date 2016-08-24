@@ -1,25 +1,22 @@
-import React, { Component, PropTypes } from 'react';
-import Nav from './Nav';
+import React, { Component } from 'react'
+import Sound from 'react-sound'
+import NavContainer from '../containers/NavContainer'
+import CommandPaneContainer from '../containers/CommandPaneContainer'
+import BoardContainer from '../containers/BoardContainer'
+import BackgroundtrackContainer from '../containers/BackgroundtrackContainer'
 
 class App extends Component {
-  static propTypes = {
-    //propTypes go here
-  };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      //state goes here
-    };
-  }
-
-  render() {
+  render () {
     return (
-      <div>
-        <Nav />
+      <div className='app'>
+        <NavContainer />
+        <BoardContainer />
+        <CommandPaneContainer />
+        <BackgroundtrackContainer />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

@@ -1,0 +1,103 @@
+.robot-container {
+  z-index: 100;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+.b3-container-animation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  z-index: 100;
+  overflow: visible;
+  /*position: relative;*/
+      -webkit-animation-name: fadeOut; /* Chrome, Safari, Opera */
+      -webkit-animation-duration: 6s; /* Chrome, Safari, Opera */
+      animation-name: fadeOut;
+      animation-duration: 6s;
+
+       @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+
+      to {
+        opacity: 0;
+        top: -80%;
+      }
+    }
+
+}
+
+.b3-robot {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 10%;
+  background-size: 100%;
+  z-index: 100;
+  overflow: visible;
+ 
+
+     
+  @media screen and (max-width: 850px) {
+    position: absolute;
+    width: 40%;
+    top: 32%;   
+    height: 40%;
+    background-size: 100%;
+    z-index: 100;   
+    left: 13px;
+  }
+}
+
+.shadow-animation {
+  top: 22%;
+  left: 10%;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  z-index: 5;
+  overflow: visible;
+      -webkit-animation-name: fadeOutShadow; /* Chrome, Safari, Opera */
+      -webkit-animation-duration: 3s; /* Chrome, Safari, Opera */
+      animation-name: fadeOutShadow;;
+      animation-duration: 3s;
+
+       @keyframes fadeOutShadow {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+      }
+    }
+}
+
+.shadow {
+  position: absolute;
+  top: 22%;
+  left: 10%;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  z-index: 5;
+  overflow: visible;
+  @media screen and (max-width: 850px) {
+    position: absolute;
+    top: 50%;
+    width: 34%;
+    left: 13px;
+    height: 30%;
+    border-radius: 50%;
+    z-index: 5;
+  }
+}

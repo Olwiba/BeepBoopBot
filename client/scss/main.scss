@@ -1,0 +1,82 @@
+/* Colors */
+$white: #f2f2f2;
+$white-dark: #cbcbcb;
+
+$red: #d53126;
+$red-dark: #a93126;
+
+$green: #78c042;
+$green-dark: #4d9713;
+
+$blue: #1c8da0;
+$blue-light: #60afbc;
+$blue-dark: #1c8da0;
+$blue-darker: #006073;
+$blue-darkest: #02333a;
+$blue-shadow: #011e22;
+
+$yellow: #e8d700;
+$yellow-dark: #c4b505;
+
+$orange: #ea7750;
+$orange-dark: #c45d45;
+
+/* Import Assets */
+@import './nav.scss';
+@import './commandPane.scss';
+@import './board.scss';
+@import './commandQueue.scss';
+@import './runButton.scss';
+@import './robot.scss';
+@import './win.scss';
+
+/* Import Fonts */
+@import 'https://fonts.googleapis.com/css?family=Press+Start+2P';
+@import 'https://fonts.googleapis.com/css?family=Space+Mono';
+
+/* Fonts */
+
+$heading: 'Press Start 2P', cursive;
+$text: 'Space Mono', monospace;
+
+body {
+	overflow-y: hidden;
+}
+
+h1 {
+	margin: 0;
+}
+
+h3{
+	font-family: $heading;
+	font-size: 2.5vh;
+	color: $white;
+
+	@media screen and (max-width: 850px) {
+		font-size: 2vh;
+	}
+}
+
+h4{
+	font-family: $heading;
+	font-size: 16px;
+	color: $white-dark;
+	cursor: default;
+}
+
+.app {
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-content: flex-start;
+	align-items: flex-start;
+
+	user-select: none;
+	-moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+	@media screen and (max-width: 850px) {
+			flex-direction: column;
+	}
+}
