@@ -1,0 +1,48 @@
+.robot-container {
+  z-index: 100;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+.b3-robot {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  z-index: 100;
+  overflow: visible;
+  @media screen and (max-width: 850px) {
+    position: absolute;
+    width: 40%;
+    top: 32%;    
+    height: 40%;
+    background-size: 100%;
+    z-index: 100;   
+    left: 11px;
+  }
+}
+
+.shadow {
+  position: absolute;
+  top: 22%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  z-index: 5;
+  overflow: visible;
+  @media screen and (max-width: 850px) {
+    position: absolute;
+    top: 50%;
+    width: 34%;
+    left: 13px;
+    height: 30%;
+    border-radius: 50%;
+    z-index: 5;
+  }
+}
